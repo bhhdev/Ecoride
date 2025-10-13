@@ -40,14 +40,49 @@ a.navbar-brand, .nav-item>a {
     color: white;
 }
 
+/* .ensemble {
+    background: green;
+    height: 100px;
+    width: 80%;
+} */
+
 .search-wrapper {
     position: fixed;
-    top: 194px;
-    left: 0;
-    right: 0;
+    top: 109px;
+    left: calc(50% + 10px);
+    transform: translateX(-50%);
+    /* right: 0; */
     z-index: 100;
-    height: 3rem;
+    height: fit-content;
     max-width: 100%;
+    /* background: green; */
+    /* overflow: hidden; */
+}
+.search-button-wrapper{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 87px;
+    width: 128px;
+    margin-inline: auto;
+}
+
+.search-icon-wrapper {
+    position: absolute;
+    top: 0.8rem;
+    left: calc(50% - 5px);
+    transform: translateX(-50%);
+}
+
+.search-bar-content{
+    position: relative;
+    width: calc(100% - 128px);
+    max-width: 1200px;
+    transform: translateX(-60px);
+        /* object-fit: content; */
 }
 
 /* .search-button {
@@ -303,6 +338,7 @@ h1, .logiques-nomiques {
 }
 
 footer {
+    position: relative;
     height: 106px;
     width: 100%;
     background: url("../images/buche-de-bois.png") 100% 100%;
@@ -318,6 +354,6 @@ footer {
     content: "";
     position: absolute;
     z-index: 10;
-    /* inset: 0; */
+    inset: 0;
     background-color: rgba(0,0,0,0.6);
 }
