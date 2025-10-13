@@ -25,8 +25,6 @@ nav>*, .navbar-toggler {
     z-index: 20;
 }
 
-
-
 a.navbar-brand, .nav-item>a {
     color: #CBBBA0;
 }
@@ -309,4 +307,15 @@ footer {
     margin-top: 3%;
 }
 
+.filter-footer {
+    height: 100%;
+    width: 100%;
+}
 
+.filter-footer::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    /* inset: 0; */
+    background-color: rgba(0,0,0,0.6);
+}
