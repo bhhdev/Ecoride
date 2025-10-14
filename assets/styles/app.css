@@ -19,7 +19,9 @@ nav::after {
 
 }
 
-
+.navigation {
+    width: 100%;
+}
 
 nav>*, .navbar-toggler {
     z-index: 20;
@@ -28,23 +30,21 @@ nav>*, .navbar-toggler {
 a.navbar-brand, .nav-item>a {
     color: #CBBBA0;
 }
+.li-item {
+    width: 12.5%;
 
-.navbar-nav .nav-link.active {
+}
+
+.navbar-nav .nav-links.active {
     color: white;
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: #95C11F;
 }
 
 
-.nav-link:focus, .nav-link:hover {
+.nav-links:focus, .nav-links:hover {
     color: white;
 }
-
-/* .ensemble {
-    background: green;
-    height: 100px;
-    width: 80%;
-} */
 
 .search-wrapper {
     position: fixed;
