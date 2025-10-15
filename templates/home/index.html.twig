@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+{# <div class="ensemble mx-auto"> #}
+
+{# </div> #}
+<div class="d-flex justify-content-center">
+    <h2 class="text-white fw-bold display-6 text-uppercase">bienvenu chez</h2>
+</div>
+
+<div class="title-ecoride m-auto">
+    <img class="m-auto ecoride-title-img" src="{{ asset("images/titre-ecoride.svg") }}">
+</div>
+
+
+<div class="les-depl d-flex justify-content-center">
+    <p class="text-white fw-bold display-6 text-uppercase">les déplacements</p>
+</div>
+
+<div class="d-flex justify-content-center mb-5">
+    <h1>
+        <img class="m-auto title-img" src="{{ asset("images/€CO.svg") }}">
+    </h1>
+    <div class="logiques-nomiques">
+        <img class="m-auto title-img" src="{{ asset("images/logiques-nomiques.svg") }}">
+    </div>
+
+</div>
+
+
+<div class="d-flex justify-content-center">
+    <div class="d-none d-lg-block img-paysage d-flex justify-content-center">
+        <div class="img-car-wrapper">
+            <img class="m-auto car" src="{{ asset("images/car-without-wheels.svg") }}">
+            <img class="back-wheel" src="{{ asset("images/roue-arriere.svg") }}">
+            <img class="front-wheel" src="{{ asset("images/roue-avant.svg") }}">
+        </div>
+        <img class="dashed-lines" src="{{ asset("images/traits-route.svg") }}">
+    </div>
+    <div class="d-block d-lg-none img-paysage d-flex justify-content-center">
+        {# Image fixe #}
+    </div>
+</div>
+
+<div class="credofferts-content d-flex justify-content-center">
+    <div class="credits-offerts">
+        <h2 class="text-white fw-bold display-4 text-uppercase text-center">20 crédits offerts à l'inscription !!</h2>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center">
+    <div class="text-pres bg-white">
+        <div class="first-text">
+            <p class="text-accueil text-black text-center">Chers visiteurs, visiteuses,</p>
+            <h3 class="text-bienv text-black text-center fw-bold">Soyez les bienvenu(e)s chez Ecoride !!</h3>
+        </div>
+        <div class="prem-parag d-flex justify-content-center">
+            <div class="second-text">
+                <p class="text-accueil text-black text-center m-auto">
+                    Notre plateforme de covoiturage est destinée à toutes celles et ceux,
+                qui désirent partager des moments conviviaux, en alliant préservation de l’environnement, et économie d’argent.
+                </p>
+            </div>
+        </div>
+        <div class="deuxieme-parag d-flex justify-content-center">
+            <div class="third-text">
+                <p class="text-accueil text-black text-center m-auto">
+                    En effet, nous privilégions le covoiturage en véhicule de catégorie B, à énergie électrique, mais pas seulement.
+                </p>
+            </div>
+        </div>
+        <div class="troisieme-parag d-flex justify-content-center">
+            <div class="fourth-text">
+                <p class="text-accueil text-black text-center m-auto">
+                    Car, logiquement, un véhicule, et ce, quelle que soit l’énergie à laquelle il fonctionne, pour plusieurs personnes,
+                    au lieu d’un véhicule chacun pour le même trajet, rentabilise chaque personne, et bien sûr,
+                    la nature elle-même.
+                </p>
+            </div>
+        </div>
+        <div class="quatrieme-parag d-flex justify-content-center">
+            <div class="fiveth-text">
+                <p class="text-accueil text-black text-center m-auto">
+                    A BIENTÔT SUR LES ROUTE
+                </p>
+            </div>
+        </div>
+        <div class="smiley d-flex justify-content-center">
+            <div class="smiley-icon">
+                <img class="img-smiley-icon" src="{{ asset("images/smiley.svg") }}">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
