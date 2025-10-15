@@ -29,6 +29,7 @@ nav>*, .navbar-toggler {
 
 a.navbar-brand, .nav-item>a {
     color: #CBBBA0;
+    text-decoration: none; !important
 }
 .li-item {
     width: 12.5%;
