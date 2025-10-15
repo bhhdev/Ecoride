@@ -47,44 +47,7 @@ a.navbar-brand, .nav-item>a {
     color: white;
 }
 
-.search-wrapper {
-    position: fixed;
-    top: 109px;
-    left: calc(50% + 10px);
-    transform: translateX(-50%);
-    /* right: 0; */
-    z-index: 100;
-    height: fit-content;
-    max-width: 100%;
-    /* background: green; */
-    /* overflow: hidden; */
-}
-.search-button-wrapper{
-    position: relative;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 87px;
-    width: 128px;
-    margin-inline: auto;
-}
 
-.search-icon-wrapper {
-    position: absolute;
-    top: 0.8rem;
-    left: calc(50% - 5px);
-    transform: translateX(-50%);
-}
-
-.search-bar-content{
-    position: relative;
-    width: calc(100% - 128px);
-    max-width: 1200px;
-    transform: translateX(-60px);
-        /* object-fit: content; */
-}
 
 /* .search-button {
     content: "";
