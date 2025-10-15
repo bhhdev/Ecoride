@@ -375,4 +375,15 @@ footer {
     height: 100%;
     width: 50%;
     z-index: 15;
+    color: #CBBBA0;
+}
+
+.text-content {
+    width: 100%;
+}
+
+.text-mentions-legales:hover, .text-email-contact:hover {
+    color: white;
+        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-color: #95C11F;
 }
