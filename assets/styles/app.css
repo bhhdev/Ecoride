@@ -358,3 +358,21 @@ footer {
     inset: 0;
     background-color: rgba(0,0,0,0.6);
 }
+
+.footer-content {
+    height: 100%;
+    width: 100%;
+}
+
+.sep {
+    height: 86%;
+    width: 0.1%;
+    background-color: white;
+    z-index: 15;
+}
+
+.mentions-legales, .email-contact {
+    height: 100%;
+    width: 50%;
+    z-index: 15;
+}
