@@ -103,6 +103,11 @@ a.navbar-brand, .nav-item>a {
     right: 7.9%;
 } */
 
+.h1-history /* h1 page historique */ {
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
 h2, .les-depl, h1 /* h1 page historique */ {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
