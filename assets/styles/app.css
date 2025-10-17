@@ -206,6 +206,18 @@ h2, h1 /* h1 page historique */ {
     width: 49%;
 }
 
+.frame-about-content /* page historique */ {
+    height: 46vh;
+    background-color: #A4957C;
+}
+
+.frame-about /* page about */ {
+    height: 46vh;
+    width: 80%;
+    background-color: #936037;
+    border: 3px solid white;
+}
+
 .title-ecoride {
     height: 25vh;
     width: 75vw;
