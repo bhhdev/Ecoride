@@ -109,7 +109,7 @@ a.navbar-brand, .nav-item>a {
 
 .h1-history /* h1 page historique */ {
     margin-top: 5%;
-    margin-bottom: 3%;
+    margin-bottom: 1%;
 }
 
 h2, .les-depl, h1 /* h1 page historique */ {
@@ -211,11 +211,32 @@ h2, h1 /* h1 page historique */ {
     background-color: #A4957C;
 }
 
-.frame-about /* page about */ {
+.frame-about /* page about */, .connection-content /* page login */ {
     height: 46vh;
     width: 80%;
     background-color: #936037;
     border: 3px solid white;
+}
+
+.input-email, .input-password /* page login */ {
+    width: 80%;
+    border: 3px solid #95C11F;
+}
+
+.connection-content /* page login */ {
+    width: 40%;
+}
+
+.checkbox-driver, .checkbox-passenger /* page login */ {
+    width: 25%;
+}
+
+.button-connect /* page login */ {
+    background-color: #CBBBA0;
+    border: 2px solid #95C11F;
+    color: black;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
 }
 
 .title-ecoride {
