@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CarpoolsController!{% endblock %}
+
+{% block body %}
+
+<div class="d-flex justify-content-center">
+    <h1 class="h1-history text-white fw-bold display-6 text-uppercase">les covoiturages prévus</h1>
+</div>
+
+<div class="total-carpool">
+    <div class="frame-filters-side m-auto">
+        <div class="container-filters-icon">
+        </div>
+    </div>
+
+    <div class="general-carpool-wrapper m-auto d-flex"> 
+        <div class="frame-carrpool d-flex">
+            <div class="carpool-list">
+                <div class="title-list-carpool text-white text-uppercase fs-5 m-auto pt-3">
+                    <p class="text-center text-align">liste des covoiturages</p>
+                </div>
+                <div class="ticket-carpool">
+                    <div class="carpool-ticket-content d-flex justify-content-center">
+                        <div class="photo-content">
+                            <div class="photo-ticket-carpool"></div>
+                            <div class="pseudo-note-driver m-auto">
+                                <p class="p-pseudo text-center text-white">pseudo</p>
+                                <p class="p-note text-center text-white">note</p>
+                            </div>
+                        </div>
+                        <div class="infos-ticket-carpool">
+                            <div class="line-1">
+                                <p class="p-trajet text-center text-uppercase">de (ville) à (ville)</p>
+                            </div>
+                            <div class="line-2 d-flex">
+                                <p class="p-date text-center text-uppercase">date</p>
+                                <p class="p-h-start text-center text-uppercase">h départ</p>
+                                <p class="p-h-end text-center text-uppercase">h arrivée</p>
+                            </div>
+                            <div class="line-3">
+                                <p class="p-seat-dispo text-center text-uppercase">... place(s) disponibles</p>
+                            </div>
+                            <div class="line-4">
+                                <p class="p-ride-eco text-center text-uppercase">trajet éco / non-eco</p>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="button-details text-uppercase text-white">détails</button>
+                            </div>
+                        </div>
+                        <div class="separateur-carpool-ticket">
+                        </div>
+                        <div class="price-carpool"> 
+                            <div class="price-number">
+                                <p class="text-price text-uppercase text-center"> prix :</p>
+                                <p class="number text-center"> 8</p>
+                                <p class="text-credits text-center text-uppercase"> crédits</p>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-carpool-last">
+
+                </div>    
+            </div>
+
+            <div class="arrow-details">
+            </div>
+
+            <div class="details">
+                <div class="title-carpool text-white text-uppercase fs-5 m-auto pt-3">
+                    <p class="text-center text-align">détails du covoiturages</p>
+                </div>
+                <div class="details-container">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="frame-new-date">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
