@@ -686,23 +686,200 @@ h2, h1 /* h1 page historique */ {
 .resum-ride_ps, .others-passengers_ps /* page personal space */ {
     height: 32%;
     width: 100%;
-    background-color: red;
 }
 .resum-driver_ps, .resum-infos_ps, .resum-price_ps /* page personal space */ {
     height: 100%;
 }
 .resum-driver_ps /* page personal space */ {
     width: 26.5%;
-    background-color: yellow;
 }
-.resum-infos_ps {
+.title-driver_ps /* page personal space */ {
+    font-size: 12px;
+}
+.frame-photo-pseudo-note-driver_ps /* page personal space */ {
+    height: 75%;
+}
+.frame-photo-driver_ps /* page personal space */ {
+    height: 85%;
+    width: 30%;
+    background-color: white;
+    margin: 3% 0 0 5%;
+}
+.frame-pseudo-note-driver_ps /* page personal space */ {
+    width: 70%;
+    font-size: 10px;
+}
+.resum-infos_ps /* page personal space */ {
     width: 54%;
-    background-color: green;
 }
-.resum-price_ps {
+.resum-frame-infos_ps /* page personal space */ {
+    height: 80%;
+    width: 100%;
+}
+.resum-h-infos_ps, .resum-date-infos_ps, .resum-vehicul-infos_ps /* page personal space */ {
+    width: 30%;
+    font-size: 10px;
+    margin: 3% 0 0 2px;
+}
+.resum-price_ps /* page personal space */ {
     width: 18.5%;
+}
+.price-next-ticket-passenger_ps /* page personal space */ {
+    font-size: 20px;
+}
+.credits_ps /* page personal space */ {
+    font-size: 10px;
+}
+.others-passengers_ps /* page personal space */ {
+    width: 99%;
+    overflow: auto;
+    background-color: #346928;
+    border: 4px solid #34280C;
+}
+.first-line_ps, .second-line_ps /* page personal space */ {
+    height: 96%;
+    width: 100%;
+}
+.first-other-passenger, .second-other-passenger, .third-other-passenger, 
+.fourth-other-passenger, .fivth-other-passenger, .sixth-other-passenger /* page personal space */ {
+    height: 100%;
+    width: 33%;
+}
+/* .second-other-passenger, .fivth-other-passenger {
+    width: 32%;
+} */
+.frame-photo-other-passenger_ps /* page personal space */ {
+    height: 80%;
+    width: 23%;
+    background-color: white;
+    margin: 4% 0 0 5%;
+}
+.frame-pseudo-note-other-passenger_ps {
+    width: 70%;
+    font-size: 10px;
+}
+.voir-details_ps, .button_ps {
+    width: 50%;
+}
+.voir-details_ps {
+    font-size: 12px;
+    margin: 2.5% 0 0 0;
+}
+.button-annul-ride-passenger {
+    height: 80%;
+    width: 50%;
+    background-color: #CBBBA0;
+    border-radius: 5px;
+    margin-bottom: 1%;
+    margin-right: 5%;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #95C11F;
+        -webkit-text-stroke-width: 0.8px;
+        -webkit-text-stroke-color: black;
+}
+
+.personal-space {
+    width: 90vw;
+    height: 100vh;
+    background-color: #346928;
+    border: 3px solid black;
+}
+.title-infos-personal-space {
+    height: 12%;
+    width: 100%;
+    padding-top: 2%;
+}
+.personal-credits-1_ps, .personal-credits-2_ps {
+    width: 48%;
+    height: 100%;
+    padding-right: 1%;
+}
+.personal-credits-2_ps {
+    padding: 0 0 0 1%;
+}
+.text-personal-credits-1_ps, .text-personal-credits-2_ps {
+    font-weight: bold;
+}
+.info-frame-perso_ps {
+    height: 88%;
+    width: 100%;
     background-color: blue;
 }
+.info-frame-perso-right_ps, .info-frame-perso-left_ps {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+}
+.info-frame-perso-left_ps {
+    background-color: aquamarine;
+}
+.first-frame-infos-pers_ps {
+    height: 26%;
+    width: 90.5%;
+}
+.photo-first-frame-infos-pers_ps, .photo-second-frame-infos-pers_ps {
+    height: 100%;
+    width: 25%;
+    background-color: white;
+    border: 2px solid white;
+    margin-left: 5%;
+}
+.note-infos-first-frame-infos-pers_ps, .infos-second-frame-infos-pers_ps {
+    height: 100%;
+    width: 34.5%;
+}
+.infos-second-frame-infos-pers_ps {
+    height: 80.4%;
+}
+.sep-horizontal-long-infos-perso1_ps, .sep-horizontal-short-infos-perso1_ps, 
+.sep-horizontal-long-infos-perso2_ps, .sep-horizontal-long-infos-perso2-bis_ps {
+    height: 1%;
+    width: 99%;
+    margin-left: 4%;
+    border-radius: 5px;
+    background-color: white;
+}
+.sep-horizontal-long-infos-perso2_ps {
+    margin: 0 0 0 0;
+    height: 1.6%;
+    width: 93%;
+    border-radius: 0px;
+}
+.sep-horizontal-long-infos-perso2-bis_ps {
+    margin: 0 0 0 0;
+    height: 2%;
+    width: 100%;
+    border-radius: 0px;
+}
+.sep-horizontal-short-infos-perso1_ps {
+    height: 1.5%;
+    width: 80%;
+    margin-left: 10%;
+}
+.note-infos_ps, .infos-perso-infos_ps {
+    height: 98%;
+    width: 96%;
+    margin-left: 4%;
+    font-size: 12px;
+}
+.infos-perso-infos_ps {
+    margin: 0 4% 0 0;
+}
+.text1_ps, .text2_ps, .text3_ps {
+    margin-left: 4%;
+}
+.sep-vertical-short-infos-perso1_ps, .sep-vertical-long-infos-perso1_ps {
+    height: 80%;
+    width: 0.5%;
+    border-radius: 5px;
+    background-color: white;
+}
+.sep-vertical-long-infos-perso1_ps {
+    height: 91%;
+    border-radius: 0px;
+}
+
 
 
 .title-ecoride {
