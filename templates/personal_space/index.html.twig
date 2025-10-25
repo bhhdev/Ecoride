@@ -1,0 +1,403 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonalSpaceController!{% endblock %}
+
+{% block body %}
+
+
+<div class="d-flex justify-content-center">
+    <h1 class="h1-history text-white fw-bold display-6 text-uppercase">Espace Perso</h1>
+</div>
+
+<div class="next-tickets_ps m-auto d-flex">
+    <div class="next-ticket-driver_ps">
+        <div class="m-auto">
+            <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-0">prochain ticket chauffeur</h3>
+        </div>
+        <div class="infos_ride-passenger d-flex">
+            <div class="infos_ride">
+                <div class="infos_date-hour m-auto d-flex">
+                    <p class="p-date_ps mb-1 text-white text-uppercase text-center">le ../../..</p>
+                    <p class="p-hour mb-1 text-white text-uppercase text-center">..h..</p>
+                </div>
+                <div class="ride_ps">
+                    <p class="p-ride_ps mb-1 text-white text-uppercase text-center">de (ville) à (ville)</p>
+                </div>
+                <div class="vehicul_ps">
+                    <p class="p-vehicul_ps mb-1 text-white text-uppercase text-center">vehicule</p>
+                </div>
+                <div class="price_ps">
+                    <p class="p-price_ps mb-1 text-white text-uppercase text-center">prix par place</p>
+                </div>
+                <div class="checkbox m-auto d-flex justify-content-center">
+                    <div class="ride-eco">
+                        <label class="text-uppercase text-white text-center mb-0" for="_ride-eco">trajet éco</label>
+                        <input class="mb-0" type="checkbox" name="_ride-eco" id="_ride-eco">
+                    </div>
+                </div>
+            </div>
+            <div class="sep-vertical-next-ticket-driver_ps mt-1"></div>
+            <div class="list-passenger-container_ps">
+                <div class="first-passenger m-auto mt-2 mb-2 d-flex">
+                    <div class="photo-passenger-inscrit"></div>
+                    <div class="pseudo-note-passenger_ps">
+                        <p class="pseudo_ps text-uppercase text-center mb-0 mt-1">pseudo</p>
+                        <p class="note_ps text-uppercase text-center mb-0">note</p>
+                    </div>
+                    <div class="frame-adress_ps">
+                        <p class="text-adress_ps text-white text-uppercase mb-0">déposer à :</p>
+                        <div class="m-auto">
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">123 rue de l'arrivée,</p>
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">12345 arrivée city, aveyron</p>
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">france</p>
+                        </div>
+                    </div>
+                    <div class="passenger-present">
+                        <input class="checkbox-passenger-present" type="checkbox" name="_ride-eco" id="_ride-eco">
+                    </div>
+                </div>
+                <div class="second-passenger m-auto mb-2 d-flex">
+                    <div class="photo-passenger-inscrit"></div>
+                    <div class="pseudo-note-passenger_ps">
+                        <p class="pseudo_ps text-uppercase text-center mb-0 mt-1">pseudo</p>
+                        <p class="note_ps text-uppercase text-center mb-0">note</p>
+                    </div>
+                    <div class="frame-adress_ps">
+                        <p class="text-adress_ps text-white text-uppercase mb-0">déposer à :</p>
+                        <div class="m-auto">
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">123 rue de l'arrivée,</p>
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">12345 arrivée city, aveyron</p>
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">france</p>
+                        </div>
+                    </div>
+                    <div class="passenger-present">
+                        <input class="checkbox-passenger-present" type="checkbox" name="_ride-eco" id="_ride-eco">
+                    </div>
+                </div>
+                <div class="third-passenger m-auto mb-2 d-flex">
+                    <div class="photo-passenger-inscrit"></div>
+                    <div class="pseudo-note-passenger_ps">
+                        <p class="pseudo_ps text-uppercase text-center mb-0 mt-1">pseudo</p>
+                        <p class="note_ps text-uppercase text-center mb-0">note</p>
+                    </div>
+                    <div class="frame-adress_ps">
+                        <p class="text-adress_ps text-white text-uppercase mb-0">déposer à :</p>
+                        <div class="m-auto">
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">123 rue de l'arrivée,</p>
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">12345 arrivée city, aveyron</p>
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">france</p>
+                        </div>
+                    </div>
+                    <div class="passenger-present">
+                        <input class="checkbox-passenger-present" type="checkbox" name="_ride-eco" id="_ride-eco">
+                    </div>
+                </div>
+                <div class="fourth-passenger m-auto mb-2 d-flex">
+                    <div class="photo-passenger-inscrit"></div>
+                    <div class="pseudo-note-passenger_ps">
+                        <p class="pseudo_ps text-uppercase text-center mb-0 mt-1">pseudo</p>
+                        <p class="note_ps text-uppercase text-center mb-0">note</p>
+                    </div>
+                    <div class="frame-adress_ps">
+                        <p class="text-adress_ps text-white text-uppercase mb-0">déposer à :</p>
+                        <div class="m-auto">
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">123 rue de l'arrivée,</p>
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">12345 arrivée city, aveyron</p>
+                            <p class="p-adress_ps text-white text-uppercase text-center mb-0">france</p>
+                        </div>
+                    </div>
+                    <div class="passenger-present">
+                        <input class="checkbox-passenger-present" type="checkbox" name="_ride-eco" id="_ride-eco">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sep-horizontal-next-ticket-driver_ps mt-0 m-auto"></div>
+        <div class="frame-buttons_ps d-flex">
+            <div class="frame-button-annul_ps">
+                <div class="d-flex justify-content-center">
+                    <button class="button-annul-ride btn-lg mt-2 text-uppercase text-white fw-bold" type="submit">annuler</button>
+                </div>
+            </div>
+            <div class="frame-button-start-stop_ps">
+                <div class="d-flex justify-content-end">
+                    <button class="button-start-ride btn-lg mt-2 text-uppercase fw-bold" type="submit">démarrer</button>
+                    <button class="button-stop-ride btn-lg mt-2 text-uppercase fw-bold" type="submit">arrêter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="next-ticket-passenger_ps">
+        <div class="m-auto">
+            <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-0">prochain ticket passager</h3>
+        </div>
+        <div class="resum-ride_ps d-flex">
+            <div class="resum-driver_ps">
+                <div class="titre-frame-driver-resum-driver_ps mb-0">
+                    <p class="title-driver_ps text-center text-white text-uppercase mb-0">chauffeur</p>
+                </div>
+                <div class="frame-photo-pseudo-note-driver_ps d-flex">
+                    <div class="frame-photo-driver_ps">
+                    </div>
+                    <div class="frame-pseudo-note-driver_ps">
+                        <p class="text-white text-center mb-1 mt-2">pseudo</p>
+                        <p class="text-white text-center">note</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sep-vertical-next-ticket-driver_ps mt-1"></div>
+            <div class="resum-infos_ps">
+                <div class="titre-frame-infos-resum-driver_ps mb-0">
+                    <p class="title-driver_ps text-center text-white text-uppercase mb-0">trajet / véhicule</p>
+                </div>
+                <div class="resum-frame-infos_ps d-flex">
+                    <div class="resum-h-infos_ps">
+                        <p class="text-white text-center mb-1 mt-2">.. h ..</p>
+                    </div>
+                    <div class="resum-date-infos_ps">
+                        <p class="text-white text-center mb-1 mt-2">le .. / .. / ..</p>
+                    </div>
+                    <div class="resum-vehicul-infos_ps">
+                        <p class="text-white text-center mb-1 mt-2">vehicule</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="sep-vertical-next-ticket-driver_ps mt-1"></div>
+            <div class="resum-price_ps">
+                <p class="title-driver_ps text-center text-white text-uppercase mb-0">prix</p>
+                <div class="price-resum-price_ps mt-1">
+                    <p class="price-next-ticket-passenger_ps text-center text-white text-uppercase mb-0">8</p>
+                    <p class="credits_ps text-center text-white text-uppercase mb-0">crédits</p>
+                </div>
+            </div>   
+        </div>
+        <div class="sep-horizontal-next-ticket-driver_ps mt-0 m-auto"></div>
+        <div class="others-passengers_ps m-auto">
+            <div class="first-line_ps d-flex m-auto">
+                <div class="first-other-passenger d-flex m-auto">
+                    <div class="frame-photo-other-passenger_ps">
+                    </div>
+                    <div class="frame-pseudo-note-other-passenger_ps">
+                        <p class="text-center text-white mb-1 mt-3">pseudo</p>
+                        <p class="text-center text-white">note</p>
+                    </div>
+                </div>
+                <div class="sep-vertical-next-ticket-driver_ps mt-1"></div>
+                <div class="second-other-passenger d-flex m-auto">
+                    <div class="frame-photo-other-passenger_ps">
+                    </div>
+                    <div class="frame-pseudo-note-other-passenger_ps">
+                        <p class="text-center text-white mb-1 mt-3">pseudo</p>
+                        <p class="text-center text-white">note</p>
+                    </div>
+                </div>
+                <div class="sep-vertical-next-ticket-driver_ps mt-1"></div>
+                <div class="third-other-passenger d-flex m-auto">
+                    <div class="frame-photo-other-passenger_ps">
+                    </div>
+                    <div class="frame-pseudo-note-other-passenger_ps">
+                        <p class="text-center text-white mb-1 mt-3">pseudo</p>
+                        <p class="text-center text-white">note</p>
+                    </div>
+                </div>
+            </div>
+            <div class="second-line_ps d-flex m-auto">
+                <div class="fourth-other-passenger d-flex">
+                    <div class="frame-photo-other-passenger_ps">
+                    </div>
+                    <div class="frame-pseudo-note-other-passenger_ps">
+                        <p class="text-center text-white mb-1 mt-3">pseudo</p>
+                        <p class="text-center text-white">note</p>
+                    </div>
+                </div>
+                <div class="sep-vertical-next-ticket-driver_ps mt-1"></div>
+                <div class="fivth-other-passenger d-flex">
+                    <div class="frame-photo-other-passenger_ps">
+                    </div>
+                    <div class="frame-pseudo-note-other-passenger_ps">
+                        <p class="text-center text-white mb-1 mt-3">pseudo</p>
+                        <p class="text-center text-white">note</p>
+                    </div>
+                </div>
+                <div class="sep-vertical-next-ticket-driver_ps mt-1"></div>
+                <div class="sixth-other-passenger d-flex">
+                    <div class="frame-photo-other-passenger_ps">
+                    </div>
+                    <div class="frame-pseudo-note-other-passenger_ps">
+                        <p class="text-center text-white mb-1 mt-3">pseudo</p>
+                        <p class="text-center text-white">note</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sep-horizontal-next-ticket-driver_ps mt-0 m-auto"></div>
+        <div class="d-flex">
+            <div class="voir-details_ps d-flex justify-content-center">
+                <a class="text-white">voir détails</a>
+            </div> 
+            <div class="button_ps d-flex justify-content-center">   
+                <button class="button-annul-ride-passenger btn-lg mt-2 text-uppercase text-white fw-bold" type="submit">annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="personal-space m-auto mt-5">
+    <div class="title-infos-personal-space d-flex justify-content-center">
+        <div class="personal-credits-1_ps">
+            <h2 class="text-personal-credits-1_ps fs-2 text-white text-uppercase mt-2 text-end">vous disposez de : </h2>
+        </div>
+        <div class="personal-credits-2_ps">
+            <h2 class="text-personal-credits-2_ps display-6 text-white text-uppercase mt-0">18 crédit(s)</h2>
+        </div>
+    </div>
+    <div class="info-frame-perso_ps d-flex">
+        <div class="info-frame-perso-left_ps">
+            <div class="first-frame-infos-pers_ps d-flex">
+                <div class="photo-first-frame-infos-pers_ps">
+                    <img class="selec-other-photo" src="{{ asset("images/select-other-photo.svg") }}">
+                </div>
+                <div class="note-infos-first-frame-infos-pers_ps">
+                    <div class="sep-horizontal-long-infos-perso1_ps mt-0"></div>
+                    <div class="note-infos_ps">
+                        <p class="text-white text-center text-uppercase mb-0 mt-0">note moyenne</p>
+                        <p class="text-white text-center text-uppercase mt-0 mb-1">chauffeur</p>
+                        <p class="text-white text-center text-uppercase mt-0 mb-2 fs-4">. , . / 5</p>
+                        <div class="sep-horizontal-short-infos-perso1_ps mt-0"></div>
+                        <p class="text-white text-center text-uppercase mb-0 mt-0">note moyenne</p>
+                        <p class="text-white text-center text-uppercase mt-0 mb-1">passager</p>
+                        <p class="text-white text-center text-uppercase mt-0 mb-1 fs-4">. , . / 5</p>
+                    </div>
+                    <div class="sep-horizontal-long-infos-perso1_ps mt-0"></div>
+                </div>
+                <div class="sep-vertical-short-infos-perso1_ps mt-3"></div>
+                <div class="infos-second-frame-infos-pers_ps">
+                    <div class="sep-horizontal-long-infos-perso2_ps mt-0"></div>
+                    <div class="d-flex justify-content-end">
+                        <img src="{{ asset("images/infos-perso-icon.svg") }}">
+                    </div>
+                    <div class="infos-perso-infos_ps">
+                        <p class="text1_ps text-white text-start text-uppercase mb-4 mt-2">pseudo</p>
+                        <p class="text2_ps text-white text-start text-uppercase mt-0 mb-4">email</p>
+                        <p class="text3_ps text-white text-start text-uppercase mt-0 mb-0">mot de passe</p>
+                        <div class="sep-horizontal-short-infos-perso_ps mt-0"></div>
+                    </div>
+                    <div class="sep-horizontal-long-infos-perso2-bis_ps mt-0"></div>
+                </div>
+                <div class="sep-vertical-long-infos-perso1_ps mt-3"></div>
+            </div>
+            <div class="lasts-avis">
+                <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-2">dernier avis passager</h3>
+                <div class="last-avis-passenger d-flex">
+                    <div class="frame-last-avis-passenger"></div>
+                    <div class="frame-infos-last-avis">
+                        <p class="pseudo_ps text-uppercase text-center mb-1 mt-0">pseudo</p>
+                        <p class="note_ps text-uppercase text-center mb-1">note</p>
+                        <p class="note_ps text-uppercase text-center mb-0">12 trajet(s)</p>
+                    </div>
+                    <div class="frame-avis-last-passenger">
+                        <p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
+                        <p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
+                        Discussions, ambiance musicale à la convenance.</p>
+                    </Div>
+                </div>
+                <div class="sep-horizontal-next-ticket-driver_ps mt-2 m-auto"></div>
+                <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-2">dernier avis chauffeur</h3>
+                <div class="last-avis-passenger d-flex">
+                    <div class="frame-last-avis-passenger"></div>
+                    <div class="frame-infos-last-avis">
+                        <p class="pseudo_ps text-uppercase text-center mb-1 mt-0">pseudo</p>
+                        <p class="note_ps text-uppercase text-center mb-1">note</p>
+                        <p class="note_ps text-uppercase text-center mb-0">12 trajet(s)</p>
+                    </div>
+                    <div class="frame-avis-last-passenger">
+                        <p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
+                        <p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
+                        Discussions, ambiance musicale à la convenance.</p>
+                    </Div>
+                </div>
+            </div>
+            <div class="select-status-user_ps">
+                <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-4">statut utilisateur</h3>
+                <h5 class="text-center text-white text-uppercase fs-6 mt-1 mb-4">liste de véhicule(s)</h5>
+                <div class="d-flex">
+                    <div class="checkbox-driver m-auto">
+                        <label class="text-uppercase text-white" for="_chauffeur">chauffeur</label>
+                        <input type="checkbox" name="_chauffeur" id="_chauffeur">
+                    </div>
+                    <div class="checkbox m-auto">
+                        <label class="text-uppercase text-white" for="_passager">passager</label>
+                        <input type="checkbox" name="_passager" id="_passager">
+                    </div>
+                </div>
+                <div class="div-button-valider d-flex justify-content-center mt-4">
+                    <button class="button-valid-status-user btn-lg mt-2 text-uppercase fw-bold" type="submit">valider</button>
+                </div>
+            </div>    
+        </div>
+        <div class="info-frame-perso-right_ps">
+            <div class="status-vehicul-organiz-trajet">
+                <div class="title-status-vehicul mb-0">
+                    <h3 class="h3_ps text-center text-white text-uppercase fs-6 mt-1 mb-2">statut véhicule</h3>
+                </div>
+                <div class="list-vehicul mt-0">
+                    <h4 class="list-vehicul-text text-center text-white text-uppercase mt-1 mb-2">liste de véhicule(s)</h4>
+                </div>
+                 
+                
+                <div class="vehicul-list m-auto">
+                    <div class="list m-auto">
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">vw combi -> hc - 265 - jv</a>
+                        </div>
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">toyota auris -> ug - 846 - gi</a>
+                        </div>
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">renault mégane -> pk - 901 - lm</a>
+                        </div>
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">peugeot 308 -> fd - 357 - nb</a>
+                        </div>
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">alfa romeo giulia -> xv - 198 - sd</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="select-record-new-vehicul d-flex mb-1">
+                    <div class="div-button-record-new-vehicul d-flex justify-content-end mt-1 m-auto">
+                        <button class="button-record-new-vehicul btn-lg text-uppercase fw-bold mb-0 mt-0" type="submit">enregistrer nouveau véhicule</button>
+                    </div>
+                    <div class="div-button-select-other-vehicul d-flex justify-content-end mt-1 m-auto">
+                        <button class="button-select-other-vehicul btn-lg text-uppercase fw-bold mt-0 mb-0" type="submit">sélectionner autre véhicule</button>
+                    </div>
+                </div>
+                 
+                <div class="sep-horizontal-long-infos-perso2-right-bis_ps mt-0 m-auto"></div>
+                <div class="organiz-ride">
+                    <h3 class="h3_ps text-center text-white text-uppercase fs-6 mt-0 mb-2">proposer un trajet</h3>
+                    
+                </div>
+                <div class="sep-horizontal-long-infos-perso2-right-bis_ps mt-0 m-auto"></div>
+                <div class="price-organiz-ride d-flex">
+                    <div class="text-price-organiz-ride mt-2">
+                        <p class="text-white text-uppercase text-center">prix par place</p>
+                    </div>
+                    <div class="button-radio-price-ride">
+
+                    </div>
+                </div>
+                <div class="sep-horizontal-long-infos-perso2-right-bis_ps mt-0 m-auto"></div>
+                <div class="details-organiz-ride">
+                    <div class="title-status-vehicul mb-0">
+                        <h3 class="h3_ps text-center text-white text-uppercase fs-6 mt-1 mb-2">options du trajet</h3>
+                    </div>
+                </div>
+            </Div>
+            
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
