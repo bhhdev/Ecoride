@@ -252,9 +252,10 @@
         </div>
     </div>
     <div class="info-frame-perso_ps d-flex">
-        <div class="info-frame-perso-right_ps">
+        <div class="info-frame-perso-left_ps">
             <div class="first-frame-infos-pers_ps d-flex">
                 <div class="photo-first-frame-infos-pers_ps">
+                    <img class="selec-other-photo" src="{{ asset("images/select-other-photo.svg") }}">
                 </div>
                 <div class="note-infos-first-frame-infos-pers_ps">
                     <div class="sep-horizontal-long-infos-perso1_ps mt-0"></div>
@@ -285,9 +286,94 @@
                 </div>
                 <div class="sep-vertical-long-infos-perso1_ps mt-3"></div>
             </div>
+            <div class="lasts-avis">
+                <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-2">dernier avis passager</h3>
+                <div class="last-avis-passenger d-flex">
+                    <div class="frame-last-avis-passenger"></div>
+                    <div class="frame-infos-last-avis">
+                        <p class="pseudo_ps text-uppercase text-center mb-1 mt-0">pseudo</p>
+                        <p class="note_ps text-uppercase text-center mb-1">note</p>
+                        <p class="note_ps text-uppercase text-center mb-0">12 trajet(s)</p>
+                    </div>
+                    <div class="frame-avis-last-passenger">
+                        <p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
+                        <p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
+                        Discussions, ambiance musicale à la convenance.</p>
+                    </Div>
+                </div>
+                <div class="sep-horizontal-next-ticket-driver_ps mt-2 m-auto"></div>
+                <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-2">dernier avis chauffeur</h3>
+                <div class="last-avis-passenger d-flex">
+                    <div class="frame-last-avis-passenger"></div>
+                    <div class="frame-infos-last-avis">
+                        <p class="pseudo_ps text-uppercase text-center mb-1 mt-0">pseudo</p>
+                        <p class="note_ps text-uppercase text-center mb-1">note</p>
+                        <p class="note_ps text-uppercase text-center mb-0">12 trajet(s)</p>
+                    </div>
+                    <div class="frame-avis-last-passenger">
+                        <p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
+                        <p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
+                        Discussions, ambiance musicale à la convenance.</p>
+                    </Div>
+                </div>
+            </div>
+            <div class="select-status-user_ps">
+                <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-4">statut utilisateur</h3>
+                <h5 class="text-center text-white text-uppercase fs-6 mt-1 mb-4">liste de véhicule(s)</h5>
+                <div class="d-flex">
+                    <div class="checkbox-driver m-auto">
+                        <label class="text-uppercase text-white" for="_chauffeur">chauffeur</label>
+                        <input type="checkbox" name="_chauffeur" id="_chauffeur">
+                    </div>
+                    <div class="checkbox m-auto">
+                        <label class="text-uppercase text-white" for="_passager">passager</label>
+                        <input type="checkbox" name="_passager" id="_passager">
+                    </div>
+                </div>
+                <div class="div-button-valider d-flex justify-content-center mt-4">
+                    <button class="button-valid-status-user btn-lg mt-2 text-uppercase fw-bold" type="submit">valider</button>
+                </div>
+            </div>    
         </div>
-        <div class="info-frame-perso-left_ps">
+        <div class="info-frame-perso-right_ps">
+            <div class="status-vehicul-organiz-trajet">
+                <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-2">statut véhicule</h3>
+                <h4 class="text-center text-white text-uppercase fs-6 mt-1 mb-2">liste de véhicule(s)</h4>
+                <div class="vehicul-list m-auto d-flex">
+                    <div class="list">
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">vw combi -> hc - 265 - jv</a>
+                        </div>
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">toyota auris -> ug - 846 - gi</a>
+                        </div>
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">renault mégane -> pk - 901 - lm</a>
+                        </div>
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">peugeot 308 -> fd - 357 - nb</a>
+                        </div>
+                        <div class="list-content">
+                            <a class="text-list text-white text-uppercase text-center">alfa romeo giulia -> xv - 198 - sd</a>
+                        </div>
+                        
+                    </div>
+                    <div class="select-record-new-vehicul">
+                        <div class="div-button-record-new-vehicul d-flex justify-content-end mt-0 m-auto">
+                            <button class="button-record-new-vehicul btn-lg text-uppercase fw-bold mb-0 mt-0" type="submit">enregistrer nouveau véhicule</button>
+                        </div>
+                        <div class="div-button-select-other-vehicul d-flex justify-content-end mt-2 m-auto">
+                            <button class="button-select-other-vehicul btn-lg text-uppercase text-white fw-bold mt-0 mb-0" type="submit">sélectionner autre véhicule</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sep-horizontal-long-infos-perso2-right-bis_ps mt-3 m-auto"></div>
+                <div class="organiz-ride">
+                    <h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-2 mb-2">proposer un trajet</h3>
+                </div>
+            </Div>   
         </div>
+        
     </div>
 </div>
 {% endblock %}
