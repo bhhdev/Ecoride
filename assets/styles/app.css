@@ -1,15 +1,8 @@
-body {
-    background-color: #A4957C;
-    font-family: "Montserrat Alternates", sans-serif;
-    font-weight: bold;
-    padding-top: 129px;
-    position: relative;
-}
+
 
 nav {
     background: url("../images/buche-de-bois.png") 100% 100%;
 }
-
 nav::after {
     content: "";
     position: absolute;
@@ -18,46 +11,39 @@ nav::after {
     background-color: rgba(0,0,0,0.6);
 
 }
-
 .navigation {
     width: 100%;
 }
-
 nav>*, .navbar-toggler {
     z-index: 20;
 }
-
 a.navbar-brand, .nav-item>a {
     color: #CBBBA0;
-    text-decoration: none; !important
+    text-decoration: none !important; 
 }
 .li-item {
     width: 12.5%;
 
 }
-
 .navbar-nav .nav-links.active {
     color: white;
-    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-width: 0.3px;
     -webkit-text-stroke-color: #95C11F;
 }
-
-
 .nav-links:focus, .nav-links:hover {
     color: white;
 }
-
-.search-wrapper {
+/* .search-wrapper {
     position: fixed;
     top: 109px;
     left: calc(50% + 10px);
     transform: translateX(-50%);
-    /* right: 0; */
+    right: 0;
     z-index: 100;
     height: fit-content;
     max-width: 100%;
-    /* background: green; */
-    /* overflow: hidden; */
+    background: green;
+    overflow: hidden;
 }
 .search-button-wrapper{
     position: relative;
@@ -70,66 +56,83 @@ a.navbar-brand, .nav-item>a {
     width: 128px;
     margin-inline: auto;
 }
-
 .search-icon-wrapper {
     position: absolute;
     top: 0.8rem;
     left: calc(50% - 5px);
     transform: translateX(-50%);
 }
-
 .search-bar-content{
     position: relative;
     width: calc(100% - 128px);
     max-width: 1200px;
+    width: 75%;
     transform: translateX(-60px);
-        /* object-fit: content; */
+        object-fit: content;
 }
-
 .search {
     height: 10px;
-}
-
-/* .search-button {
-    content: "";
-    position: absolute;
-    z-index: 5;
-    bottom: 75%;
-    right: 83.5%;
-    margin-right: 20px;
-}
-
-.search-bar-content {
-    content: "";
-    position: absolute;
-    z-index: 5;
-    bottom: 75%;
-    right: 7.9%;
 } */
-
-.h1-history /* h1 page historique */ {
-    margin-top: 5%;
-    margin-bottom: 1%;
+/* .search-bar-content {
+    height: 10vh;
+    width: 80vw;
+    background-color: #34280C;
+    border-radius: 50px;
+    padding: 1.65%;
+} */
+.search-bar-content {
+    height: 4.9rem;
+    width: clamp(320px, 80vw , 700px);
+    background-color: #34280C;
+    border-radius: 50px;
+    @media screen and (width < 1000px) {
+        height: auto;
+        padding: 1rem;
+        border-radius: 25px;
+    }
+}
+.search-bar-icon {
+    /* width: 1.25rem; */
+    width: 3.25rem;
+    height: auto;
+    @media screen and (width < 1000px) {
+        margin-block: auto;
+    }  
 }
 
-h2, .les-depl, h1 /* h1 page historique */ {
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+/* .search-bar {
+    width: 100%;
+    margin: 1.6% 0;
+}
+.label-search-bar {
+    border: 3px solid #95C11F;
+} */
+/* .search-bar-wrapper {
+    width: calc(100% - 2rem);
+    max-width: 800px;
+    @media screen and (min-width >= 100px) {
+        width: auto;
+    }
+} */
+.input-search-wrapper {
+    width: 12.5rem;    
+    @media screen and (width < 1000px) {
+        width: calc(100% - 2rem);
+        margin-left: 1rem;
+    }
 }
 
-h2, h1 /* h1 page historique */ {
-    margin-top: 8%;
-}
 
 .historic-driver-wrapper, .historic-passenger-wrapper /* page historique */ {
     background-color: #CBBBA0;
-    width: 45vw;
+    /* width: 45vw; */
     border: 2px solid black;
+    padding: 1rem;
 }
 
 .title-driver, .title-passenger /* page historique */ {
-    height: 5vh;
-    width: 100vw;
+    /* height: 5vh; */
+    /* width: 100vw; */
 }
 
 .content_ticket-next-ride /* page historique */ {
@@ -138,9 +141,10 @@ h2, h1 /* h1 page historique */ {
 
 .ticket-next-ride /* page historique */ {
     border: 2px solid black;
-    height: 132px;
-    width: 70%;
+    /* height: 132px;
+    width: 70%; */
     margin-bottom: 0.5%;
+    width: 340px;
 }
 
 .text-ticket /* page historique */ {
@@ -178,17 +182,17 @@ h2, h1 /* h1 page historique */ {
 
 .ticket /* page historique */ {
     background-color: #34280C;
-    height: 100px;
+    /* height: 100px; */
     width: 98%;
     border: 2px solid white;
 
 }
 
 .historical-left /* page historique */ {
-    width: 49%;
+    /* width: 49%; */
 }
 .last-ticket /* page historique */ {
-    height: 100px;
+    /* height: 100px; */
     width: 98%;
     background-color: white;
     border: 1px solid black;
@@ -203,7 +207,7 @@ h2, h1 /* h1 page historique */ {
 }
 
 .historical-right /* page historique */ {
-    width: 49%;
+    /* width: 49%; */
 }
 
 .frame-about-content /* page historique */ {
@@ -211,8 +215,8 @@ h2, h1 /* h1 page historique */ {
     background-color: #A4957C;
 }
 
-.frame-about /* page about */, .connection-content /* page login */ {
-    height: 46vh;
+.frame-about /* page about */ {
+    /* height: 46vh; */
     width: 80%;
     background-color: #936037;
     border: 3px solid white;
@@ -225,6 +229,10 @@ h2, h1 /* h1 page historique */ {
 
 .connection-content /* page login */ {
     width: 40%;
+    min-width: 340px;
+    background-color: #936037;
+    border: 3px solid white;
+    padding: 1rem;
 }
 
 .checkbox-driver, .checkbox-passenger /* page login */ {
@@ -381,7 +389,7 @@ h2, h1 /* h1 page historique */ {
     height: 50%;
     width: 100%;
     color: #34280C;
-    margin-bottom: none; !important
+    margin-bottom: none !important;
 }
 .number  /* page carpools */ {
     font-size: 20px;
@@ -1018,147 +1026,6 @@ h2, h1 /* h1 page historique */ {
 }
 
 
-.title-ecoride {
-    height: 25vh;
-    width: 75vw;
-    display: flex;
-}
-
-.title-img {
-    height: 15vh;
-    width: 100%;
-}
-
-h1, .logiques-nomiques {
-    margin-top: 1%;
-}
-.ecoride-title-img {
-    height: 20vh;
-    width: 100%;
-}
-
-.img-paysage {
-    position: relative;
-    height: 548px;
-    width: 1181px;
-    background: url("../images/decors-image-presentation.svg");
-    background-size: cover;
-    overflow: hidden;
-}
-
-/****  Car style ****/
-.img-car-wrapper {
-    position: absolute;
-    z-index: 10;
-    height: 132px;
-    width: 688px;
-    bottom: 140px;
-    transform: translateX(980px);
-}
-.car {
-    height: 132px;
-    width: 688px;
-}
-
-/****  Wheels style ****/
-.back-wheel,
-.front-wheel{
-    position: absolute;
-    z-index: 15;
-    height: 59px;
-    width: 59px;
-    bottom: 0rem;
-    /* animation */
-}
-.back-wheel {
-    left: 273px;
-}
-.front-wheel{
-    left: 40px;
-}
-
-/**** Dashed lines ****/
-.dashed-lines{
-    position: absolute;
-    z-index: 5;
-    bottom: 124px;
-    animation: dashedLinesAnim 3s linear forwards infinite;
-    transform: translateX(-1150px);
-    width: 200%;
-    height: 10px;
-}
-
-/**** Car Animation ****/
-.img-car-wrapper {
-    animation: carAnim 5s linear forwards infinite;
-}
-
-@keyframes carAnim {
-    to {
-        transform: translateX(-980px);
-    }
-}
-@keyframes dashedLinesAnim {
-    to {
-        transform: translateX(-4.5%);
-    }
-}
-
-.front-wheel, .back-wheel {
-    animation: rotate1 0.05s linear infinite;
-}
-
-@keyframes rotate1 {
-    0% {transform: rotate(360deg);}
-    100% {transform: rotate(0deg);}
-}
-
-.credofferts-content {
-    margin-top: 2%;
-}
-
-.credits-offerts {
-    height: 156px;
-    width: 650px;
-    rotate: -7.5deg;
-}
-
-.text-pres {
-    height: 700px;
-    width: 1190px;
-    border: 3px solid black;
-    margin-top: 8%;
-}
-
-.first-text, .fiveth-text {
-    height: 100px;
-    width: 100%;
-    margin-top: 1%;
-}
-
-.text-bienv {
-    height: 100px;
-    width: 100%;
-}
-
-.prem-parag {
-    margin-top: 2%;
-}
-
-.second-text, .fourth-text {
-    height: 100px;
-    width: 80%;
-}
-
-.third-text {
-    height: 100px;
-    width: 65%;
-}
-
-.smiley-icon, .img-smiley-icon {
-    height: 121px;
-    width: 121px;
-}
 
 footer {
     position: relative;
