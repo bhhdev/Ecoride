@@ -1,0 +1,147 @@
+
+.h2-home-page {
+    margin-top: 4%;
+}
+
+.title-ecoride {
+    height: 25vh;
+    width: 75vw;
+    display: flex;
+}
+.title-img {
+    height: 15vh;
+    width: 100%;
+}
+h1, .logiques-nomiques {
+    margin-top: 1%;
+}
+.ecoride-title-img {
+    height: 20vh;
+    width: 100%;
+}
+.img-paysage {
+    position: relative;
+    height: 548px;
+    width: 1181px;
+    background: url("../images/decors-image-presentation.svg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+/****  Car style ****/
+.img-car-wrapper {
+    position: absolute;
+    z-index: 10;
+    height: 132px;
+    width: 688px;
+    bottom: 140px;
+    transform: translateX(980px);
+}
+.car {
+    height: 132px;
+    width: 688px;
+}
+
+/****  Wheels style ****/
+.back-wheel,
+.front-wheel{
+    position: absolute;
+    z-index: 15;
+    height: 59px;
+    width: 59px;
+    bottom: 0rem;
+    /* animation */
+}
+.back-wheel {
+    left: 273px;
+}
+.front-wheel{
+    left: 40px;
+}
+
+/**** Dashed lines ****/
+.dashed-lines{
+    position: absolute;
+    z-index: 5;
+    bottom: 124px;
+    animation: dashedLinesAnim 3s linear forwards infinite;
+    transform: translateX(-1150px);
+    width: 200%;
+    height: 10px;
+}
+
+/**** Car Animation ****/
+.img-car-wrapper {
+    animation: carAnim 5s linear forwards infinite;
+}
+@keyframes carAnim {
+    to {
+        transform: translateX(-980px);
+    }
+}
+@keyframes dashedLinesAnim {
+    to {
+        transform: translateX(-4.5%);
+    }
+}
+.front-wheel, .back-wheel {
+    animation: rotate1 0.05s linear infinite;
+}
+@keyframes rotate1 {
+    0% {transform: rotate(360deg);}
+    100% {transform: rotate(0deg);}
+}
+
+.credofferts-content {
+    margin-top: 2%;
+}
+.credits-offerts {
+    height: 156px;
+    width: 650px;
+    rotate: -7.5deg;
+}
+.text-pres {
+    height: 700px;
+    width: 1190px;
+    border: 3px solid black;
+    margin-top: 8%;
+}
+.first-text, .fiveth-text {
+    height: 100px;
+    width: 100%;
+    margin-top: 1%;
+}
+.text-bienv {
+    height: 100px;
+    width: 100%;
+}
+.prem-parag {
+    margin-top: 2%;
+}
+.second-text, .fourth-text {
+    height: 100px;
+    width: 80%;
+}
+.third-text {
+    height: 100px;
+    width: 65%;
+}
+.smiley-icon, .img-smiley-icon {
+    height: 121px;
+    width: 121px;
+}
+
+
+.h1-history /* h1 page historique */ {
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+h2, .les-depl, h1 /* h1 page historique */ {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+h2, h1 /* h1 page historique */ {
+    margin-top: 8%;
+}
