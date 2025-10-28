@@ -1,37 +1,37 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href={{ path('app_home') }}>
             <img height="80" width="170" src="{{ asset("images/ecoride-logo.svg") }}">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         {# <span class="navbar-toggler-icon"></span> #}
             <img height="40" width="50" src="{{ asset("images/burger-menu.svg") }}">
         </button>
-        <div class="navigation" id="navbarSupportedContent">
-            <ul class="items navbar-nav d-flex justify-content-between">
-                <li class="nav-item mx-0 mx-lg-1 mx-xl-2">
-                    <a class="nav-links active" aria-current="page" href="#">accueil</a>
+        <div class="collapse navbar-collapse navigation" id="navbarSupportedContent">
+            <ul class="items navbar-nav d-flex ms-auto">
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_home' ? 'active' : '' }}" href={{ path('app_home') }}>accueil</a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1 mx-xl-2">
-                    <a class="nav-links" href="#">covoiturages</a>
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_carpools' ? 'active' : '' }}" href={{ path('app_carpools') }}>covoiturages</a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1 mx-xl-2">
-                    <a class="nav-links" href="#">espace perso</a>
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_personal_space' ? 'active' : '' }}" href={{ path('app_personal_space') }}>espace perso</a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1 mx-xl-2">
-                    <a class="nav-links" href="#">contact</a>
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links" href='#'>contact</a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1 mx-xl-2">
-                    <a class="nav-links" href="#">historique</a>
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_history' ? 'active' : '' }}" href={{ path('app_history') }}>historique</a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1 mx-xl-2">
-                    <a class="nav-links" href="#">à propos</a>
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_about' ? 'active' : '' }}" href={{ path('app_about') }}>à propos</a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1 mx-xl-2">
-                    <a class="nav-links" href="#">connection</a>
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_login' ? 'active' : '' }}" href={{ path('app_login') }}>connection</a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1 mx-xl-2">
-                    <a class="nav-links" href="#">inscription</a>
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 mb-4 my-lg-0 mb-lg-0">
+                    <a class="nav-links" href='#'>inscription</a>
                 </li>
             </ul>
         </div>
