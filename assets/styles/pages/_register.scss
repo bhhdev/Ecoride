@@ -1,0 +1,28 @@
+.registration-content /* page login */ {
+    width: 40%;
+    min-width: 340px;
+    background-color: #34280C;
+    border: 3px solid white;
+    padding: 1rem;
+}
+
+.input-pseudo-register, .input-email-register,
+.input-mdp-register, .input-confirm_mdp-register {
+    border: 3px solid #95C11F;
+}
+
+small {
+    color: #CBBBA0 !important;
+}
+
+.checkbox-driver, .checkbox-passenger /* page login */ {
+    width: 25%;
+}
+
+.button-connect /* page login */ {
+    background-color: #CBBBA0;
+    border: 2px solid #95C11F;
+    color: black;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+}
