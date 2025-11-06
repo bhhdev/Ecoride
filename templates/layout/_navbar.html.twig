@@ -19,7 +19,7 @@
                     <a class="nav-links {{ route_name starts with 'app_personal_space' ? 'active' : '' }}" href={{ path('app_personal_space') }}>espace perso</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
-                    <a class="nav-links" href='#'>contact</a>
+                    <a class="nav-links {{ route_name starts with 'app_contact' ? 'active' : '' }}" href={{ path('app_contact') }}>contact</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
                     <a class="nav-links {{ route_name starts with 'app_history' ? 'active' : '' }}" href={{ path('app_history') }}>historique</a>
