@@ -1,0 +1,27 @@
+.search-bar-content {
+    height: 4.9rem;
+    width: clamp(320px, 80vw , 700px);
+    background-color: #34280C;
+    border-radius: 50px;
+    @media screen and (width < 1000px) {
+        height: auto;
+        padding: 1rem;
+        border-radius: 25px;
+    }
+}
+.search-bar-icon {
+    /* width: 1.25rem; */
+    width: 3.25rem;
+    height: auto;
+    @media screen and (width < 1000px) {
+        margin-block: auto;
+    }  
+}
+
+.input-search-wrapper {
+    width: 12.5rem;   
+    @media screen and (width < 1000px) {
+        width: calc(100% - 2rem);
+        margin-left: 1rem;
+    }
+}

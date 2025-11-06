@@ -1,0 +1,33 @@
+nav {
+    background: url("../images/buche-de-bois.png") 100% 100%;
+}
+nav::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6);
+
+}
+.navigation {
+    width: 100%;
+}
+nav>*, .navbar-toggler {
+    z-index: 20;
+}
+a.navbar-brand, .nav-item>a {
+    color: #CBBBA0;
+    text-decoration: none !important; 
+}
+.li-item {
+    width: 12.5%;
+
+}
+.navbar-nav .nav-links.active {
+    color: white;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #95C11F;
+}
+.nav-links:focus, .nav-links:hover {
+    color: white;
+}
