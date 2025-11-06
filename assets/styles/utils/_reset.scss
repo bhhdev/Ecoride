@@ -8,6 +8,14 @@ body {
     background-color: #A4957C !important;
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: bold;
+    height: 100%;
+    width: 100%;
     padding-top: 129px;
+    display: flex;
+    flex-direction: column;
     position: relative;
+}
+
+main {
+    flex: auto !important;
 }
