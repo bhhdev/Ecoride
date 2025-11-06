@@ -1,13 +1,7 @@
-.total-carpools /* page carpools */ {
-    /* min-height: 46vh; */
-}
-
-.frame-filters-side /* page carpools */ {
-    /* height: 5vh; */
+.frame-filters-side {
     width: 90%;
 }
-
-.container-filters-icon /* page carpools */ {
+.container-filters-icon {
     width: 6%;
     height: 98%;
     background-color: #CBBBA0;
@@ -15,32 +9,27 @@
     padding: 0.2%;
     border: 2px solid #95C11F;
 }
-.fliters-arrow-container /* page carpools */ {
+.fliters-arrow-container {
     margin: 8% 0 0 15%;
 }
-
-.general-carpool-wrapper /* page carpools */ {
+.general-carpool-wrapper {
     width: 90vw;
-    /* min-height: 42vh; */
 }
-
-.frame-carrpool /* page carpools */ {
+.frame-carrpool {
     width: 66.5%;
-    /* min-height: 43vh; */
     background-color: #936037;
     border: 3px solid white;
     margin-right: 0.5%;
 }
 
-.carpool-list /* page carpools */ {
+.carpool-list {
     width: 51%;
-    /* height: 98%; */
     margin-top: 0.4%;
     margin-right: 1%;
     margin-left: 0.5%;
 }
 
-.ticket-carpool /* page carpools */ {
+.ticket-carpool {
     width: 100%;
     height: 150px;
     border: 2px solid white;
@@ -49,23 +38,21 @@
     margin-bottom: 2%;
 }
 
-.carpool-ticket-content /* page carpools */ {
+.carpool-ticket-content {
     height: 96%;
     width: 98%;
-    /* background-color: #34280C;
-     */
     margin-top: 0.7%;
     margin-left: 1%;
 }
 
-.photo-content /* page carpools */ {
+.photo-content {
     height: 100%;
     width: 22%;
     background-color: #34280C;
     border: 1px solid white;
 }
 
-.photo-ticket-carpool /* page carpools */ {
+.photo-ticket-carpool {
     height: 70%;
     width: 92%;
     background-color: white;
@@ -74,41 +61,41 @@
     margin-left: 4%;
 }
 
-.pseudo-note-driver /* page carpools */ {
+.pseudo-note-driver {
     font-size: 12px;
 }
 
-.p-pseudo, .p-note /* page carpools */ {
+.p-pseudo, .p-note {
     margin: 1% 0 0 0;
 }
 
-.infos-ticket-carpool /* page carpools */ {
+.infos-ticket-carpool {
     width: 63%;
     height: 100%;
 }
-.line-1 /* page carpools */ {
+.line-1 {
     margin: 0 0 0 0;
 }
-.line-2, .line-3 /* page carpools */ {
+.line-2, .line-3 {
     margin: 0 0 2% 0;
 }
-.line-4 /* page carpools */ {
+.line-4 {
     margin-bottom: 3%;
 }
-.p-trajet /* page carpools */ {
+.p-trajet {
     font-size: 14px;
 }
-.p-date, .p-h-start, .p-h-end, .p-seat-dispo, .p-ride-eco /* page carpools */ {
+.p-date, .p-h-start, .p-h-end, .p-seat-dispo, .p-ride-eco {
     font-size: 12px;
     margin: 0;
 }
-.p-date /* page carpools */ {
+.p-date {
     width: 30%;
 }
-.p-h-start, .p-h-end /* page carpools */ {
+.p-h-start, .p-h-end {
     width: 40%;
 }
-.button-details /* page carpools */ {
+.button-details {
     height: 30px;
     width: 40%;
     background-color: #346928;
@@ -116,7 +103,7 @@
     margin-bottom: 1%;
 }
 
-.separateur-carpool-ticket /* page carpools */ {
+.separateur-carpool-ticket {
     width: 0.5%;
     height: 80%;
     background-color: #34280C;
@@ -124,51 +111,48 @@
     margin-top: 3%;
 }
 
-.price-carpool /* page carpools */ {
+.price-carpool {
     width: 14%;
     height: 100%;
 }
-.price /* page carpools */ {
+.price {
     height: 40%;
     width: 100%;
 }
-.text-price /* page carpools */ {
+.text-price {
     margin-top: 50%;
     font-size: 12px;
 }
-.price-number /* page carpools */ {
+.price-number {
     height: 50%;
     width: 100%;
     color: #34280C;
     margin-bottom: none !important;
 }
-.number  /* page carpools */ {
+.number  {
     font-size: 20px;
     margin-bottom: 0;
 }
-.text-credits /* page carpools */ {
+.text-credits {
     font-size: 12px;
     color: #34280C;
 }
 
-.arrow-details /* page carpools */ {
+.arrow-details {
     width: 4%;
-    /* height: 98%; */
-    /* background-color: yellow; */
     margin-top: 7.6%;
     margin-right: 1%;
 }
-.arrow /* page carpools */ {
+.arrow {
     height: 143px;
 }
 
-.details /* page carpools */ {
+.details {
     width: 42%;
-    /* height: 98%; */
     margin-top: 0.4%;
     background-color: #936037;
 }
-.details-container /* page carpools */ {
+.details-container {
     height: 788px;
     width: 385px;
     background-color: #34280C;
@@ -176,99 +160,99 @@
     border-radius: 5px;
     padding-top: 1%;
 }
-.section-details-1 /* page carpools */ {
+.section-details-1 {
     width: 98%;
     margin-top: 1%;
 }
-.details-photo-container /* page carpools */ {
+.details-photo-container {
     height: 165px;
     width: 30%;
     background-color: #CBBBA0;
     padding-top: 1%;
 }
-.frame-photo-details /* page carpools */ {
+.frame-photo-details {
     height: 70%;
     width: 90%;
     background-color: white;
     border: 2px solid black;
 }
-.p-pseudo-details /* page carpools */ {
+.p-pseudo-details {
     margin: 0;
 }
-.infos-details_section-1 /* page carpools */ {
+.infos-details_section-1 {
     width: 70%;
 }
-.p-next-trajet, .p-trajet_details, .p-date_h-start_h-end, .p-seat-dispo_details, .p-vehicul /* page carpools */ {
+.p-next-trajet, .p-trajet_details, .p-date_h-start_h-end, .p-seat-dispo_details, .p-vehicul {
     width: 100%;
 }
-.p-next-trajet /* page carpools */ {
+.p-next-trajet {
     margin-bottom: 0;
         -webkit-text-stroke-width: 0.5px;
         -webkit-text-stroke-color: #95C11F;
 }
-.p-trajet_details /* page carpools */ {
+.p-trajet_details {
     padding-top: 3%;
 }
-.p-trajet_details, .p-date_h-start_h-end, .p-seat-dispo_details, .p-vehicul /* page carpools */ {
+.p-trajet_details, .p-date_h-start_h-end, .p-seat-dispo_details, .p-vehicul {
     width: 100%;
     font-weight: 500;
     font-size: 12px;
 }
-.separateur_details /* page carpools */ {
+.separateur_details {
     height: 0.3%;
     width: 90%;
     background-color: white;
     border-radius: 5px;
     margin-top: 3%;
 }
-.prefer_1-2, .prefer_3-4 /* page carpools */ {
+.prefer_1-2, .prefer_3-4 {
     width: 50%;
     font-weight: 500;
     font-size: 12px;
 }
-.frame-message-driver /* page carpools */ {
+.frame-message-driver {
     width: 85%;
     height: 62px;
     background-color: white;
     border: 2px solid #95C11F;
 }
-.frame-message-driver /* page carpools */ {
+.frame-message-driver {
     overflow: scroll;
 }
-.p-message-driver /* page carpools */ {
+.p-message-driver {
     font-size: 12px;
     font-weight: 500;
 }
-.avis-content /* page carpools */ {
+.avis-content {
     width: 96%;
     height: 260px;
     background-color: #936037;
     border: 2px solid white;
     overflow: scroll;
 }
-.last-avis, .fivth-avis, .fourth-avis, .third-avis, .second-avis, .first-avis /* page carpools */ {
+.last-avis, .fivth-avis, .fourth-avis, .third-avis, .second-avis, .first-avis {
     height: 60px;
     width: 98%;
     background-color: #CBBBA0;
     border: 2px solid #95C11F;
 }
-.photo-avis /* page carpools */ {
+.photo-avis {
     height: 94%;
     width: 13%;
     background-color: white;
     border: 1px solid black;
     margin: 0.3% 0 0 0.3%;
 }
-.infos-avis /* page carpools */ {
+.infos-avis {
     height: 94%;
     margin: 0.3% 0 0 0.3%;
     width: 20%;
 }
-.pseudo-avis, .note-avis, .nbr-trajet-avis /* page carpools */ {
+.pseudo-avis, .note-avis, .nbr-trajet-avis {
     font-size: 12px;
 
 }
-.avis  /* page carpools */ {
+.avis  {
     height: 94%;
     width: 65.5%;
     background-color: black;
@@ -276,11 +260,11 @@
     margin: 0.3% 0 0 0.3%;
     overflow: scroll;
 }
-.p-message-passenger /* page carpools */ {
+.p-message-passenger {
     font-size: 10px;
     font-weight: 500;
 }
-.button-participer /* page carpools */ {
+.button-participer {
     height: 30px;
     width: 40%;
     background-color: #CBBBA0;
@@ -294,7 +278,7 @@
 }
 
 
-.frame-new-date /* page carpools */ {
+.frame-new-date {
     width: 33%;
     /* height: 43vh; */
     background-color: #34280C;
