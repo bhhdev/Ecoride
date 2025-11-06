@@ -1,0 +1,19 @@
+.input-email, .input-password {
+    width: 80%;
+    border: 3px solid #95C11F;
+}
+
+.connection-content {
+    width: 40%;
+    min-width: 340px;
+    background-color: #936037;
+    border: 3px solid white;
+    padding: 1rem;
+}
+.button-connect {
+    background-color: #CBBBA0;
+    border: 2px solid #95C11F;
+    color: black;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+}
