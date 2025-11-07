@@ -1,14 +1,14 @@
 nav {
-    background: url("../images/buche-de-bois.png") 100% 100%;
+    background-color: #34280C;
 }
-nav::after {
-    content: "";
-    position: absolute;
-    z-index: 10;
-    inset: 0;
-    background-color: rgba(0,0,0,0.6);
+// nav::after {
+//     content: "";
+//     position: absolute;
+//     z-index: 10;
+//     inset: 0;
+//     background-color: rgba(0,0,0,0.6);
 
-}
+// }
 .navigation {
     width: 100%;
 }

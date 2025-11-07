@@ -2,7 +2,7 @@ footer {
     position: relative;
     height: 106px;
     width: 100%;
-    background: url("../images/buche-de-bois.png") 100% 100%;
+    background-color: #34280C;
     margin-top: 3%;
 }
 
@@ -11,13 +11,13 @@ footer {
     width: 100%;
 }
 
-.filter-footer::after {
-    content: "";
-    position: absolute;
-    z-index: 10;
-    inset: 0;
-    background-color: rgba(0,0,0,0.6);
-}
+// .filter-footer::after {
+//     content: "";
+//     position: absolute;
+//     z-index: 10;
+//     inset: 0;
+//     background-color: rgba(0,0,0,0.6);
+// }
 
 .footer-content {
     height: 100%;

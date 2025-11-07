@@ -3,18 +3,35 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<h1 class="h1-history text-center text-white fw-bold display-6 text-uppercase">contact</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/saga01061984/ecoride/app/src/Controller/ContactController.php</code></li>
-        <li>Your template at <code>/home/saga01061984/ecoride/app/templates/contact/index.html.twig</code></li>
-    </ul>
-</div>
+<section>
+    <div class="d-flex justify-content-center">
+        <div class="contact-content">
+            <form>
+                <div class="form-group mb-4">
+                    <label class="d-block text-center text-white text-uppercase" for="email">Email</label>
+                    <input type="email" class="input-email-register form-control" id="email" name="email" aria-describedby="Entrez votre email" placeholder="Votre email...">
+                    <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+                </div>
+                <p class="text-center text-white text-uppercase mb-1">à :</p>
+                <p class="text-center text-white mb-5">ecoride@contact.fr</p>
+                <div class="form-group mb-4">
+                    <label class="d-block text-center text-white text-uppercase" for="object">objet</label>
+                    <input type="text" class="input-pseudo-register form-control" id="object" name="object" aria-describedby="Entrez votre objet de message" placeholder="Objet du message...">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="d-block text-center text-white text-uppercase" for="message">Message</label>
+                    <textarea type="text" class="input-pseudo-register form-control" id="message" name="message" aria-describedby="Entrez votre message" placeholder="Entrez votre message..."></textarea>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="button-connect btn btn-lg mt-4 text-uppercase fw-bold" type="submit">valider
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
