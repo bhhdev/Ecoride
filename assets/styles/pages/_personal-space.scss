@@ -1,274 +1,510 @@
-.next-tickets_ps /* page personal space */ {
-    width: 90vw;
-    height: 30vh;
- }
- .next-ticket-driver_ps, .next-ticket-passenger_ps /* page personal space */ {
-    width: 45%;
-    height: 100%;
-    background-color: #936037;
-    margin-right: 10%;
+// -------------------------------------------------------------------START NEXT TICKETS
+
+// -------------------START GENERAL TICKETS
+.next-tickets {
+    width: 22rem;
+    height: 80vh;
+}
+@media (min-width: 800px) {
+    .next-tickets {
+        width: 50%;
+        height: 50vh;
+    }
+}
+@media (min-width: 1200px) {
+    .next-tickets {
+        width: 40%;
+        height: 80vh;
+    }
+}
+
+.next-ticket-driver_ps, .next-ticket-passenger_ps {
+    width: 100%;
+    height: 48%;
     border: 3px solid white;
- }
-.next-ticket-passenger_ps /* page personal space */ {
-    margin: 0;
+    background-color: #936037;
+}
+.next-ticket-passenger_ps {
     background-color: #34280C;
 }
-.h3_ps /* page personal space */ {
+.h3_ps {
     font-weight: 700;
-    -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-width: 0.5px;
         -webkit-text-stroke-color: #95C11F;
 }
-.infos_ride-passenger /* page personal space */ {
+// -------------------END GENERAL TICKETS
+
+// --------START DETAILS TICKET NEXT RIDE DRIVER
+.div-infos {
+    height: 70%;
     width: 100%;
-    height: 65%;
 }
-.infos_ride /* page personal space */ {
-    width: 33.5%;
+.info-next-carpool-driver {
+    height: 39%;
+    width: 100%;
+}
+.infos_date-hour {
+    width: 60%;
     height: 100%;
 }
-.sep-vertical-next-ticket-driver_ps /* page personal space */ {
-    height: 98%;
-    width: 0.5%;
-    background-color: white;
-    border-radius: 5px;
+.infos_date-hour,
+.infos_vehicul-price-eco {
+    font-size: 12px !important;
 }
-.p-date_ps /* page personal space */ {
-    width: 60%;
+@media (min-width: 1200px) {
+    .infos_date-hour,
+    .infos_vehicul-price-eco {
+        font-size: 14px !important;
+    }
 }
-.p-hour /* page personal space */ {
+.infos_vehicul-price-eco {
     width: 40%;
+    height: 100%;
 }
-.ride_ps, .p-vehicul_ps, .p-price_ps, .p-ride-eco_ps /* page personal space */ {
+
+.sep-hori {
+    height: 1%;
+    width: 98%;
+    border-radius: 10px;
+}
+
+ .passenger-list {
+    height: 60%;
     width: 100%;
-}
-.list-passenger-container_ps /* page personal space */ {
-    width: 66%;
-    height: 96%;
-    background-color: #936037;
+    background-color: #34280C;
+    border: 5px solid #936037;
     overflow: auto;
 }
-.first-passenger, .second-passenger, .third-passenger, .fourth-passenger /* page personal space */ {
+.first-passenger, .second-passenger, .third-passenger, .fourth-passenger {
     width: 96%;
-    height: 30%;
+    height: 70%;
     background-color: #CBBBA0;
     border: 2px solid #95C11F;
 }
-.photo-passenger-inscrit /* page personal space */ {
-    width: 9%;
+.photo-passenger-inscrit {
+    width: 15%;
     height: 96%;
     background-color: white;
     border: 1px solid #34280C;
-    margin: 0.2% 0.3% 0 0.3%;
+    margin: 0.45% 0.3% 0 0.3%;
 }
-.pseudo-note-passenger_ps /* page personal space */ {
-    width: 15%;
-    height: 100%;
-    margin-right: 0.3%;
+@media (min-width: 800px) {
+    .photo-passenger-inscrit {
+        width: 14%;
+        margin: 0.42% 0.4% 0 0.4%;
+    }
 }
-.pseudo_ps, .note_ps /* page personal space */ {
+@media (min-width: 1200px) {
+    .photo-passenger-inscrit {
+        width: 11%;
+        margin: 0.3% 0.4% 0 0.4%;
+    }
+}
+
+.pseudo-note-passenger_ps {
     font-size: 12px;
+    margin: 2.5% 0.5%;
 }
-.frame-adress_ps /* page personal space */ {
-    width: 67.5%;
-    height: 94%;
-    background-color: #34280C;
+@media (min-width: 800px) {
+    .pseudo-note-passenger_ps {
+        margin: 3% 0.5%;
+    }
+}
+@media (min-width: 1200px) {
+    .pseudo-note-passenger_ps {
+        font-size: 14px;
+        margin: 2.5% 0.5%;
+    }
+}
+
+.frame-adress_ps {
+    height: 98%;
+    width: 55%;
+    background-color: black;
     border: 1px solid white;
-    margin-top: 0.25%;
     overflow: auto;
+    margin: 0.1% 0 0 0;
 }
-.text-adress_ps /* page personal space */ {
+@media (min-width: 800px) {
+    .frame-adress_ps {
+        width: 60%;
+    }
+}
+@media (min-width: 1200px) {
+    .frame-adress_ps {
+        width: 68%;
+    }
+}
+.text-adress_ps {
     font-size: 10px;
-    font-weight: 500;
-    margin-left: 2%;
 }
-.p-adress_ps /* page personal space */ {
+@media (min-width: 1200px) {
+    .text-adress_ps {
+        font-size: 12px;
+    }
+}
+.p-adress_ps {
     font-size: 12px;
 }
-.passenger-present /* page personal space */ {
-    height: 100%;
-    width: 7.5%;
+@media (min-width: 1200px) {
+    .p-adress_ps {
+        font-size: 16px;
+    }
 }
-.checkbox-passenger-present /* page personal space */ {
-    height: 50%;
-    width: 80%;
-    margin: 35% 0 0 10%;
+
+.passenger-present {
+    height: 98%;
+    width: 10%;
 }
-.sep-horizontal-next-ticket-driver_ps /* page personal space */ {
-    height: 1.2%;
-    width: 98%;
-    background-color: white;
-    border-radius: 5px;
+.checkbox-passenger-present {
+    height: 60%;
+    width: 60%;
+    margin: 40% 30% ;
 }
-.frame-buttons_ps /* page personal space */ {
+@media (min-width: 800px) {
+    .checkbox-passenger-present {
+        margin: 35% 20%;
+    }
+}
+@media (min-width: 1200px) {
+    .checkbox-passenger-present {
+        margin: 30% 20%;
+    }
+}
+
+.frame-buttons_ps {
     height: 21%;
     width: 100%;
 }
-.frame-button-annul_ps /* page personal space */ {
+.frame-button-annul_ps {
     height: 100%;
     width: 34%;
 }
-.button-annul-ride /* page personal space */ {
-    height: 80%;
-    width: 60%;
+.button-annul-ride {
+    height: 100%;
+    width: 80%;
     background-color: #34280C;
     border-radius: 5px;
-    margin-bottom: 1%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     border: 2px solid #95C11F;
+    margin-top: 7.5%;
+    margin-right: 10%;
 }
-.frame-button-start-stop_ps /* page personal space */ {
+@media (min-width: 1200px) {
+    .button-annul-ride {
+        width: 60%;
+        font-size: 16px;
+    }
+}
+
+.frame-button-start-stop_ps {
     height: 100%;
     width: 66%;
 }
-.button-start-ride, .button-stop-ride /* page personal space */ {
-    height: 80%;
-    width: 30%;
-    background-color: #CBBBA0;
-    border-radius: 5px;
-    margin-bottom: 1%;
-    margin-right: 5%;
-    font-size: 16px;
-    font-weight: bold;
-    border: 2px solid #95C11F;
-        -webkit-text-stroke-width: 0.8px;
-        -webkit-text-stroke-color: black;
-}
-.button-stop-ride /* page personal space */ {
-    background-color: #A4957C;
-    margin-right: 10%;
-}
-.resum-ride_ps, .others-passengers_ps /* page personal space */ {
-    height: 32%;
-    width: 100%;
-}
-.resum-driver_ps, .resum-infos_ps, .resum-price_ps /* page personal space */ {
-    height: 100%;
-}
-.resum-driver_ps /* page personal space */ {
-    width: 26.5%;
-}
-.title-driver_ps /* page personal space */ {
-    font-size: 12px;
-}
-.frame-photo-pseudo-note-driver_ps /* page personal space */ {
-    height: 75%;
-}
-.frame-photo-driver_ps /* page personal space */ {
-    height: 85%;
-    width: 30%;
-    background-color: white;
-    margin: 3% 0 0 5%;
-}
-.frame-pseudo-note-driver_ps /* page personal space */ {
-    width: 70%;
-    font-size: 10px;
-}
-.resum-infos_ps /* page personal space */ {
-    width: 54%;
-}
-.resum-frame-infos_ps /* page personal space */ {
-    height: 80%;
-    width: 100%;
-}
-.resum-h-infos_ps, .resum-date-infos_ps, .resum-vehicul-infos_ps /* page personal space */ {
-    width: 30%;
-    font-size: 10px;
-    margin: 3% 0 0 2px;
-}
-.resum-price_ps /* page personal space */ {
-    width: 18.5%;
-}
-.price-next-ticket-passenger_ps /* page personal space */ {
-    font-size: 20px;
-}
-.credits_ps /* page personal space */ {
-    font-size: 10px;
-}
-.others-passengers_ps /* page personal space */ {
-    width: 99%;
-    overflow: auto;
-    background-color: #346928;
-    border: 4px solid #34280C;
-}
-.first-line_ps, .second-line_ps /* page personal space */ {
-    height: 96%;
-    width: 100%;
-}
-.first-other-passenger, .second-other-passenger, .third-other-passenger, 
-.fourth-other-passenger, .fivth-other-passenger, .sixth-other-passenger /* page personal space */ {
-    height: 100%;
-    width: 33%;
-}
-/* .second-other-passenger, .fivth-other-passenger {
-    width: 32%;
-} */
-.frame-photo-other-passenger_ps /* page personal space */ {
-    height: 80%;
-    width: 23%;
-    background-color: white;
-    margin: 4% 0 0 5%;
-}
-.frame-pseudo-note-other-passenger_ps {
-    width: 70%;
-    font-size: 10px;
-}
-.voir-details_ps, .button_ps {
-    width: 50%;
-}
-.voir-details_ps {
-    font-size: 12px;
-    margin: 2.5% 0 0 0;
-}
-.button-annul-ride-passenger {
-    height: 80%;
+.button-start-ride, .button-stop-ride {
+    height: 60%;
     width: 50%;
     background-color: #CBBBA0;
     border-radius: 5px;
-    margin-bottom: 1%;
-    margin-right: 5%;
-    font-size: 16px;
+    margin-top: 4%;
+    margin-right: 2%;
+    font-size: 14px;
     font-weight: bold;
     border: 2px solid #95C11F;
-        -webkit-text-stroke-width: 0.8px;
-        -webkit-text-stroke-color: black;
+}
+@media (min-width: 1200px) {
+    .button-start-ride, .button-stop-ride {
+        width: 40%;
+        font-size: 16px;
+    }
+    .button-stop-ride {
+        margin-right: 10%;
+    }
 }
 
-.personal-space {
-    width: 90vw;
-    height: 100vh;
+.button-stop-ride {
+    background-color: #A4957C;
+    margin-right: 1%;
+}
+@media (min-width: 1200px) {
+    .button-stop-ride {
+        margin-right: 5%;
+    }
+}
+// --------END DETAILS TICKET NEXT RIDE DRIVER
+
+
+// --------START DETAILS TICKET NEXT RIDE PASSENGER
+.infos-next-ride {
+    height: 80%;
+    width: 100%;
+}
+.sep-vert {
+    height: 98%;
+    width: 0.5%;
+    border-radius: 10px;
+}
+.infos {
+    height: 42.5%;
+    width: 100%;
+}
+.title {
+    font-size: 8px;
+}
+@media (min-width: 1200px) {
+    .title {
+        font-size: 10px;
+    }
+}
+
+.photo-driver{
+    height: 50%;
+    width: 50%;
+}
+@media (min-width: 1200px) {
+    .photo-driver {
+        width: 30%;
+    }
+}
+.title-pseudo,
+.title-note,
+.title-credits,
+.title-date, 
+.title-h {
+    font-size: 10px;
+}
+@media (min-width: 1200px) {
+    .title-pseudo,
+    .title-note,
+    .title-credits,
+    .title-date, 
+    .title-h {
+        font-size: 12px;
+    }
+}
+
+.infos-ride-passenger {
+    height: 100%;
+    width: 100%;
+}
+.infos-driver {
+    height: 100%;
+    width: 19.5%;
+}
+.infos-ride {
+    height: 85%;
+    width: 60%;
+}
+
+.date-h, .next-ride-passenger, .infos-price {
+    height: 27.5%;
+}
+.date-h, .brand-model-vehicle, .next-ride-passenger {
+    width: 100%;
+}
+.title-date, 
+.title-h {
+    width: 50%;
+}
+
+.number-price {
+    font-size: 24px;
+}
+@media (min-width: 1200px) {
+    .number-price {
+        font-size: 32px;
+    }
+}
+.infos-price {
+    height: 100%;
+    width: 19.5%;
+}
+
+.others-passengers {
+    height: 42.5%;
+    width: 100%;
+    background-color: #346928;
+    border: 5px solid #34280C;
+    overflow: auto;
+}
+.first-line, .second-line {
+    height: 98%;
+    width: 98%;
+    margin: 1% 0 0 0;
+}
+.first-other-passenger, .second-other-passenger {
+    height: 94%;
+    width: 48%;
+    margin: 0.5% 0 0 0;
+    background-color: #CBBBA0;
+    border: 2px solid black;
+}
+.infos-other-passenger {
+    height: 96%;
+    width: 98%;
+}
+.photo-other-passenger {
+    height: 90%;
+    width: 30%;
+    margin: 3% 3%;
+    border: 2px solid black;
+}
+@media (min-width: 1200px) {
+    .photo-other-passenger {
+        width: 21%;
+        margin: 1.8% 1.8%;
+    }
+}
+
+.details-other-passenger {
+    height: 90%;
+    width: 64%;
+    margin-top: 3%;
+}
+
+.options-ride {
+    height: 100%;
+    width: 100%;
+}
+.see-details,
+.div-button-annul {
+    height: 100%;
+    width: 50%;
+}
+.see-details {
+    margin: 5% 0 0 0;
+}
+.button-annul-ride-other-passenger {
+    height: 12%;
+    width: 70%;
+    background-color: #CBBBA0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #95C11F;
+    margin-top: 7.5%;
+    margin-right: 10%;
+}
+@media (min-width: 800px) {
+    .button-annul-ride-other-passenger {
+        width: 50%;
+        margin-top: 6%;
+    }
+    .see-details {
+        margin: 4% 0 0 0;
+    }
+}
+@media (min-width: 1200px) {
+    .button-annul-ride-other-passenger {
+    margin-top: 5%;
+    }
+    .see-details {
+        margin: 4% 0 0 0;
+    }
+}
+// --------END DETAILS TICKET NEXT RIDE PASSENGER
+
+// -------------------------------------------------------------------END NEXT TICKETS
+
+
+
+// ---------------------------------------------------------START PERSONAL DETAILS USER
+
+// -------------------START GENERAL PERSONAL SPACE USER
+.details-perso-space {
+    width: 22rem;
+    height: 97rem;
     background-color: #346928;
     border: 3px solid black;
 }
+@media (min-width: 800px) {
+    .details-perso-space {
+        height: 98rem;
+        width: 50%;
+    }
+}
+@media (min-width: 1200px) {
+    .details-perso-space {
+        height: 103rem;
+        width: 40%;
+    }
+}
+// -------------------END GENERAL PERSONAL SPACE USER
+
+// -------------------START CREDITS USER
 .title-infos-personal-space {
-    height: 12%;
     width: 100%;
-    padding-top: 2%;
 }
-.personal-credits-1_ps, .personal-credits-2_ps {
-    width: 48%;
-    height: 100%;
-    padding-right: 1%;
-}
+.personal-credits-1_ps,
 .personal-credits-2_ps {
-    padding: 0 0 0 1%;
+    width: 50%;
 }
 .text-personal-credits-1_ps, .text-personal-credits-2_ps {
     font-weight: bold;
 }
-.info-frame-perso_ps {
-    height: 88%;
-    width: 100%;
-
+.text-personal-credits-1_ps {
+    font-size: 14px;
+    margin: 12% 2.5% 0 0;
+        -webkit-text-stroke-width: 0.4px;
+        -webkit-text-stroke-color: black;
 }
-.info-frame-perso-right_ps, .info-frame-perso-left_ps {
-    width: 100%;
+.text-personal-credits-2_ps {
+    font-size: 22px;
+    margin: 7.9% 0 0 2%;
+        -webkit-text-stroke-width: 0.8px;
+        -webkit-text-stroke-color: black;
+}
+@media (min-width: 800px) {
+    .text-personal-credits-1_ps {
+        font-size: 16px;
+        margin: 10% 2.5% 0 0;
+    }
+    .text-personal-credits-2_ps {
+        font-size: 26px;
+        margin: 6% 0 0 2%;
+    }
+}
+@media (min-width: 1200px) {
+    .text-personal-credits-1_ps {
+        font-size: 26px;
+    }
+    .text-personal-credits-2_ps {
+        font-size: 36px;
+        margin: 7% 0 0 2.5%;
+    }
+}
+// -------------------END CREDITS USER
+
+// -------------------START PERSONAL INFOS USER
+.infos-perso {
+    width: 98%;
+    height: 8rem;    
+}
+@media (min-width: 800px) {
+    .infos-perso {
+        height: 8rem;
+    }
+}
+@media (min-width: 1200px) {
+    .infos-perso {
+        height: 10.5rem;
+    }
+}
+
+.your-photo {
     height: 100%;
+    width: 28%;
+    margin: 0 2% 0 0;
+    display: flex;
+    justify-content: end;
 
 }
-.first-frame-infos-pers_ps {
-    height: 26%;
-    width: 90.5%;
+@media (min-width: 1200px) {
+    .your-photo {
+        width: 23%;
+        margin: 0 4% 0 0;
+    }
 }
 .photo-first-frame-infos-pers_ps {
     height: 100%;
@@ -280,194 +516,323 @@
     justify-content: end;
     align-items: end;
 }
-.note-infos-first-frame-infos-pers_ps, .infos-second-frame-infos-pers_ps {
-    height: 100%;
+
+.div-note, .div-infos-perso {
+    height: 8rem;
     width: 34.5%;
 }
-.infos-second-frame-infos-pers_ps {
-    height: 80.2%;
+@media (min-width: 1200px) {
+    .div-note, .div-infos-perso {
+        height: 100%;
+        width: 37.5%;
+    }
 }
-.sep-horizontal-long-infos-perso1_ps, .sep-horizontal-short-infos-perso1_ps, 
-.sep-horizontal-long-infos-perso2_ps, .sep-horizontal-long-infos-perso2-bis_ps,
-.sep-horizontal-long-infos-perso2-right-bis_ps {
-    height: 1%;
-    width: 99%;
-    margin-left: 4%;
-    border-radius: 5px;
-    background-color: white;
-}
-.sep-horizontal-long-infos-perso2_ps {
-    margin: 0 0 0 0;
-    height: 1.3%;
-    width: 93%;
-    border-radius: 0px;
-}
-.sep-horizontal-long-infos-perso2-bis_ps {
-    margin: 0 0 0 0;
-    height: 1.5%;
+
+.sep-hori_ps1, .sep-hori_ps2 {
     width: 100%;
-    border-radius: 0px;
 }
-.sep-horizontal-short-infos-perso1_ps {
+.sep-hori_ps1 {
     height: 1.5%;
-    width: 80%;
-    margin-left: 10%;
 }
-.note-infos_ps, .infos-perso-infos_ps {
-    height: 98%;
-    width: 96%;
-    margin-left: 4%;
+.sep-hori_ps2 {
+    height: 1%;
+}
+.sep-hori_ps3 {
+    width: 90%;
+    height: 1.5%;
+}
+
+.note_ps {
+    height: 100%;
+    width: 100%;
+}
+.notes-moyennes, .div-infos-perso {
+    height: 98.5%; 
+}
+.note-moyenne-driver,
+.note-moyenne-passenger {
+    height: 49%;
+    width: 100%;
+    font-size: 10px;
+}
+@media (min-width: 1200px) {
+    .note-moyenne-driver,
+    .note-moyenne-passenger {
+        font-size: 12px;
+    }
+}
+.sep-inter-hori {
+    height: 1%;
+    width: 80%;
+}
+.sep-vert_ps1 {
+    width: 0.5%;
+}
+.sep-vert_ps1 {
+    height: 100%;
+}
+.sep-vert_ps2 {
+    height: 88%;
+    margin-top: 4.5%;
+    width: 0.3%;
+}
+@media (min-width: 800px) {
+    .sep-vert_ps2 {
+        height: 87.5%;
+    }
+}
+@media (min-width: 1200px) {
+    .sep-vert_ps2 {
+        height: 85.5%;
+        margin-top: 4%;
+    }
+}
+
+.infos-perso-infos_ps{
+    height: 79%;
+    width: 100%;
+    padding-top: 8%;
+}
+.img-modified-infos {
+    height: 20%;
+    width: 100%;
+}
+@media (min-width: 800px) {
+    .infos-perso-infos_ps {
+        height: 79%;
+    }
+}
+
+.text1_ps,
+.text2_ps,
+.text3_ps {
     font-size: 12px;
 }
-.infos-perso-infos_ps {
-    margin: 0 4% 0 0;
-}
-.text1_ps, .text2_ps, .text3_ps {
-    margin-left: 4%;
-}
-.sep-vertical-short-infos-perso1_ps, .sep-vertical-long-infos-perso1_ps {
-    height: 80%;
-    width: 0.5%;
-    border-radius: 5px;
-    background-color: white;
-}
-.sep-vertical-long-infos-perso1_ps {
-    height: 91%;
-    border-radius: 0px;
-}
-.lasts-avis, .select-status-user_ps {
-    height: 35%;
-    width: 86%;
+// -------------------END PERSONAL INFOS USER
+
+// -------------------START LAST NOTICES
+.last-notice {
+    height: 13rem;
+    width: 98%;
     background-color: #936037;
-    border: 3px solid white;
-    margin: 3% 0 0 4.5%;
+    border: 2px solid white;
 }
-.last-avis-passenger {
-    height: 30%;
-    width: 90%;
+@media (min-width: 800px) {
+    .last-notice {
+        height: 14rem;
+    }
+}
+@media (min-width: 1200px) {
+    .last-notice {
+        height: 15rem;
+    }
+}
+
+.h3_ps {
+    font-size: 14px;
+}
+.last-notice-passenger,
+.last-notice-driver {
+    height: 49%;
+    width: 100%;
+}
+.general-frame {
+    height: 70%;
+    width: 98%;
     background-color: #CBBBA0;
-    margin-left: 5%;
-    border: 2px solid #95C11F;
+    border: 1px solid #95C11F;
 }
-.frame-last-avis-passenger {
-    height: 94%;
-    width: 11%;
-    background-color: white;
-    margin: 0.4% 0 0 0.4%;
-}
-.frame-infos-last-avis {
-    margin-left: 1%;
-}
-.frame-avis-last-passenger {
-    height: 94%;
-    width: 71%;
-    background-color: #34280C;
-    margin: 0.4% 0 0 1%;
+.frame-notice_ps {
+    height: 95%;
+    width: 66.5%;
+    background-color: black;
+    border: 1px solid white;
     overflow: auto;
+    margin: 0.45% 0 0 0;
 }
-.select-status-user_ps {
-    height: 30%;
+@media (min-width: 800px) {
+    .frame-notice_ps {
+        width: 69%;
+    }
 }
-.div-button-valider {
-    width: 100%;
+@media (min-width: 1200px) {
+    .frame-notice_ps {
+        width: 76%;
+    }
+}
+// -------------------END LAST NOTICES
+
+// -------------------START USER STATUT
+.user-statut {
+    height: 10rem;
+    width: 98%;
+    background-color: #936037;
+    border: 2px solid white;
+}
+.statut_ps {
+    font-size: 12px;
+}
+.div-button-valid {
     height: 20%;
-}
-.div-button-record-new-vehicul {
-    height: 34%;
     width: 100%;
 }
-.button-valid-status-user, .button-record-new-vehicul, .div-button-select-other-vehicul {
-    height: 80%;
+.button-valid-statut {
+    height: 100%;
     width: 25%;
     background-color: #CBBBA0;
     border-radius: 5px;
-    margin-bottom: 1%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     border: 2px solid #95C11F;
-        -webkit-text-stroke-width: 0.5px;
-        -webkit-text-stroke-color: white;
 }
-.button-select-other-vehicul {
-    background-color: #A4957C;
-}
-.button-record-new-vehicul{
-    width: 100%;
-    height: 100%;
+// -------------------END USER STATUT
 
-}
-.status-vehicul-organiz-trajet {
-    height: 97%;
-    width: 86%;
+// -------------------START VEHICLE STATUT
+.vehicl-satut_and_organise-ride {
+    height: 60rem;
+    width: 98%;
     background-color: #34280C;
-    border: 3px solid white;
-    margin-left: 10%;
-}
-.list-vehicul {
-    height: 3.5%;
-    width: 100%;
+    border: 2px solid white;
 }
 .list-vehicul-text {
-    font-size: 14px;
+    font-size: 12px;
 }
 .vehicul-list {
-    height: 15%;
+    height: 8%;
     width: 94%;
+    font-size: 14px;
 }
 .list {
-    height: 100%;
+    height: 80%;
     width: 98%;
     border: 2px solid #95C11F;
+    background-color: #936037;
     overflow: auto;
 }
 .list-content {
     width: 100%;
 }
-.text-list {
-    margin: 1% 0 0 2%;
-    font-weight: none;
-    font-size: 12px;
-}
-.title-status-vehicul {
-    height: 3.5%;
+.buttons-statut-vehicl {
     width: 100%;
+    height: 5%;
 }
-.select-record-new-vehicul {
-    height: 8%;
-    width: 100%;
-}
-.div-button-record-new-vehicul, .div-button-select-other-vehicul {
-    height: 93%;
-    width: 47%;
-    margin: 0 0 2% 0;
-}
-.div-button-record-new-vehicul {
-    margin-right: 6%;
-}
-.button-record-new-vehicul, .button-select-other-vehicul {
-    /* font-size: 14px; */
-    margin-bottom: 2%;
+@media (min-width: 1200px) {
+    .buttons-statut-vehicl {
+    height: 5%;
+    }
 }
 
-.sep-horizontal-long-infos-perso2-right-bis_ps {
-    height: 0.5%;
+.div-button-recorded-vehicl,
+.div-button-select-vehicl {
+    width: 50%;
+    height: 100%;
+}
+.button-recorded-vehicl,
+.button-select-vehicl {
+    width: 92%;
+    height: 100%;
+    background-color: #CBBBA0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #95C11F;
+}
+@media (min-width: 1200px) {
+    .button-recorded-vehicl,
+.button-select-vehicl {
+    width: 60%;
+    }
+}
+
+.button-select-vehicl {
+    background-color: white;
+}
+.sep-hori_vehicl-satut_and_organise-ride {
+    width: 90%;
+    height: 0.125rem;
+}
+// -------------------END VEHICLE STATUT
+
+// -------------------START ORGANISE RIDE
+.organise-ride {
+    height: 41%;
+    width: 100%;
+}
+.date-hour-adress_departure-arrival {
+    height: 50%;
+    width: 100%;
+
+}
+.date-hour-adress_departure,
+.date-hour-adress_arrival {
+    height: 100%;
+    width: 50%;
+}
+.departure {
+    width: 96%;
+}
+.dispo-seats {
+    height: 22%;
+    width: 100%;
+}
+.dipo-seats-text {
+    width: 80%;
+}
+.dispo-seats-input {
+    width: 40%;
+    height: 100%;
+}
+.seat-price-ride-organised {
+    width: 70%;
+}
+.div-switch-button {
     width: 98%;
 }
-.organiz-ride {
-    height: 20%;
+@media (min-width: 800px) {
+    .div-switch-button {
+        width: 80%;
+    }
+}
+@media (min-width: 1200px) {
+    .div-switch-button {
+        width: 60%;
+    }
+}
+
+.label-switch-button {
+    width: 80%;
+    font-size: 12px;
+}
+.switch-button {
+    width: 20%;  
+}
+.fram-textarea {
+    width: 90%;
+}
+.div-max-length {
+    font-size: 10px;
+}
+.div-button-recorded {
+    height: 15%;
     width: 100%;
 }
-.price-organiz-ride {
-    height: 6%;
-    width: 100%;
+.button-recorded {
+    height: 100%;
+    width: 40%;
+    background-color: #CBBBA0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #95C11F;
 }
-.text-price-organiz-ride {
-    width: 66%;
+@media (min-width: 800px) {
+    .button-recorded {
+        width: 35%;
+    }
 }
-.button-radio-price-ride {
-    width: 34%;
+@media (min-width: 1200px) {
+    .button-recorded {
+        width: 25%;
+    }
 }
-.details-organiz-ride {
-    height: 40.6%;
-    width: 100%;
-}
+// -------------------END ORGANISE RIDE
