@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<h1 class="text-center h1-history text-white fw-bold display-6 text-uppercase">les covoiturages prévus</h1>
+<h1 class=" text-center h1-history text-white fw-bold display-6 text-uppercase">les covoiturages prévus</h1>
 
 <div class="total-carpool">
     {# START FILTER ICON #}
@@ -18,10 +18,11 @@
             </div>
         </div>
     </div>
+</div>
     {# END FILTER ICON #}
 
     {# START CARPOOLS AND DETAILS CARPOOL #}
-    <div class="general-carpool-wrapper m-auto d-flex"> 
+    {# <div class="general-carpool-wrapper m-auto d-flex"> 
         <div class="frame-carrpool d-flex">
             <div class="carpool-list">
                 <div class="title-list-carpool text-white text-uppercase fs-5 m-auto pt-3">
@@ -222,19 +223,19 @@
                         </div>
                     </div>
                 </div>  
-            </div>
+            </div> #}
             {# END CARPOOLS AND DETAILS CARPOOL #}
 
             {# START ARROW DETAILS CARPOOL #}
-            <div class="arrow-details">
+            {# <div class="arrow-details">
                 <div>
                     <img class="arrow" src="{{ asset("images/arrow-details.svg") }}">
                 </div>
-            </div>
+            </div> #}
             {# START ARROW DETAILS CARPOOL #}
 
             {# START DETAILS CARPOOLS #}
-            <div class="details">
+            {# <div class="details">
                 <div class="title-carpool text-white text-uppercase fs-5 m-auto pt-3">
                     <p class="text-center text-align">détails du covoiturages</p>
                 </div>
@@ -387,15 +388,15 @@
                         <button type="button" class="button-participer text-uppercase">participer</button>
                     </div>
                 </div>
-            </div> 
+            </div>  #}
             {# END DETAILS CARPOOLS #} 
-        </div>
+        {# </div> #}
 
         {# START NEW DATE FOR CARPOOLS #}
-        <div class="frame-new-date">
+        {# <div class="frame-new-date">
 
-        </div>
+        </div> #}
         {# END NEW DATE FOR CARPOOLS #}
-    </div>
+    {# </div> #}
 </div>
 {% endblock %}
