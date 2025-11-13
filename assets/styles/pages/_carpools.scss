@@ -1,8 +1,13 @@
 .frame-filters-side {
-    width: 90%;
+    width: 22rem;
+}
+@media (min-width: 800px) {
+    .frame-filters-side {
+        width: 35rem;
+    }
 }
 .container-filters-icon {
-    width: 6%;
+    width: 5rem;
     height: 98%;
     background-color: #CBBBA0;
     margin-bottom: 0.5%;
@@ -12,53 +17,107 @@
 .fliters-arrow-container {
     margin: 8% 0 0 15%;
 }
+
+
+
+
+
 .general-carpool-wrapper {
-    width: 90vw;
+    width: 22rem;
+}
+@media (min-width: 800px) {
+    .general-carpool-wrapper {
+        width: 35rem;
+    }
+}
+
+.h3_ps {
+    font-size: 16px;
+    font-weight: 700;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: #95C11F;
+}
+@media (min-width: 800px) {
+    .h3_ps {
+        font-size: 18px;
+    }
+}
+@media (min-width: 1200px) {
+    .h3_ps {
+        font-size: 20px;
+    }
 }
 .frame-carrpool {
-    width: 66.5%;
+    width: 100%;
     background-color: #936037;
     border: 3px solid white;
-    margin-right: 0.5%;
+
 }
 
 .carpool-list {
-    width: 51%;
+    width: 99%;
     margin-top: 0.4%;
-    margin-right: 1%;
+    margin-right: 0.5%;
     margin-left: 0.5%;
+}
+@media (min-width: 800px) {
+    .carpool-list {
+    width: 98%;
+    margin-right: 1%;
+    margin-left: 1%;
+    }
 }
 
 .ticket-carpool {
-    width: 100%;
-    height: 150px;
+    width: 98%;
+    height: 7.5rem;
     border: 2px solid white;
     border-radius: 5px;
     background-color: #CBBBA0;
     margin-bottom: 2%;
 }
-
+@media (min-width: 800px) {
+    .ticket-carpool {
+        height: 10rem;
+    
+    }
+}
 .carpool-ticket-content {
     height: 96%;
-    width: 98%;
+    width: 100%;
     margin-top: 0.7%;
-    margin-left: 1%;
 }
-
+@media (min-width: 800px) {
+    .ticket-carpool-content {
+        margin-top: 0.5%;
+    }
+}
+@media (min-width: 1200px) {
+    .carpool-ticket-content {
+        margin-top: 0.58%;
+    }
+}
 .photo-content {
     height: 100%;
-    width: 22%;
+    width: 20%;
     background-color: #34280C;
     border: 1px solid white;
+    padding-top: 0.7%;
+    margin-left: 0.5%;
+}
+@media (min-width: 800px) {
+    .photo-content {
+        width: 17%;
+    }
 }
 
 .photo-ticket-carpool {
-    height: 70%;
-    width: 92%;
+    height: 60%;
+    width: 94%;
     background-color: white;
     border: 2px solid #95C11F;
     margin-top: 3.5%;
-    margin-left: 4%;
+    margin-left: 3.25%;
 }
 
 .pseudo-note-driver {
@@ -68,26 +127,46 @@
 .p-pseudo, .p-note {
     margin: 1% 0 0 0;
 }
+@media (min-width: 800px) {
+    .p-pseudo, .p-note {
+        margin: 10% 0 0 0;
+    }
+}
 
 .infos-ticket-carpool {
-    width: 63%;
+    width: 60%;
     height: 100%;
 }
+@media (min-width: 800px) {
+    .infos-ticket-carpool {
+        width: 63%;
+    }
+}
 .line-1 {
-    margin: 0 0 0 0;
+    margin: 0 0 2% 0;
 }
 .line-2, .line-3 {
     margin: 0 0 2% 0;
 }
 .line-4 {
-    margin-bottom: 3%;
+    margin-bottom: 4%;
 }
 .p-trajet {
-    font-size: 14px;
+    font-size: 12px;
+}
+@media (min-width: 800px) {
+    .p-trajet {
+        font-size: 16px;
+    }
 }
 .p-date, .p-h-start, .p-h-end, .p-seat-dispo, .p-ride-eco {
-    font-size: 12px;
+    font-size: 10px;
     margin: 0;
+}
+@media (min-width: 800px) {
+    .p-date, .p-h-start, .p-h-end, .p-seat-dispo, .p-ride-eco {
+    font-size: 14px;
+}
 }
 .p-date {
     width: 30%;
@@ -112,7 +191,7 @@
 }
 
 .price-carpool {
-    width: 14%;
+    width: 20%;
     height: 100%;
 }
 .price {
@@ -120,8 +199,17 @@
     width: 100%;
 }
 .text-price {
-    margin-top: 50%;
+    margin-top: 20%;
     font-size: 12px;
+}
+.text-credits {
+    font-size: 12px;
+    color: #34280C;
+}
+@media (min-width: 800px) {
+    .text-price, .text-credits  {
+    font-size: 16px;
+    }
 }
 .price-number {
     height: 50%;
@@ -130,13 +218,15 @@
     margin-bottom: none !important;
 }
 .number  {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 0;
 }
-.text-credits {
-    font-size: 12px;
-    color: #34280C;
+@media (min-width: 800px) {
+    .number  {
+    font-size: 32px;
+    }
 }
+
 
 .arrow-details {
     width: 4%;
@@ -147,26 +237,44 @@
     height: 143px;
 }
 
+
+.sep-hori {
+    height: 0.125rem;
+    width: 92%;
+    border-radius: 10px;
+}
+
 .details {
-    width: 42%;
+    width: 98%;
     margin-top: 0.4%;
     background-color: #936037;
 }
 .details-container {
     height: 788px;
-    width: 385px;
+    width: 99%;
     background-color: #34280C;
     border: 2px solid white;
     border-radius: 5px;
     padding-top: 1%;
 }
+@media (min-width: 800px) {
+    .details-container {
+        height: 62.5rem;
+    }
+}
 .section-details-1 {
+    height: 11rem;
     width: 98%;
     margin-top: 1%;
 }
+@media (min-width: 800px) {
+    .section-details-1r {
+        height: 25rem;
+    }
+}
 .details-photo-container {
-    height: 165px;
-    width: 30%;
+    height: 98%;
+    width: 25%;
     background-color: #CBBBA0;
     padding-top: 1%;
 }
@@ -198,6 +306,11 @@
     font-weight: 500;
     font-size: 12px;
 }
+@media (min-width: 800px) {
+    .p-trajet_details, .p-date_h-start_h-end, .p-seat-dispo_details, .p-vehicul {
+        font-size: 14px;
+    }
+}
 .separateur_details {
     height: 0.3%;
     width: 90%;
@@ -205,19 +318,27 @@
     border-radius: 5px;
     margin-top: 3%;
 }
+.infos-details_section-2 {
+    height: 8rem;
+}
 .prefer_1-2, .prefer_3-4 {
     width: 50%;
     font-weight: 500;
     font-size: 12px;
 }
+@media (min-width: 800px) {
+    .prefer_1-2, .prefer_3-4 {
+        font-size: 14px;
+    }
+}
 .frame-message-driver {
     width: 85%;
-    height: 62px;
+    height: 10rem;
     background-color: white;
     border: 2px solid #95C11F;
 }
 .frame-message-driver {
-    overflow: scroll;
+    overflow: auto;
 }
 .p-message-driver {
     font-size: 12px;
@@ -225,10 +346,15 @@
 }
 .avis-content {
     width: 96%;
-    height: 260px;
+    height: 8rem;
     background-color: #936037;
     border: 2px solid white;
     overflow: scroll;
+}
+@media (min-width: 800px) {
+    .avis-content {
+        height: 20rem;
+    }
 }
 .last-avis, .fivth-avis, .fourth-avis, .third-avis, .second-avis, .first-avis {
     height: 60px;
@@ -243,11 +369,17 @@
     border: 1px solid black;
     margin: 0.3% 0 0 0.3%;
 }
+@media (min-width: 800px) {
+    .photo-avis {
+        width: 9%;
+    }
+}
 .infos-avis {
     height: 94%;
     margin: 0.3% 0 0 0.3%;
-    width: 20%;
+    width: 25%;
 }
+
 .pseudo-avis, .note-avis, .nbr-trajet-avis {
     font-size: 12px;
 
@@ -258,11 +390,21 @@
     background-color: black;
     border: 1px solid white;
     margin: 0.3% 0 0 0.3%;
-    overflow: scroll;
+    overflow: auto;
+}
+@media (min-width: 800px) {
+    .avis {
+        width: 64.5%;
+    }
 }
 .p-message-passenger {
     font-size: 10px;
     font-weight: 500;
+}
+@media (min-width: 800px) {
+    .p-message-passenger {
+        font-size: 12px;
+    }
 }
 .button-participer {
     height: 30px;
@@ -276,11 +418,30 @@
         -webkit-text-stroke-width: 0.5px;
         -webkit-text-stroke-color: white;
 }
-
+@media (min-width: 800px) {
+    .button-participer {
+        width: 30%;
+        margin-top: 1.5%;
+    }
+}
 
 .frame-new-date {
-    width: 33%;
-    /* height: 43vh; */
+    width: 100%;
+    height: 16rem;
     background-color: #34280C;
     border: 3px solid white;
+}
+@media (min-width: 800px) {
+    .frame-new-date {
+       height: 15rem;
+    }
+}
+.h5-new-date {
+    font-size: 16px;
+}
+.text-new-date {
+    width: 90%;
+}
+.input-nex-adress {
+    width: 60%;
 }
