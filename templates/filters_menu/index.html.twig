@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FiltersMenuController!
+{% endblock %}
+
+{% block body %}
+	<div class="filters-menu-container m-auto mt-4">
+		<div class="smoker-vap-ride d-flex">
+				<p class="p-smoker-vap-ride text-uppercase text-white">trajet écologique</p>
+				<div class="button-eco-ride form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="modeSwitch">
+				</div>
+			</div>
+		<div class="max-price-ride mt-3">
+			<p class="p-max-price text-uppercase text-white mb-1">prix maximum</p>
+			<p class="price-ride d-block text-center text-white mb-1 mt-0">crédit(s)</p>
+			<div class="progress-bar">
+				<div class="slider-container">
+					<input type="range" class="form-range custom-range" min="0" max="100" value="25">
+				</div>
+			</div>
+		</div>
+		<div class="max-time-ride d-flex mt-5">
+			<p class="p-time-ride text-uppercase text-white mt-1 mb-1">durée max du trajet</p>
+			<input type="time" id="duration" class="input-time-ride border-input form-control duration-input" step="60">
+		</div>
+		<div class="min-notice-driver d-flex mt-3">
+			<p class="p-time-ride text-uppercase text-white mt-1 mb-1">note min du chauffeur</p>
+			<div class="input-group-rating">
+				<input type="number" id="rating" class="form-control same-size-input" min="0" max="5" step="0.1" placeholder="."/>
+				<span class="rating-suffix">/ 5</span>
+			</div>
+		</div>
+		<div class="options-ride mt-5">
+			<div class="smoker-vap-ride d-flex">
+				<p class="p-smoker-vap-ride text-uppercase text-white">trajet fumeur / vapoteur</p>
+				<div class="button-eco-ride form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="modeSwitch">
+				</div>
+			</div>
+            <div class="smoker-vap-ride d-flex">
+				<p class="p-smoker-vap-ride text-uppercase text-white">trajet animaux acceptés</p>
+				<div class="button-eco-ride form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="modeSwitch">
+				</div>
+			</div>
+            <div class="smoker-vap-ride d-flex">
+				<p class="p-smoker-vap-ride text-uppercase text-white">utilisation de la clim</p>
+				<div class="button-eco-ride form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="modeSwitch">
+				</div>
+			</div>
+            <div class="div-button-valid-filters d-flex justify-content-center">
+				<button class="button-valid-statut btn-lg text-uppercase fw-bold" type="submit">valider</button>
+			</div>
+		</div>
+	</div>
+{% endblock %}
