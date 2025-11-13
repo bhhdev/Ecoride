@@ -17,8 +17,11 @@
 }
 @media (min-width: 800px) {
     .eco-ride, .p-max-price,
-    .max-time-ride, .min-notice-driver {
+    .max-time-ride, .min-notice-driver, .p-smoker-vap-ride {
         padding-left: 5%;
+    }
+    .max-price-ride {
+        padding-left: 0%;
     }
 }
 .p-eco-ride, .p-max-price, .p-smoker-vap-ride {
@@ -34,8 +37,15 @@
 .button-eco-ride {
     width: 6%;
 }
+
 .progress-bar {
     height: 28px;
+    width: 100%;
+}
+@media (min-width: 800px) {
+    .progress-bar {
+        width: 35rem;
+    }
 }
 /* Conteneur principal */
 .slider-container {
