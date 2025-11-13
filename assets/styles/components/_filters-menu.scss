@@ -1,0 +1,248 @@
+.filters-menu-container {
+    height: 30rem;
+    width: 22rem;
+    background-color: #34280C;
+    border: 3px solid white;
+}
+@media (min-width: 800px) {
+    .filters-menu-container {
+        width: 35rem;
+    }
+}
+
+.eco-ride, .max-price-ride, 
+.max-time-ride, .min-notice-driver, .p-smoker-vap-ride {
+    width: 98%;
+    padding-left: 2%;
+}
+@media (min-width: 800px) {
+    .eco-ride, .p-max-price,
+    .max-time-ride, .min-notice-driver, .p-smoker-vap-ride {
+        padding-left: 5%;
+    }
+    .max-price-ride {
+        padding-left: 0%;
+    }
+}
+.p-eco-ride, .p-max-price, .p-smoker-vap-ride {
+    width: 90%;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: #95C11F;
+}
+@media (min-width: 800px) {
+    .p-eco-ride {
+        width: 89%;
+    }
+}
+.button-eco-ride {
+    width: 6%;
+}
+
+.progress-bar {
+    height: 28px;
+    width: 100%;
+}
+@media (min-width: 800px) {
+    .progress-bar {
+        width: 35rem;
+    }
+}
+/* Conteneur principal */
+.slider-container {
+  width: 20rem;
+  margin: 100px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 800px) {
+    .slider-container {
+        width: 32rem;
+    }
+}
+/* Barre de progression (piste beige + contour vert) */
+.custom-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 50px;
+  background: #f0f2f4; /* blanc */
+  border: 3px solid #95C11F; /* beige régulier sur tout le contour */
+  box-shadow: none;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* ----- Piste blanche et bord beige (corrigée pour Chrome & Firefox) ----- */
+.custom-range::-webkit-slider-runnable-track {
+  height: 15px;
+  border-radius: 50px;
+  background: #f0f2f4; /* blanc */
+  border: 3px solid #95C11F; /* beige uniforme */
+  box-sizing: border-box;
+}
+
+.custom-range::-moz-range-track {
+  height: 15px;
+  border-radius: 50px;
+  background: #f0f2f4;
+  border: 3px solid #95C11F;
+  box-sizing: border-box;
+}
+
+/* ----- Curseur rond noir ----- */
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid #bfa78a; /* léger contour beige du curseur */
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  margin-top: -1px; /* centre verticalement */
+}
+
+.custom-range::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid #bfa78a;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+
+.custom-range::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+  border: 2px solid #bfa78a;
+}
+
+.p-time-ride {
+    width: 80%;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: #95C11F;
+}
+.input-time-ride {
+    width: 20%;
+}
+
+/* Harmonisation du champ "durée max du trajet" */
+.input-time-ride {
+  width: 5.3rem;                /* même largeur que le champ note */
+  height: 1.6rem;               /* même hauteur */
+  background: #fff;             /* fond blanc */
+  border: 2px solid #8bb700;    /* bord vert vif */
+  border-radius: 6px;           /* même arrondi */
+  color: #3a2b0c;               /* même couleur texte */
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  padding: 0;                   /* enlève tout écart interne par défaut */
+}
+
+/* Supprime les icônes/flèches natives selon les navigateurs */
+.input-time-ride::-webkit-clear-button,
+.input-time-ride::-webkit-inner-spin-button {
+  display: none;
+}
+.input-time-ride::-webkit-calendar-picker-indicator {
+  opacity: 0; /* cache l’icône d’horloge */
+  pointer-events: none;
+}
+
+/* Effet focus cohérent */
+.input-time-ride:focus {
+  box-shadow: 0 0 4px #8bb700;
+}
+
+/* Optionnel : harmonise si .border-input interfère */
+.border-input {
+  border: 2px solid #8bb700 !important;
+  border-radius: 6px !important;
+  background: #fff !important;
+}
+
+.input-min-notice {
+    width: 10%;
+}
+
+/* Conteneur de l'input + /5 */
+.input-group-rating {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #8bb700; /* bord vert */
+  border-radius: 6px;
+  width: 5.3rem; /* 🔧 même largeur que le champ heure */
+  height: 1.6rem; /* 🔧 même hauteur que le champ heure */
+  box-sizing: border-box;
+}
+
+/* Input principal */
+.same-size-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #3a2b0c;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  height: 100%;
+  padding: 0 1.2rem 0 0.2rem; /* espace pour le “/5” */
+  box-sizing: border-box;
+}
+
+/* Supprimer les flèches ↑↓ */
+.same-size-input::-webkit-inner-spin-button,
+.same-size-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.same-size-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Texte “/5” fixé à droite */
+.rating-suffix {
+  position: absolute;
+  right: 0.35rem;
+  color: #3a2b0c;
+  font-size: 1rem;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* Effet focus */
+.input-group-rating:focus-within {
+  box-shadow: 0 0 4px #8bb700;
+}
+
+.div-button-valid-filters {
+    height: 1.75rem;
+}
+
+.button-valid-statut {
+    height: 20px;
+    width: 30%;
+    background-color: #CBBBA0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #95C11F;
+}
