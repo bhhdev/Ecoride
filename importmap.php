@@ -23,6 +23,12 @@ return [
         'entrypoint' => true,
     ],
 
+    // 👉 Ton fichier JavaScript pour le filtrage de covoiturages
+    'js/carpools' => [
+        'path' => './assets/js/carpools.js',
+        'entrypoint' => true,
+    ],
+
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
