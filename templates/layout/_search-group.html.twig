@@ -1,55 +1,47 @@
-<form 
-    action="{{ path('app_carpools') }}" 
-    method="GET" 
-    class="search-bar-content mx-auto d-flex align-items-start align-items-md-center justify-content-evenly"
->
+<form action="{{ path('app_carpools') }}" 
+      method="GET" 
+      class="search-bar-content mx-auto d-flex align-items-start align-items-md-center justify-content-evenly">
 
     <div class="search-bar-icon">
-        <img src="{{ asset("images/search-icon.svg") }}">
+        <img src="{{ asset('images/search-icon.svg') }}">
     </div>
 
     <div class="row g-3 search-bar-wrapper">
 
         <div class="col-md input-search-wrapper">
             <div class="form-floating">
-                <input 
-                    type="text"
-                    class="form-control border-input" 
-                    id="departure-location" 
-                    name="from"
-                    placeholder="ex: Caen..." 
-                >
+                <input type="text" class="form-control border-input"
+                       id="departure-location"
+                       name="from"
+                       placeholder="ex: Caen..."
+                       value="{{ from ?? '' }}">
                 <label for="departure-location">Ville de départ</label>
             </div>
         </div>
 
         <div class="col-md input-search-wrapper">
             <div class="form-floating">
-                <input 
-                    type="text" 
-                    class="form-control border-input" 
-                    id="arrival-location" 
-                    name="to"
-                    placeholder="ex: Paris..."
-                >
+                <input type="text" class="form-control border-input"
+                       id="arrival-location"
+                       name="to"
+                       placeholder="ex: Paris..."
+                       value="{{ to ?? '' }}">
                 <label for="arrival-location">Ville d'arrivée</label>
             </div>
         </div>
 
         <div class="col-md input-search-wrapper">
             <div class="form-floating">
-                <input 
-                    type="date" 
-                    class="form-control border-input" 
-                    id="departure-date"
-                    name="date"
-                >
+                <input type="date" class="form-control border-input"
+                       id="departure-date"
+                       name="date"
+                       value="{{ date ?? '' }}">
                 <label for="departure-date">Date de départ</label>
             </div>
         </div>
 
-        {# bouton caché si tu veux valider avec "Enter" uniquement #}
-        <button type="submit" class="d-none"></button>
-
     </div>
+
+    <!-- BOUTON DE SUBMIT MASQUÉ : NECESSAIRE POUR QUE ENTER FONCTIONNE -->
+    <button type="submit" style="display:none"></button>
 </form>
