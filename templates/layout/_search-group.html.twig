@@ -1,30 +1,55 @@
-<div class="search-bar-content mx-auto d-flex align-items-start align-items-md-center justify-content-evenly">
+<form 
+    action="{{ path('app_carpools') }}" 
+    method="GET" 
+    class="search-bar-content mx-auto d-flex align-items-start align-items-md-center justify-content-evenly"
+>
+
     <div class="search-bar-icon">
         <img src="{{ asset("images/search-icon.svg") }}">
     </div>
-    <div class="row g-3 search-bar-wrapper">
-        {# <form class="search-bar d-flex justify-content-center" role="search">
-            <input class="label-search-bar form-control rounded-5 me-2 m-auto" type="search" placeholder="Search" aria-label="Search"/>
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> #}
 
-          <div class="col-md input-search-wrapper">
+    <div class="row g-3 search-bar-wrapper">
+
+        <div class="col-md input-search-wrapper">
             <div class="form-floating">
-              <input type="text" class="form-control border-input" id="departure-location" placeholder="ex: Caen..." value="caen">
-              <label for="departure-location">Ville de départ</label>
+                <input 
+                    type="text"
+                    class="form-control border-input" 
+                    id="departure-location" 
+                    name="from"
+                    placeholder="ex: Caen..." 
+                >
+                <label for="departure-location">Ville de départ</label>
             </div>
-          </div>
-          <div class="col-md input-search-wrapper">
+        </div>
+
+        <div class="col-md input-search-wrapper">
             <div class="form-floating">
-              <input type="text" class="form-control border-input" id="arrival-location" placeholder="ex: Caen..." value="caen">
-              <label for="arrival-location">Ville d'arrivée</label>
+                <input 
+                    type="text" 
+                    class="form-control border-input" 
+                    id="arrival-location" 
+                    name="to"
+                    placeholder="ex: Paris..."
+                >
+                <label for="arrival-location">Ville d'arrivée</label>
             </div>
-          </div>
-          <div class="col-md input-search-wrapper">
+        </div>
+
+        <div class="col-md input-search-wrapper">
             <div class="form-floating">
-              <input type="date" class="form-control border-input" id="departure-date" placeholder="H:M">
-              <label for="departure-date">Date de départ</label>
+                <input 
+                    type="date" 
+                    class="form-control border-input" 
+                    id="departure-date"
+                    name="date"
+                >
+                <label for="departure-date">Date de départ</label>
             </div>
-          </div>
+        </div>
+
+        {# bouton caché si tu veux valider avec "Enter" uniquement #}
+        <button type="submit" class="d-none"></button>
+
     </div>
-</div>
+</form>
