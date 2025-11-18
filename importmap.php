@@ -16,6 +16,13 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
+
+    // 👉 AJOUT pour charger ton animation JS home.js
+    'js/home' => [
+        'path' => './assets/js/home.js',
+        'entrypoint' => true,
+    ],
+
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
