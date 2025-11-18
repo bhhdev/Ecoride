@@ -1,4 +1,15 @@
 
+.intro-line {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.intro-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .h2-home-page {
     margin-top: 4%;
 }
@@ -84,7 +95,7 @@ h1, .logiques-nomiques {
     }
 }
 .front-wheel, .back-wheel {
-    animation: rotate1 0.05s linear infinite;
+    animation: rotate1 0.1s linear infinite;
 }
 @keyframes rotate1 {
     0% {transform: rotate(360deg);}
