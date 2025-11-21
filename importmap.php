@@ -17,14 +17,15 @@ return [
         'entrypoint' => true,
     ],
 
-    // 👉 AJOUT pour charger ton animation JS home.js
     'js/home' => [
         'path' => './assets/js/home.js',
         'entrypoint' => true,
     ],
-
-    // 👉 Ton fichier JavaScript pour le filtrage de covoiturages
     'js/carpools' => [
+        'path' => './assets/js/carpools.js',
+        'entrypoint' => true,
+    ],
+    'js/search-route.js' => [
         'path' => './assets/js/carpools.js',
         'entrypoint' => true,
     ],
