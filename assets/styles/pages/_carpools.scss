@@ -1,3 +1,5 @@
+
+
 .frame-filters-side {
     width: 22rem;
 }
@@ -70,23 +72,25 @@
 
 .ticket-carpool {
     width: 98%;
-    height: 7.5rem;
     border: 2px solid white;
     border-radius: 5px;
     background-color: #CBBBA0;
     margin-bottom: 2%;
+    /* height: 8rem;  <-- À ENLEVER */
 }
+
+
 @media (min-width: 800px) {
     .ticket-carpool {
-        height: 10rem;
-    
+        /* height: 10rem; <-- À ENLEVER */
     }
 }
 .carpool-ticket-content {
-    height: 96%;
-    width: 100%;
-    margin-top: 0.7%;
+    display: flex;
+    align-items: stretch !important; /* ⭐ absolument nécessaire */
 }
+
+
 @media (min-width: 800px) {
     .ticket-carpool-content {
         margin-top: 0.5%;
@@ -134,9 +138,13 @@
 }
 
 .infos-ticket-carpool {
-    width: 60%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto !important;
 }
+
+
 @media (min-width: 800px) {
     .infos-ticket-carpool {
         width: 63%;
@@ -159,6 +167,10 @@
         font-size: 16px;
     }
 }
+.p-ride-eco.eco, .p-ride-eco.standard {
+    color: black;
+}
+
 .p-date, .p-h-start, .p-h-end, .p-seat-dispo, .p-ride-eco {
     font-size: 10px;
     margin: 0;
@@ -169,18 +181,16 @@
 }
 }
 .p-date {
-    width: 30%;
+    width: 50%;
 }
 .p-h-start, .p-h-end {
-    width: 40%;
+    width: 30%;
 }
 .button-details {
-    height: 30px;
-    width: 40%;
-    background-color: #346928;
-    border-radius: 5px;
-    margin-bottom: 1%;
+    margin-top: 6px;
+    margin-bottom: 4px !important;
 }
+
 
 .separateur-carpool-ticket {
     width: 0.5%;
@@ -191,40 +201,18 @@
 }
 
 .price-carpool {
-    width: 20%;
-    height: 100%;
+    width: 14%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.price {
-    height: 40%;
-    width: 100%;
-}
-.text-price {
-    margin-top: 20%;
-    font-size: 12px;
-}
-.text-credits {
-    font-size: 12px;
-    color: #34280C;
-}
-@media (min-width: 800px) {
-    .text-price, .text-credits  {
-    font-size: 16px;
-    }
-}
+
+
 .price-number {
-    height: 50%;
-    width: 100%;
-    color: #34280C;
-    margin-bottom: none !important;
-}
-.number  {
-    font-size: 24px;
-    margin-bottom: 0;
-}
-@media (min-width: 800px) {
-    .number  {
-    font-size: 32px;
-    }
+    font-size: 32px;   /* ⭐ visible mais pas déformé */
+    font-weight: bold;
+    line-height: 1;
+    height: auto;      /* ⭐ ne force plus l’écrasement */
 }
 
 

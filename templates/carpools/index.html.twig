@@ -1,216 +1,103 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CarpoolsController!
+{% block title %}Les covoiturages
 {% endblock %}
 
 {% block body %}
 
-	<h1 class=" text-center h1-history text-white fw-bold display-6 text-uppercase">les covoiturages prévus</h1>
+	<h1 class="text-center h1-history text-white fw-bold display-6 text-uppercase">
+		les covoiturages prévus
+	</h1>
 
-	<div
-		class="total-carpool">
-		{# START FILTER ICON #}
-		<div class="frame-filters-side m-auto">
+	{# ===================================================== #}
+	{# ===============  ICÔNE FILTRES  ===================== #}
+	{# ===================================================== #}
+		<div class="total-carpool"> <div class="frame-filters-side m-auto">
 			<div class="container-filters-icon d-flex">
 				<div class="fliters-menu-container">
-					<img src="{{ asset("images/filters-menu.svg") }}">
+					<img src="{{ asset('images/filters-menu.svg') }}">
 				</div>
 				<div class="fliters-arrow-container">
-					<img src="{{ asset("images/arrow-filters.svg") }}">
+					<img src="{{ asset('images/arrow-filters.svg') }}">
 				</div>
 			</div>
 		</div>
 	</div>
-	{# END FILTER ICON #}
 
-	{# START CARPOOLS AND DETAILS CARPOOL #}
-	<div class="general-carpool-wrapper m-auto mb-4">
-		<div class="frame-carrpool mb-4">
-			<div class="carpool-list">
-				<div id="rides-container" class="rides-wrapper"></div>
-			</div>
-			{# END CARPOOLS AND DETAILS CARPOOL #}
+	{# ===================================================== #}
+	{# ===============   LISTE DES TRAJETS  ================= #}
+	{# ===================================================== #}
 
-			{# START ARROW DETAILS CARPOOL #}
-			{# <div class="arrow-details">
-			                <div>
-			                    <img class="arrow" src="{{ asset("images/arrow-details.svg") }}">
-			                </div>
-			            </div> #}
-			{# START ARROW DETAILS CARPOOL #}
+		<div class="general-carpool-wrapper m-auto mb-4"> <div class="frame-carrpool mb-4 pt-2">
+			<div class="carpool-list d-flex flex-column align-items-center">
 
-			{# START DETAILS CARPOOLS #}<div class="sep-hori m-auto bg-white"> </div>
-			<div class="details m-auto">
-				<div class="title-carpool text-white text-uppercase fs-5 m-auto pt-3">
-					<h3 class="h3_ps text-center text-align">détails du covoiturage</h3>
-				</div>
-				<div class="details-container m-auto mb-2">
-					<div class="section-details-1 d-flex m-auto">
-						<div class="details-photo-container">
-							<div class="frame-photo-details m-auto"></div>
-							<div class="frame-pseudo-note-details m-auto">
-								<p class="p-pseudo-details text-center">pseudo</p>
-								<p class="p-note-details text-center">note</p>
-							</div>
-						</div>
-						<div class="infos-details_section-1">
-							<div class="line-1-details">
-								<p class="p-next-trajet text-center text-uppercase text-white mb-2">prochain trajet</p>
-							</div>
-							<div class="line-2_details">
-								<p class="p-trajet_details text-center text-uppercase text-white mb-2">de (ville) à (ville)</p>
-							</div>
-							<div class="line-2_details">
-								<p class="p-date_h-start_h-end text-center text-uppercase text-white mb-2">date / hdépart / h arrivée</p>
-							</div>
-							<div class="line-3_details">
-								<p class="p-seat-dispo_details text-center text-uppercase text-white mb-2">... place(s) disponibles</p>
-							</div>
-							<div class="line-4_details">
-								<p class="p-vehicul text-center text-uppercase text-white mb-4">marque / modèle / energie vehicule</p>
-							</div>
-						</div>
-					</div>
-					<div class="separateur_details m-auto"></div>
-					<div class="infos-details_section-2">
-						<div class="line-1-details">
-							<p class="p-next-trajet text-center text-uppercase text-white mt-1 mb-2">préférences du chauffeur</p>
-						</div>
-						<div class="prefer_details m-auto d-flex">
-							<div class="prefer_1-2">
-								<p class="prefer-1 text-center text-uppercase text-white mb-3 mt-4">preference 1</p>
-								<p class="prefer-2 text-center text-uppercase text-white mb-1">preference 2</p>
-							</div>
-							<div class="prefer_3-4">
-								<p class="prefer-3 text-center text-uppercase text-white mb-3 mt-4">preference 3</p>
-								<p class="prefer-4 text-center text-uppercase text-white mb-1">preference 4</p>
-							</div>
-						</div>
-					</div>
-					<div class="separateur_details m-auto"></div>
-					<div class="infos-details_section-3">
-						<div class="line-1-details">
-							<p class="p-next-trajet text-center text-uppercase text-white mt-1 mb-2">message du chauffeur</p>
-						</div>
-						<div class="frame-message-driver m-auto mb-3">
-							<p class="p-message-driver">Bonjour à toutes et tous, futurs passagers et passagères !</p>
-							<p class="p-message-driver">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
-								                            Discussions, ambiance musicale à la convenance.</p>
-						</Div>
-					</div>
-					<div class="separateur_details m-auto"></div>
-					<div class="infos-details_section-3 mb-3">
-						<div class="line-1-details">
-							<p class="p-next-trajet text-center text-uppercase text-white mt-1 mb-3">avis des passgers</p>
-						</div>
-						<div class="avis-content m-auto">
-							<div class="last-avis m-auto mt-1 mb-1 d-flex">
-								<div class="photo-avis"></div>
-								<div class="infos-avis">
-									<p class="pseudo-avis text-center mb-0">pseudo</p>
-									<p class="note-avis text-center mb-0">note</p>
-									<p class="nbr-trajet-avis text-center mb-0">... trajet(s)</p>
-								</div>
-								<div class="avis">
-									<p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
-									<p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
-										                                    Discussions, ambiance musicale à la convenance.</p>
-								</div>
-							</div>
-							<div class="fivth-avis m-auto mb-1 d-flex">
-								<div class="photo-avis"></div>
-								<div class="infos-avis">
-									<p class="pseudo-avis text-center mb-0">pseudo</p>
-									<p class="note-avis text-center mb-0">note</p>
-									<p class="nbr-trajet-avis text-center mb-0">... trajet(s)</p>
-								</div>
-								<div class="avis">
-									<p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
-									<p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
-										                                    Discussions, ambiance musicale à la convenance.</p>
-								</div>
-							</div>
-							<div class="fourth-avis m-auto mb-1 d-flex">
-								<div class="photo-avis"></div>
-								<div class="infos-avis">
-									<p class="pseudo-avis text-center mb-0">pseudo</p>
-									<p class="note-avis text-center mb-0">note</p>
-									<p class="nbr-trajet-avis text-center mb-0">... trajet(s)</p>
-								</div>
-								<div class="avis">
-									<p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
-									<p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
-										                                    Discussions, ambiance musicale à la convenance.</p>
-								</div>
-							</div>
-							<div class="third-avis m-auto mb-1 d-flex">
-								<div class="photo-avis"></div>
-								<div class="infos-avis">
-									<p class="pseudo-avis text-center mb-0">pseudo</p>
-									<p class="note-avis text-center mb-0">note</p>
-									<p class="nbr-trajet-avis text-center mb-0">... trajet(s)</p>
-								</div>
-								<div class="avis">
-									<p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
-									<p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
-										                                    Discussions, ambiance musicale à la convenance.</p>
-								</div>
-							</div>
-							<div class="second-avis m-auto mb-1 d-flex">
-								<div class="photo-avis"></div>
-								<div class="infos-avis">
-									<p class="pseudo-avis text-center mb-0">pseudo</p>
-									<p class="note-avis text-center mb-0">note</p>
-									<p class="nbr-trajet-avis text-center mb-0">... trajet(s)</p>
-								</div>
-								<div class="avis">
-									<p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
-									<p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
-										                                    Discussions, ambiance musicale à la convenance.</p>
-								</div>
-							</div>
-							<div class="first-avis m-auto mb-1 d-flex">
-								<div class="photo-avis"></div>
-								<div class="infos-avis">
-									<p class="pseudo-avis text-center mb-0">pseudo</p>
-									<p class="note-avis text-center mb-0">note</p>
-									<p class="nbr-trajet-avis text-center mb-0">... trajet(s)</p>
-								</div>
-								<div class="avis">
-									<p class="p-message-passenger text-white">Bonjour à toutes et tous, futurs passagers et passagères !</p>
-									<p class="p-message-passenger text-white">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
-										                                    Discussions, ambiance musicale à la convenance.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="separateur_details m-auto mb-3"></div>
-					<div class="d-flex justify-content-center">
-						<button type="button" class="button-participer text-uppercase">participer</button>
-					</div>
-				</div>
-			</div>
-			{# {# END DETAILS CARPOOLS #}
-		</div>
+				{% for ride in rides %}
+					<div class="ticket-carpool">
+						<div
+							class="carpool-ticket-content d-flex">
 
-		{# START NEW DATE FOR CARPOOLS #}
-		<div class="frame-new-date">
-			<h3 class="h3_ps text-center text-align text-uppercase text-white mt-1 mb-4">nouvelle date</h3>
-            <div class="text-new-date m-auto">
-                <h5 class="h5-new-date text-center text-align text-uppercase text-white mt-1 mb-4">il n'y a pas de covoiturage prévu(s) ou disponible(s) à cette date</h5>
-                <h5 class="h5-new-date text-center text-align text-uppercase text-white mt-1 mb-3">veuillez entrer une nouvelle date :</h5>
-            </div>
-			<div class="input-nex-adress form-floating m-auto mb-1">
-				<input type="date" class="form-control border-input" id="departure-date" placeholder="H:M" name="date">
-				<label for="departure-date">Date de départ</label>
+							{# --- PHOTO + PSEUDO --- #}
+							<div class="photo-content text-center">
+								<div class="photo-ticket-carpool"></div>
+
+								<div class="pseudo-note-driver">
+									<p class="p-pseudo text-white">{{ ride.driverName }}</p>
+									<p class="p-note text-white">{{ ride.driverNote }}
+										⭐</p>
+								</div>
+							</div>
+
+							{# --- INFOS DU TRAJET --- #}
+							<div class="infos-ticket-carpool ms-2">
+
+								<div class="line-1">
+									<p class="p-trajet text-center mb-2">{{ ride.from }}
+										→
+										{{ ride.to }}</p>
+								</div>
+
+								<div class="line-2 d-flex justify-content-center">
+									<p class="p-date text-center mb-0">{{ ride.date }}</p>
+									<p class="p-h-start text-center mb-0">{{ ride.startTime }}</p>
+									<p class="p-h-end text-center mb-0">{{ ride.endTime }}</p>
+								</div>
+
+								<div class="line-3">
+									<p class="p-seat-dispo text-center mb-1">{{ ride.seats }}
+										places disponibles</p>
+								</div>
+
+								<div class="line-4">
+									<p class="p-ride-eco text-center mb-0 {{ ride.eco ? 'eco' : 'standard' }}">
+										{{ ride.eco ? 'Trajet éco' : 'Trajet standard' }}
+									</p>
+								</div>
+								<div class="d-flex justify-content-center">
+									<button class="button-details text-white text-uppercase mb-1 mt-0">Détails</button>
+								</div>
+							</div>
+
+							{# --- SÉPARATEUR --- #}
+							<div class="separateur-carpool-ticket"></div>
+
+							{# --- PRIX --- #}
+							<div class="price-carpool">
+                                <p class="price-label d-block text-center mb-4">prix</p>
+                                <p class="price-number d-block text-center mb-0">{{ ride.credits }}</p>
+                                <p class="price-credits d-block text-center mb-0">crédits</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
 			</div>
 		</div>
-		{# END NEW DATE FOR CARPOOLS #}
-    </div>
-</div>
+	</div>
+
 {% endblock %}
 
 
 {% block javascripts %}
-    {{ importmap('js/carpools') }}
+    {{ parent() }}
+	{{ importmap('js/carpools') }}
 {% endblock %}
