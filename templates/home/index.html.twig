@@ -98,5 +98,6 @@
 {% endblock %}
 
 {% block javascripts %}
+    {{ parent() }}
     {{ importmap(['js/home']) }}
 {% endblock %}
