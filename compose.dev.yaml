@@ -1,0 +1,37 @@
+services:
+
+  database:
+    container_name: database
+    image: mariadb:10.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: bhhdev
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "4306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  app:
+    build:
+      context: ./app
+    user: "www-data"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+      - ./apache/default.conf:/etc/apache2/sites-available/000-default.conf
+    depends_on:
+      - database
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - "8899:8080"
+
+volumes:
+  db_data:
