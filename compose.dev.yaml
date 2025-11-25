@@ -16,7 +16,7 @@ services:
 
   app:
     build:
-      context: app/Dockerfile
+      context: ./app
     user: "www-data"
     ports:
       - "8080:80"
