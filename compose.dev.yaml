@@ -22,7 +22,7 @@ services:
       - "8080:80"
     volumes:
       - ./app:/var/www/html
-      - ./apache/default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./app/apache/default.conf:/etc/apache2/sites-available/000-default.conf
     depends_on:
       - database
 
