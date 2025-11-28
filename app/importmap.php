@@ -17,16 +17,16 @@ return [
         'entrypoint' => true,
     ],
 
-    'js/home' => [
+    'home' => [
         'path' => './assets/js/home.js',
         'entrypoint' => true,
     ],
-    'js/carpools' => [
+    'carpools' => [
         'path' => './assets/js/carpools.js',
         'entrypoint' => true,
     ],
-    'js/search-route.js' => [
-        'path' => './assets/js/carpools.js',
+    'search-route' => [
+        'path' => './assets/js/search-route.js',
         'entrypoint' => true,
     ],
 
