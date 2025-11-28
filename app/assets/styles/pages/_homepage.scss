@@ -23,66 +23,176 @@
     height: 15vh;
     width: 100%;
 }
-h1, .logiques-nomiques {
+h1 {
     margin-top: 1%;
+}
+.logiques-nomiques {
+    margin-top: 5%;
+}
+@media (min-width: 800px) {
+    .logiques-nomiques {
+        margin-top: 2.5%;
+    }
+}
+@media (min-width: 1200px) {
+    .logiques-nomiques {
+        margin-top: 1.2%;
+    }
 }
 .ecoride-title-img {
     height: 20vh;
     width: 100%;
 }
-.img-paysage {
+
+.img-paysage2 {
     position: relative;
-    height: 548px;
-    width: 1181px;
+    height: 250px;
+    width: 320px;
     background-size: cover;
     overflow: hidden;
+}
+.bg-paysage2 {
+    height: 250px;
+    width: 320px;
+}
+@media (min-width: 800px) {
+    .bg-paysage2 {
+        position: relative;
+        height: 480px;
+        width: 780px;
+        background-size: cover;
+        overflow: hidden;
+    }
+    .img-paysage2 {
+        position: relative;
+        height: 480px;
+        width: 780px;
+        background-size: cover;
+        overflow: hidden;
+    }
+}
+@media (min-width: 1200px) {
+    .img-paysage {
+        position: relative;
+        height: 548px;
+        width: 1181px;
+        background-size: cover;
+        overflow: hidden;
+    }
 }
 
 /****  Car style ****/
 .img-car-wrapper {
     position: absolute;
-    z-index: 10;
-    height: 132px;
-    width: 688px;
-    bottom: 140px;
-    transform: translateX(980px);
+        z-index: 10;
+        height: 80px;
+        width: 200px;
+        bottom: 80px;
+        left: 80px;
+        // transform: translateX(980px);
 }
-.car {
-    height: 132px;
-    width: 688px;
-}
+.whole-car {
+    height: 80px;
+    width: 200px;
 
+}
+@media (min-width: 800px) {
+    .img-car-wrapper {
+        position: absolute;
+        z-index: 10;
+        height: 110px;
+        width: 500px;
+        bottom: 175px;
+        left: 170px;
+        // transform: translateX(780px);
+    }
+}
+@media (min-width: 1200px) {
+    .img-car-wrapper2 {
+        position: absolute;
+        z-index: 10;
+        height: 110px;
+        width: 500px;
+        bottom: 160px;
+        transform: translateX(980px);
+    }
+}
+@media (min-width: 800px) {
+    .whole-car {
+        height: 110px;
+        width: 500px;
+    }
+}
+@media (min-width: 1200px) {
+    .car {
+        height: 132px;
+        width: 688px;
+    }
+}
 /****  Wheels style ****/
-.back-wheel,
-.front-wheel{
-    position: absolute;
-    z-index: 15;
-    height: 59px;
-    width: 59px;
-    bottom: 0rem;
-    /* animation */
+@media (min-width: 1200px) {
+    .back-wheel,
+    .front-wheel{
+        position: absolute;
+        z-index: 15;
+        height: 59px;
+        width: 59px;
+        top: 4.5rem;
+        /* animation */
+    }
 }
-.back-wheel {
-    left: 273px;
+@media (min-width: 1200px) {
+    .back-wheel {
+        left: 273px;
+    }
 }
-.front-wheel{
-    left: 40px;
+@media (min-width: 1200px) {
+    .front-wheel{
+        left: 39px;
+    }
 }
 
 /**** Dashed lines ****/
-.dashed-lines{
+.dashed-lines {
     position: absolute;
-    z-index: 5;
-    bottom: 124px;
-    animation: dashedLinesAnim 3s linear forwards infinite;
-    transform: translateX(-1150px);
-    width: 200%;
-    height: 10px;
+        z-index: 5;
+        bottom: 17px;
+        right: 0.2px;
+        // animation: dashedLinesAnim 3s linear forwards infinite;
+        // transform: translateX(-1150px);
+        width: 280%;
+        height: 3px;
+
+}
+@media (min-width: 800px) {
+    .dashed-lines{
+        position: absolute;
+        z-index: 5;
+        bottom: 0px;
+        right: -0.5px;
+        // animation: dashedLinesAnim 3s linear forwards infinite;
+        // transform: translateX(-1150px);
+        width: 200%;
+        height: 4px;
+    }
+}
+@media (min-width: 1200px) {
+    .dashed-lines2{
+        position: absolute;
+        z-index: 5;
+        bottom: 124px;
+        animation: dashedLinesAnim 3s linear forwards infinite;
+        transform: translateX(-1150px);
+        width: 200%;
+        height: 10px;
+    }
 }
 
 /**** Car Animation ****/
-.img-car-wrapper {
-    animation: carAnim 5s linear forwards infinite;
+@media (min-width: 1200px) {
+    .img-car-wrapper2 {
+        animation: carAnim 5s linear forwards infinite;
+    }
 }
 @keyframes carAnim {
     to {
@@ -94,8 +204,10 @@ h1, .logiques-nomiques {
         transform: translateX(-4.5%);
     }
 }
-.front-wheel, .back-wheel {
-    animation: rotate1 0.1s linear infinite;
+@media (min-width: 1200px) {
+    .front-wheel, .back-wheel {
+        animation: rotate1 0.2s linear infinite;
+    }
 }
 @keyframes rotate1 {
     0% {transform: rotate(360deg);}
@@ -110,11 +222,20 @@ h1, .logiques-nomiques {
     width: 650px;
     rotate: -7.5deg;
 }
+
 .text-pres {
-    height: 700px;
+    height: 800px;
     width: 1190px;
     border: 3px solid black;
     margin-top: 8%;
+}
+@media (min-width: 800px) {
+    .text-pres {
+        height: 700px;
+        width: 1190px;
+        border: 3px solid black;
+        margin-top: 8%;
+}
 }
 .first-text, .fiveth-text {
     height: 100px;
@@ -128,13 +249,28 @@ h1, .logiques-nomiques {
 .prem-parag {
     margin-top: 2%;
 }
-.second-text, .fourth-text {
+.second-text {
     height: 100px;
     width: 80%;
+    margin-bottom: 15%;
+}
+@media (min-width: 800px) {
+    .second-text {
+        margin-bottom: 0;
+    }
+}
+.fourth-text {
+    margin-bottom: 5%;
 }
 .third-text {
     height: 100px;
     width: 65%;
+    margin-bottom: 7.5%;
+}
+@media (min-width: 800px) {
+    .third-text {
+        margin-bottom: 0;
+    }
 }
 .smiley-icon, .img-smiley-icon {
     height: 121px;
