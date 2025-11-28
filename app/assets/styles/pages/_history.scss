@@ -44,15 +44,17 @@
 }
 
 .infos-ticket2, .infos-ticket3 {
-    width: 50%;
+    width: 100%;
 }
 
 .infos-veh /* page historique */ {
     height: 50%;
 }
 
-.infos-price /* page historique */ {
-    height: 50%;
+
+.infos-price_h /* page historique */ {
+    height: 100%;
+    width: 100%;
 }
 
 .ticket /* page historique */ {
