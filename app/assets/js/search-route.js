@@ -1,117 +1,147 @@
+import { routesMocks } from './mocks/routes-mocks.js';
+document.addEventListener("DOMContentLoaded", () => {
 
 
-// =========================
-//  TRAJETS FICTIFS
-// =========================
-const fakeRides = [
-    {
-        departure: "Caen",
-        arrival: "Paris",
-        date: "2025-01-12",
-        start: "08:30",
-        end: "11:45",
-        seats: 3,
-        eco: true
-    },
-    {
-        departure: "Lyon",
-        arrival: "Marseille",
-        date: "2025-01-12",
-        start: "10:00",
-        end: "13:20",
-        seats: 1,
-        eco: false
-    },
-    {
-        departure: "Bordeaux",
-        arrival: "Toulouse",
-        date: "2025-01-13",
-        start: "09:00",
-        end: "11:30",
-        seats: 2,
-        eco: true
-    }
-];
+    const container = document.getElementById("tickets-container");
 
+    /* ========= FAKE DATA (nouveau format) ========= */
+    // const routesMocks = [
+    //     {
+    //         driver: { pseudo: "Maxime", note: 4.8, photo: "/images/bob.jpg" },
+    //         trip: { from: "Paris", to: "Amiens", date: "2025-12-04", timeStart: "08:10", timeEnd: "09:40", seatsLeft: 3, eco: true },
+    //         price: { credits: 180 }
+    //     },
+    //     {
+    //         driver: { pseudo: "Claire", note: 4.2, photo: "/images/bob.jpg" },
+    //         trip: { from: "Caen", to: "Rennes", date: "2025-12-05", timeStart: "09:00", timeEnd: "11:00", seatsLeft: 1, eco: false },
+    //         price: { credits: 140 }
+    //     }
+    // ];
 
-// =========================
-//  FONCTION : Génère un ticket HTML
-// =========================
-function createRideTicket(ride) {
-    return `
-        <div class="infos-ticket-carpool">
-            <div class="line-1">
-                <p class="p-trajet text-center text-uppercase">de ${ride.departure} à ${ride.arrival}</p>
-            </div>
-            <div class="line-2 d-flex">
-                <p class="p-date text-center text-uppercase">${ride.date}</p>
-                <p class="p-h-start text-center text-uppercase">${ride.start}</p>
-                <p class="p-h-end text-center text-uppercase">${ride.end}</p>
-            </div>
-            <div class="line-3">
-                <p class="p-seat-dispo text-center text-uppercase">${ride.seats} place(s) disponibles</p>
-            </div>
-            <div class="line-4">
-                <p class="p-ride-eco text-center text-uppercase">${ride.eco ? "trajet éco" : "trajet non-éco"}</p>
-            </div>
-            <div class="d-flex justify-content-center">
-                <button type="button" class="button-details text-uppercase text-white">détails</button>
-            </div>
-        </div>
-    `;
-}
-
-
-// =========================
-//  FONCTION : Recherche asynchrone
-// =========================
-async function searchRides() {
-    const departure = document.getElementById("departure-location").value.trim().toLowerCase();
-    const arrival = document.getElementById("arrival-location").value.trim().toLowerCase();
-    const date = document.getElementById("departure-date").value;
-
-    // Simule un appel async (API future)
-    await new Promise(resolve => setTimeout(resolve, 300));
-
-    const results = fakeRides.filter(ride =>
-        (departure ? ride.departure.toLowerCase().includes(departure) : true) &&
-        (arrival ? ride.arrival.toLowerCase().includes(arrival) : true) &&
-        (date ? ride.date === date : true)
+    /* ========= Helpers ========= */
+    const escapeHTML = s => String(s).replace(/[&<>"']/g, m =>
+        ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;" }[m])
     );
 
-    renderResults(results);
-}
-
-
-// =========================
-//  FONCTION : Injecte les résultats dans la page
-// =========================
-function renderResults(rides) {
-    const container = document.getElementById("rides-container");
-
     if (!container) {
-        console.error("⚠️ ERREUR : #rides-container est introuvable dans le HTML.");
+        console.error("❌ ERREUR : #tickets-container est introuvable.");
         return;
     }
+    
+    
+    const displayAllRides = (rides) => {
+        // rides.map(ride => rideTemplate(ride));
+        container.innerHTML = rides.map(rideTemplate).join("");
+    };
 
-    if (rides.length === 0) {
-        container.innerHTML = `<p class="text-center mt-4">Aucun trajet trouvé.</p>`;
-        return;
+    
+    /* ========= Template identique à ton HTML ========= */
+    function rideTemplate(ride) {
+        return `
+        <div class="ticket-carpool">
+        <div class="carpool-ticket-content d-flex">
+        
+        <!-- PHOTO + PSEUDO -->
+        <div class="photo-content text-center">
+        
+        <div class="photo-ticket-carpool">
+            <img class="bob-photo" src="${'avatar-images/'+ ride.driver.pseudo.toString().toLowerCase() +".jpg"}">
+        </div>
+        
+        <div class="pseudo-note-driver">
+        <p class="p-pseudo text-white">${escapeHTML(ride.driver.pseudo)}</p>
+        <p class="p-note text-white">${escapeHTML(ride.driver.note)}</p>
+        </div>
+        </div>
+        
+        <!-- INFOS DU TRAJET -->
+        <div class="infos-ticket-carpool ms-2">
+        <div class="line-1">
+        <p class="p-trajet text-center mb-2">de ${escapeHTML(ride.trip.from)} à ${escapeHTML(ride.trip.to)}</p>
+        </div>
+        
+        <div class="line-2 d-flex justify-content-center">
+        <p class="p-date text-center mb-0">le : ${escapeHTML(ride.trip.date)}</p>
+        <p class="p-h-start text-center mb-0">D : ${escapeHTML(ride.trip.timeStart)}</p>
+        <p class="p-h-end text-center mb-0">A : ${escapeHTML(ride.trip.timeEnd)}</p>
+                    </div>
+
+                    <div class="line-3">
+                        <p class="p-seat-dispo text-center mb-1">${escapeHTML(ride.trip.seatsLeft)} place(s) disponibles</p>
+                    </div>
+
+                    <div class="line-4">
+                        <p class="p-ride-eco text-center mb-1">
+                            ${ride.trip.eco ? "trajet éco" : "trajet non-éco"}
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button class="button-details text-white text-uppercase mb-1 mt-0">Détails</button>
+                    </div>
+                </div>
+
+                <!-- SÉPARATEUR -->
+                <div class="separateur-carpool-ticket ms-2"></div>
+
+                <!-- PRIX -->
+                <div class="price-carpool">
+                    <p class="price-label d-block text-center mb-4">prix</p>
+                    <p class="price-number d-block text-center mb-0">${escapeHTML(ride.price.credits)}</p>
+                    <p class="price-credits d-block text-center mb-0">crédits</p>
+                </div>
+
+            </div>
+        </div>
+        `;
     }
 
-    container.innerHTML = rides.map(r => createRideTicket(r)).join("");
-}
+    /* ========= Render ========= */
+    // function renderRides(list) {
+    //     container.innerHTML = list.map(rideTemplate).join("");
+    // }
+
+    // /* Auto-render pour tests */
+    // renderRides(routesMocks);
 
 
-// =========================
-//  ÉCOUTEURS D'ÉVÈNEMENTS
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-    // Recherche live
-    document.getElementById("departure-location").addEventListener("input", searchRides);
-    document.getElementById("arrival-location").addEventListener("input", searchRides);
-    document.getElementById("departure-date").addEventListener("change", searchRides);
 
-    // Affiche des trajets au chargement
-    searchRides();
+
+    // ---- FILTRAGE ---- //
+    function filterRides(e) {
+        e.preventDefault();
+        
+        const departureInput = document.getElementById("departure-location").value.toLowerCase();
+        const arrivalInput = document.getElementById("arrival-location").value.toLowerCase();
+        const dateInput = document.getElementById("departure-date").value;
+
+        console.log('Inside filterRides() :',{departureInput,arrivalInput,dateInput});
+        const results = routesMocks.filter(ride => {
+            console.log(ride.trip.date === dateInput)
+            console.log('ride.trip.to',ride.trip.to)
+            console.log('arrivalInput',arrivalInput)
+            console.log(ride.trip.to.toLowerCase().includes(arrivalInput))
+            console.log(ride.trip.to.toLowerCase() === arrivalInput)
+            return (
+                (departureInput === "" || ride.trip.from.toLowerCase().includes(departureInput)) &&
+                (arrivalInput === "" || ride.trip.to.toLowerCase().includes(arrivalInput)) &&
+                (dateInput === "" || ride.trip.date === dateInput)
+            );
+        });
+        console.log('results :', results)
+
+        displayAllRides(results); 
+    }
+
+    // ---- LISTENERS ---- //
+    document.getElementById("departure-location").addEventListener("input", filterRides);
+    document.getElementById("arrival-location").addEventListener("input", filterRides);
+    document.getElementById("departure-date").addEventListener("change", filterRides);
+
+    // ---- AFFICHER TOUS LES TRAJETS AU DÉBUT ---- //
+    
+
+
+    // displayAllRides(fakeRides);
+
 });

@@ -1,5 +1,6 @@
-<form action="{{ path('app_carpools') }}" 
-      method="GET" 
+<form 
+    {# action="{{ path('app_carpools') }}"  #}
+      {# method="GET"  #}
       class="search-bar-content mx-auto d-flex align-items-start align-items-md-center justify-content-evenly">
 
     <div class="search-bar-icon">
@@ -14,7 +15,8 @@
                        id="departure-location"
                        name="from"
                        placeholder="ex: Caen..."
-                       value="{{ from ?? '' }}">
+                       {# value="{{ from ?? '' }}" #}
+                       >
                 <label for="departure-location">Ville de départ</label>
             </div>
         </div>
@@ -25,7 +27,8 @@
                        id="arrival-location"
                        name="to"
                        placeholder="ex: Paris..."
-                       value="{{ to ?? '' }}">
+                       {# value="{{ to ?? '' }}" #}
+                       >
                 <label for="arrival-location">Ville d'arrivée</label>
             </div>
         </div>
@@ -35,7 +38,8 @@
                 <input type="date" class="form-control border-input"
                        id="departure-date"
                        name="date"
-                       value="{{ date ?? '' }}">
+                       {# value="{{ date ?? '' }}" #}
+                       >
                 <label for="departure-date">Date de départ</label>
             </div>
         </div>
@@ -43,5 +47,5 @@
     </div>
 
     <!-- BOUTON DE SUBMIT MASQUÉ : NECESSAIRE POUR QUE ENTER FONCTIONNE -->
-    <button type="submit" style="display:none"></button>
+    {# <button type="submit" style="display:none"></button> #}
 </form>
