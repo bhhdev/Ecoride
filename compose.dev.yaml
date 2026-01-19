@@ -18,6 +18,7 @@ services:
     build:
       context: ./app
     user: "www-data"
+    restart: always
     ports:
       - "8080:80"
     volumes:
