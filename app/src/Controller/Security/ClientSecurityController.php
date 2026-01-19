@@ -1,32 +1,29 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Security; // <-- Changement du namespace
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class LoginController extends AbstractController
+class ClientSecurityController extends AbstractController // <-- Changement du nom de la classe
 {
-    #[Route(path: '/connexion', name: 'app_login')]
+    #[Route(path: '/client/connexion', name: 'app_client_login')] // <-- Route spécifique au client
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-
-        // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('login/login.html.twig', [
+        return $this->render('security/client_security/login.html.twig', [ // <-- Nouveau template
             'last_username' => $lastUsername,
             'error' => $error,
         ]);
     }
 
-    #[Route(path: '/logout', name: 'app_logout')]
+    #[Route(path: '/client/logout', name: 'app_client_logout')]
     public function logout(): void
     {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        throw new \LogicException('This method can be blank - intercepted by firewall.');
     }
 }
