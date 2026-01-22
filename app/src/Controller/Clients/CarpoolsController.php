@@ -8,11 +8,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class CarpoolsController extends AbstractController
 {
-    #[Route('/carpools', name: 'app_clients_carpools')]
+    #[Route('/covoiturages', name: 'app_carpools', methods: ['GET'])]
     public function index(): Response
     {
-        return $this->render('clients/carpools/index.html.twig', [
-            'controller_name' => 'Covoiturages',
-        ]);
+        // Le JS gère tout le mock / filtrage côté client.
+        // Ici on renvoie simplement la page.
+        return $this->render('carpools/index.html.twig');
     }
 }
+
