@@ -8,10 +8,10 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class HistoryController extends AbstractController
 {
-    #[Route('/historique', name: 'app_history')]
+    #[Route('/historique', name: 'app_clients_history')]
     public function index(): Response
     {
-        return $this->render('history/index.html.twig', [
+        return $this->render('clients/history/index.html.twig', [
             'controller_name' => 'Page historique des covoiturages',
         ]);
     }

@@ -1,4 +1,5 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/clients/base_clients.html.twig' %}
+
 
 {% block title %}Les covoiturages
 {% endblock %}
@@ -10,7 +11,7 @@
 
 
 {% block body %}
-	{% include("./layout/_search-group.html.twig") %}
+	{% include("./layout/clients/_search-group.html.twig") %}
 
 	<h1 class="text-center h1-history text-white fw-bold display-6 text-uppercase">
 		les covoiturages prévus

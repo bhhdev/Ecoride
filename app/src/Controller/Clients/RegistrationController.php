@@ -23,7 +23,7 @@ class RegistrationController extends AbstractController
     {
     }
 
-    #[Route('/inscription', name: 'app_register')]
+    #[Route('/inscription', name: 'app_clients_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, Security $security, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
@@ -54,7 +54,7 @@ class RegistrationController extends AbstractController
             return $security->login($user, 'form_login', 'main');
         }
 
-        return $this->render('registration/register.html.twig', [
+        return $this->render('clients/registration/register.html.twig', [
             'registrationForm' => $form,
         ]);
     }
