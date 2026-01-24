@@ -1,0 +1,292 @@
+{% extends 'layout/clients/base_clients.html.twig' %}
+
+
+{% block title %}Hello HistoricalController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <h1 class="h1-history text-white fw-bold display-6 text-uppercase">historique</h1>
+    </div>
+
+    <div class="row d-flex justify-content-around g-3">
+        <div class="col-12 col-lg-6 driver">
+            <div class="historic-driver-wrapper">
+                {# ticket nect ride start #}
+                <div class="d-flex justify-content-center">
+                    <p class="title-driver fw-bold fs-3 text-center text-uppercase">chauffeur</p>
+                </div>
+                <div class="content_ticket-next-ride d-flex justify-content-center">
+                    <div class="ticket-next-ride">
+                        <p class="text-ticket fw-bold fs-6 text-center text-uppercase mb-0">prochain trajet chauffeur</p>
+                        <div class="ticket m-auto">
+                            <div class="date_next-ticket-driver">
+                                <p class="infos-ticket mb-0 text-white text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                    <p class="infos-ticket mb-0 text-white text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-white text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-white text-start fs-6 text-uppercase">passagers :</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-white text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-white text-end fs-6 text-uppercase">prix / place</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {# ticket next ride end#}
+                <div class="row historical-content-driver d-flex justify-content-center mt-3">
+                    <div class="col-12 col-lg-6 historical-left">
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-driver">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                <p class="infos-ticket mb-0 text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">passagers :</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix / place</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-driver">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                <p class="infos-ticket mb-0 text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">passagers :</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix / place</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-driver">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                <p class="infos-ticket mb-0 text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">passagers :</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix / place</p>
+                                </div>
+                            </div>
+                        </div>
+                        {# <div class="last-ticket m-auto mt-1 mb-1"></div> #}
+
+                    </div>
+
+                    {# <div class="separateur"></div> #}
+
+                    
+                    <div class="col-12 col-lg-6 historical-right">
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-driver">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                <p class="infos-ticket mb-0 text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">passagers :</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix / place</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-driver">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                <p class="infos-ticket mb-0 text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">passagers :</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix / place</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-driver">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                <p class="infos-ticket mb-0 text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">passagers :</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix / place</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 passenger">
+            <div class="historic-passenger-wrapper">
+                <div class="d-flex justify-content-center">
+                    <p class="title-passenger fw-bold fs-3 text-center text-uppercase">passager</p>
+                </div>
+                <div class="content_ticket-next-ride d-flex justify-content-center">
+                    <div class="ticket-next-ride">
+                        <p class="text-ticket fw-bold fs-6 text-center text-uppercase mb-0">prochain trajet passager</p>
+                        <div class="ticket m-auto">
+                            <div class="date_next-ticket-passenger">
+                                <p class="infos-ticket mb-0 text-white text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                    <p class="infos-ticket mb-0 text-white text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-white text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-white text-start fs-6 text-uppercase">chauffeur</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-white text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-white text-end fs-6 text-uppercase">prix payé</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row historical-content-passenger d-flex justify-content-center mt-3">
+                    <div class="col-12 col-lg-6 historical-left">
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-passenger">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">chauffeur</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix payé</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-passenger">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">chauffeur</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix payé</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-passenger">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">chauffeur</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix payé</p>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+
+                    </div>
+
+                    {# <div class="separateur"></div> #}
+
+                    
+                    <div class="col-12 col-lg-6 historical-right">
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-passenger">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">chauffeur</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix payé</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-passenger">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">chauffeur</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix payé</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last-ticket m-auto mt-1 mb-1">
+                            <div class="date_next-ticket-passenger">
+                                <p class="infos-ticket mb-0 text-black text-center fs-6 text-uppercase">le . . / . . / . .</p>
+                            </div>
+                            <div class="infos-ticket2-3 d-flex justify-content-start m-aoto">
+                                <div class="infos-ticket2">
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">h départ</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">de ........... à .........</p>
+                                    <p class="infos-ticket mb-0 text-black text-start fs-6 text-uppercase">chauffeur</p>
+                                </div>
+                                <div class="infos-ticket3">
+                                    <p class="infos-ticket infos-veh mb-0 text-black text-end fs-6 text-uppercase">véhicule</p>
+                                    <p class="infos-ticket infos-price_h mb-0 text-black text-end fs-6 text-uppercase">prix payé</p>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

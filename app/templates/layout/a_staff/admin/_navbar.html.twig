@@ -1,0 +1,62 @@
+{% set route_name = app.request.attributes.get('_route') %}
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="{{ path('app_a_staff_admin_home') }}">
+            <img height="55" width="170" src="{{ asset('images/ecoride-logo.svg') }}">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
+            <img height="35" width="45" src="{{ asset('images/burger-menu.svg') }}">
+        </button>
+
+        <div class="collapse navbar-collapse" id="adminNavbar">
+            <ul class="navbar-nav ms-auto">
+
+                {% if not app.user %}
+                    <li class="nav-item">
+                        <a class="nav-links" href="{{ path('app_a_staff_admin_security_admin_admin_login') }}">
+                            connexion
+                        </a>
+                    </li>
+                {% else %}
+
+                    <li class="nav-item">
+                        <a class="nav-links {{ route_name == 'app_a_staff_admin_admin_dashboard' ? 'active' }}"
+                           href="{{ path('app_a_staff_admin_admin_dashboard') }}">
+                            dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-links dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            gestion
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item"
+                                   href="{{ path('app_a_staff_admin_employee_account_management') }}">
+                                    comptes employés
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   href="{{ path('app_a_staff_admin_user_account_management') }}">
+                                    comptes clients
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-links" href="{{ path('app_clients_logout') }}">
+                            déconnexion
+                        </a>
+                    </li>
+
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

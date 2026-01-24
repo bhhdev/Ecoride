@@ -1,0 +1,208 @@
+{% extends 'layout/clients/base_clients.html.twig' %}
+
+
+{% block title %}Les covoiturages
+{% endblock %}
+
+{% block importmap %}
+ 	{{ parent() }}
+	{{ importmap('carpools') }}
+{% endblock %}
+
+
+{% block body %}
+	{% include("./layout/clients/_search-group.html.twig") %}
+
+	<h1 class="text-center h1-history text-white fw-bold display-6 text-uppercase">
+		les covoiturages prévus
+	</h1>
+
+	{# ===================================================== #}
+	{# ===============  ICÔNE FILTRES  ===================== #}
+	{# ===================================================== #}
+	<div class="total-carpool"> 
+		<div class="frame-filters-side m-auto">
+			<div class="container-filters-icon d-flex">
+				<div class="fliters-menu-container">
+					<img src="{{ asset('images/filters-menu.svg') }}">
+				</div>
+				<div class="fliters-arrow-container">
+					<img src="{{ asset('images/arrow-filters.svg') }}">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# ===================================================== #}
+	{# ===============   LISTE DES TRAJETS  ================= #}
+	{# ===================================================== #}
+
+	<div class="general-carpool-wrapper m-auto mb-4"> 
+		<div class="frame-carrpool mb-4 pt-2">
+			<div class="carpool-list d-flex flex-column align-items-center">
+				<h3 class="h3_ps text-uppercase text-white">liste des covoiturages</h3>
+
+				
+					<div id="tickets-container"></div>
+					<div id="rides-container"></div>
+
+
+				
+					<div class="sep-hori mb-2"></div>
+					<h3 class="h3_ps text-uppercase text-white mt-2">détails des covoiturages</h3>
+					<div class="details d-flex justify-content-center">
+						
+						<div class="details-container mb-2">
+							<div class="section-details-1 d-flex">
+								<div class="details-photo-container d-flex justify-content-center">
+									<div class="details-photo-content">
+										<div class="frame-photo-details"></div>
+										<p class="p-pseudo-details text-center">pseudo</p>
+										<p class="p-note-details text-center">note</p>
+									</div>
+								</div>
+								<div class="infos-details_section-1">
+									<p class="p-next-trajet text-center text-white text-uppercase">prochain trajet</p>
+									<p class="p-trajet_details text-center text-white">de (ville) à (ville)</p>
+									<div class="d-flex">
+										<p class="p-date_h-start_h-end text-center text-white">le: ../../..</p>
+										<p class="p-date_h-start_h-end text-center text-white">D: ..H..</p>
+										<p class="p-date_h-start_h-end text-center text-white">A: ..H..</p>
+									</div>
+									<p class="p-seat-dispo_details text-center text-white">place(s) dispo</p>
+									<p class="p-vehicul text-center text-white">marque / modèle / energie</p>
+								</div>
+							</div>
+							<div class="separateur_details"></div>
+							<div class="infos-details_section-2">
+								<p class="p-prefer-trajet text-center text-white text-uppercase">préférences chauffeur</p>
+								<div class="d-flex">
+									<div class="prefer_1-2">
+										<p class="text-white text-center text-uppercase mb-4">préférence 1</p>
+										<p class="text-white text-center text-uppercase">préférence 2</p>
+									</div>
+									<div class="prefer_3-4">
+										<p class="text-white text-center text-uppercase mb-4">préférence 3</p>
+										<p class="text-white text-center text-uppercase">préférence 4</p>
+									</div>
+								</div>
+							</div>
+							<div class="separateur_details"></div>
+							<div class="infos-details_section-3">
+								<p class="p-driver-message text-center text-white text-uppercase">message du chauffeur</p>
+								<div class="d-flex justify-content-center">
+									<div class="frame-message-driver">
+										<p class="p-message-driver">Bonjour à toutes et tous, futurs passagers et passagères !</p>
+										<p class="p-message-driver">Je vous propose ce trajet de Marseille à Avignon, le 23/10/25, dans une ambiance conviviale et confortable.
+																	Discussions, ambiance musicale à la convenance, </p>
+									</div>
+								</div>
+							</div>
+							<div class="separateur_details"></div>
+							<div class="infos-details_section-4 mb-4">
+								<p class="p-avis-passengers text-center text-white text-uppercase">avis</p>
+								<div class="global-avis d-flex justify-content-center">
+									<div class="avis-content">
+										<div class="last-avis mb-2 mt-2 d-flex">
+											<div class="photo-avis"></div>
+											<div class="infos-avis">
+												<p class="pseudo-avis mb-0 text-center">pseudo</p>
+												<p class="note-avis mb-0 text-center">note</p>
+												<p class="nbr-trajet-avis text-center">nbr trajets</p>
+											</div>
+											<div class="avis">
+												<p class="p-message-passenger text-white">super chauffeur !!</p>
+												<p class="p-message-passenger text-white">Très bonne ambiance, discussions, conduite fluide et "coulée" très confortable !!</p>
+											</div>
+										</div>
+										<div class="fivth-avis mb-2 d-flex">
+											<div class="photo-avis"></div>
+											<div class="infos-avis">
+												<p class="pseudo-avis mb-0 text-center">pseudo</p>
+												<p class="note-avis mb-0 text-center">note</p>
+												<p class="nbr-trajet-avis text-center">nbr trajets</p>
+											</div>
+											<div class="avis">
+												<p class="p-message-passenger text-white">super chauffeur !!</p>
+												<p class="p-message-passenger text-white">Très bonne ambiance, discussions, conduite fluide et "coulée" très confortable !!</p>
+											</div>
+										</div>
+										<div class="fourth-avis mb-2 d-flex">
+											<div class="photo-avis"></div>
+											<div class="infos-avis">
+												<p class="pseudo-avis mb-0 text-center">pseudo</p>
+												<p class="note-avis mb-0 text-center">note</p>
+												<p class="nbr-trajet-avis text-center">nbr trajets</p>
+											</div>
+											<div class="avis">
+												<p class="p-message-passenger text-white">super chauffeur !!</p>
+												<p class="p-message-passenger text-white">Très bonne ambiance, discussions, conduite fluide et "coulée" très confortable !!</p>
+											</div>
+										</div>
+										<div class="third-avis mb-2 d-flex">
+											<div class="photo-avis"></div>
+											<div class="infos-avis">
+												<p class="pseudo-avis mb-0">pseudo</p>
+												<p class="note-avis mb-0 text-center">note</p>
+												<p class="nbr-trajet-avis">nbr trajets</p>
+											</div>
+											<div class="avis">
+												<p class="p-message-passenger text-white">super chauffeur !!</p>
+												<p class="p-message-passenger text-white">Très bonne ambiance, discussions, conduite fluide et "coulée" très confortable !!</p>
+											</div>
+										</div>
+										<div class="second-avis mb-2 d-flex">
+											<div class="photo-avis"></div>
+											<div class="infos-avis">
+												<p class="pseudo-avis mb-0">pseudo</p>
+												<p class="note-avis mb-0 text-center">note</p>
+												<p class="nbr-trajet-avis">nbr trajets</p>
+											</div>
+											<div class="avis">
+												<p class="p-message-passenger text-white">super chauffeur !!</p>
+												<p class="p-message-passenger text-white">Très bonne ambiance, discussions, conduite fluide et "coulée" très confortable !!</p>
+											</div>
+										</div>
+										<div class="first-avis mb-2 d-flex">
+											<div class="photo-avis"></div>
+											<div class="infos-avis">
+												<p class="pseudo-avis mb-0">pseudo</p>
+												<p class="note-avis mb-0 text-center">note</p>
+												<p class="nbr-trajet-avis">nbr trajets</p>
+											</div>
+											<div class="avis">
+												<p class="p-message-passenger text-white">super chauffeur !!</p>
+												<p class="p-message-passenger text-white">Très bonne ambiance, discussions, conduite fluide et "coulée" très confortable !!</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="separateur_details"></div>
+							<div class="d-flex justify-content-center">
+								<div class="button-participer text-uppercase text-center">participer</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div class="d-flex justify-content-center">
+		<div class="frame-new-date ">
+			<div class="d-flex justify-content-center">
+				<h5 class="h5-new-date d-block text-center text-white text-uppercase mt-2">il n'y a pas de covoiturage à cette date.</h5>
+			</div>
+			<div class="d-flex justify-content-center">
+				<p class="text-new-date d-block text-center text-white text-uppercase mt-3">veuillez entrer une nouvelle date de départ :</p>
+			</div>
+			<div class="form-floating mb-1 d-flex justify-content-center">
+				<input type="date" class="input-new-date form-control border-input" id="departure-date" placeholder="H:M" name="date">
+
+			</div>
+			<div class="div-button-connect d-flex justify-content-center mt-3">
+				<button class="button-connect btn btn-lg text-uppercase fw-bold" type="submit">valider
+				</button>
+			</div>	
+		</div>
+	</div>
+{% endblock %}

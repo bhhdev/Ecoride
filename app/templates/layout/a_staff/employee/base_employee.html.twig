@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Employee{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/app.scss') }}">
+    {% endblock %}
+</head>
+
+<body>
+    {% include 'layout/a_staff/employee/_navbar.html.twig' %}
+
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+</body>
+</html>

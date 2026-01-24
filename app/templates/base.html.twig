@@ -1,36 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
+
         <title>{% block title %}Welcome!{% endblock %}</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-
-        {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% block javascripts %}
-            {# {{ importmap('search-route') }} #}
+        {% block importmap %}
+            {{ importmap('app') }}
         {% endblock %}
-        <script type="module">import 'search-route';</script>
-        
+
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('styles/app.scss') }}">
         {% endblock %}
     </head>
-    <body>
-        {# {{ dump(app) }}
-        {{ dump(app.user) }} #}
-        {% set route_name = app.request.attributes.get('_route') %}
-        {# {{ dump(route_name) }} #}
 
-        {% include("./layout/_navbar.html.twig") %}
+    <body>
+
+        {% block navbar %}{% endblock %}
+
+        {% block search %}{% endblock %}
+
         <main>
-        {# {% include("./layout/_search-group.html.twig") %} #}
             {% block body %}{% endblock %}
         </main>
-        {% include("./layout/_footer.html.twig") %}
+
+        {% block footer %}{% endblock %}
+
+        {% block javascripts %}
+            <script type="module">import 'search-route';</script>
+        {% endblock %}
+
     </body>
 </html>

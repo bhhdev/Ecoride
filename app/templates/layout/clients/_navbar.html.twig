@@ -1,0 +1,72 @@
+{% set route_name = app.request.attributes.get('_route') %}
+
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('app_clients_home') }}">
+            <img height="55" width="170" src="{{ asset('images/ecoride-logo.svg') }}">
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <img height="35" width="45" src="{{ asset('images/burger-menu.svg') }}">
+        </button>
+
+        <div class="collapse navbar-collapse navigation" id="navbarSupportedContent">
+            <ul class="items navbar-nav d-flex ms-auto">
+
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_clients_home' ? 'active' : '' }}"
+                       href="{{ path('app_clients_home') }}">accueil</a>
+                </li>
+
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_clients_carpools' ? 'active' : '' }}"
+                       href="{{ path('app_clients_carpools') }}">covoiturages</a>
+                </li>
+
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_clients_personal_space' ? 'active' : '' }}"
+                       href="{{ path('app_clients_personal_space') }}">espace perso</a>
+                </li>
+
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_clients_contact' ? 'active' : '' }}"
+                       href="{{ path('app_clients_contact') }}">contact</a>
+                </li>
+
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_clients_history' ? 'active' : '' }}"
+                       href="{{ path('app_clients_history') }}">historique</a>
+                </li>
+
+                <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                    <a class="nav-links {{ route_name starts with 'app_clients_about' ? 'active' : '' }}"
+                       href="{{ path('app_clients_about') }}">à propos</a>
+                </li>
+
+                {# 🔐 AUTH #}
+                {% if app.user %}
+                    <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                        <a class="nav-links" href="{{ path('app_logout') }}">déconnexion</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
+                        <a class="nav-links {{ route_name starts with 'app_clients_login' ? 'active' : '' }}"
+                           href="{{ path('app_clients_login') }}">connexion</a>
+                    </li>
+
+                    <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 mb-4 my-lg-0 mb-lg-0">
+                        <a class="nav-links {{ route_name starts with 'app_clients_register' ? 'active' : '' }}"
+                           href="{{ path('app_clients_register') }}">inscription</a>
+                    </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>
