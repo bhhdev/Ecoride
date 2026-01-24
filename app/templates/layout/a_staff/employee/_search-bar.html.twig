@@ -1,0 +1,34 @@
+<form method="get"
+      action="{{ path('astaff_employee_dashboard_index') }}"
+      class="search-bar-content mx-auto d-flex align-items-center">
+
+    <div class="search-bar-icon">
+        <img src="{{ asset('images/search-icon.svg') }}">
+    </div>
+
+    <div class="row g-3 search-bar-wrapper">
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text"
+                       name="trip_id"
+                       class="form-control"
+                       placeholder="ID trajet"
+                       value="{{ app.request.query.get('trip_id') }}">
+                <label>ID trajet</label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="email"
+                       name="client_email"
+                       class="form-control"
+                       placeholder="Email client"
+                       value="{{ app.request.query.get('client_email') }}">
+                <label>Email client</label>
+            </div>
+        </div>
+
+    </div>
+</form>

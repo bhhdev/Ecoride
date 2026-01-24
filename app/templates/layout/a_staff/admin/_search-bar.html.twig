@@ -1,0 +1,34 @@
+<form method="get"
+      action="{{ path('app_a_staff_admin_user_account_management') }}"
+      class="search-bar-content mx-auto d-flex align-items-center">
+
+    <div class="search-bar-icon">
+        <img src="{{ asset('images/search-icon.svg') }}">
+    </div>
+
+    <div class="row g-3 search-bar-wrapper">
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text"
+                       name="user_id"
+                       class="form-control"
+                       placeholder="ID utilisateur"
+                       value="{{ app.request.query.get('user_id') }}">
+                <label>ID utilisateur</label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="email"
+                       name="email"
+                       class="form-control"
+                       placeholder="Email"
+                       value="{{ app.request.query.get('email') }}">
+                <label>Email</label>
+            </div>
+        </div>
+
+    </div>
+</form>
