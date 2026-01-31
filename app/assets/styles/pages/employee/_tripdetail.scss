@@ -1,0 +1,146 @@
+.frame-trip-details {
+    background-color: #34280C;
+    border: 3px solid white;
+    width: 60%;
+}
+
+h3 {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #95C11F;
+}
+
+.id-covoit {
+    height: 25px;
+    width: 200px;
+    background-color: #346928;
+}
+
+.others-infos-covoit {
+    background-color: white;
+    border: 3px solid #95C11F;
+    border-radius: 10px;
+    height: 150px;
+    width: 400px;
+}
+.first-infos {
+    width: 295px;
+
+}
+.sep-vert {
+    background-color: black;
+    width: 5px;
+    height: 130px;
+    margin-top: 8px;
+}
+.infos-price {
+    width: 100px;
+}
+.title-price {
+    font-size: 12px;
+}
+.price-credits {
+    font-size: 40px;
+}
+
+.frame-details {
+    background-color: #CBBBA0;
+    width: 94%;
+    height: auto;
+}
+.driver-trip, .passenger1-trip {
+    height: 300px;
+    width: 96%;
+    border: 2px solid black;
+}
+.content-crew-details {
+    width: 98%;
+}
+.infos-perso {
+    height: 264px;
+    width: 33%;
+    border-right: 2px solid black;
+}
+.photo-infos-driver, .photo-infos-passenger {
+    height: 130px;
+    width: 45%;
+    background-color: white;
+    border: 2px solid black;
+}
+.stats-up {
+    height: 130px;
+    width: 47%;
+
+    .nbr-trips-driver, .nbr-trips-passenger {
+        border-bottom: 2px solid black;
+        height: 50%;
+        width: 100%;
+    }
+    .nbr-trips-driver > .text-nbr-trips-driver, .text-rate-driver {
+        font-size: 10px;
+    }
+    .nbr-trips-driver > .int-nbr-trips-driver, .int-rate-driver {
+        font-size: 24px;
+    }
+
+    .nbr-trips-passenger > .text-nbr-trips-passenger, .text-rate-passenger {
+        font-size: 10px;
+    }
+    .nbr-trips-passenger > .int-nbr-trips-passenger, .int-rate-passenger {
+        font-size: 24px;
+    }
+}
+
+.down > p {
+    font-size: 16px;
+}
+
+.notice {
+    height: 264px;
+    width: 67%;
+    background-color: #346928;
+    overflow: auto;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+
+    .notice-p1, .reclam-p2, .notice-p3, .notice-p4 {
+        height: 30%;
+        width: 98%;
+        background-color: white;
+        border: 2px solid black;
+    }
+    .reclam-p2 {
+        background-color: black;
+         border: 2px solid white;
+
+        .staus-notice_rate {
+            border-right: 2px solid white;
+        }    
+    }
+    .staus-notice_rate {
+        width: 15%;
+        height: 94%;
+        border-right: 2px solid black;
+    }
+    .staus-notice_rate > .rate {
+        font-size: 24px;
+    }
+
+    .notice-p1 > .text-notice {
+        height: 94%;
+        width: 73%;
+
+        .text-notice > p {
+        font-size: 20px;
+        }
+
+        .checkbox-validation {
+        height: 94%;
+        width: 10%;
+            }
+    }
+}
+.or {
+    height: 20%;
+    width: 98%;
+}

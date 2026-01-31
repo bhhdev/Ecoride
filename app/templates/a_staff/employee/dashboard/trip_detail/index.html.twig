@@ -1,22 +1,226 @@
 {% extends 'layout/a_staff/employee/base_employee.html.twig' %}
 
-{% block title %}Hello AStaff/Employee/Dashboard/TripDetailController!{% endblock %}
+{% block title %}Détail covoiturage{% endblock %}
 
 {% block body %}
+<section>
+    <h1 class="text-center text-white text-uppercase fw-bold">détails des covoiturages</h1>
 
-{% include 'layout/a_staff/employee/_search-bar.html.twig' %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="frame-trip-details container">
+        <h3 class="d-block text-center text-white text-uppercase fw-bold mt-2 mb-4">
+            détail du covoiturage :
+        </h3>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <div class="card-general-trip-details">
+            <div class="id-covoit container">
+                <p class="text-id-covoit text-white">
+                    N° : {{ covoit.code }}
+                </p>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/bhhdev/News_Projects/Ecoride/app/src/Controller/AStaff/Employee/Dashboard/TripDetailController.php</code></li>
-        <li>Your template at <code>/home/bhhdev/News_Projects/Ecoride/app/templates/a_staff/employee/dashboard/trip_detail/index.html.twig</code></li>
-    </ul>
-</div>
+            <div class="others-infos-covoit container">
+                <div class="content-others-infos d-flex mb-2">
+                    <div class="first-infos text-uppercase">
+                        <p class="d-block text-center text-uppercase fs-5 mb-2 mt-2">
+                            de : {{ covoit.from }} à : {{ covoit.to }}
+                        </p>
+                        <p class="d-block text-center text-uppercase fs-6 mb-2">
+                            le: {{ covoit.date|date('d/m/Y') }}
+                            de: {{ covoit.date|date('H:i') }}
+                            à: {{ covoit.date|date_modify('+2 hours')|date('H:i') }}
+                        </p>
+                        <p class="d-block text-center text-uppercase fs-6 mb-2">
+                            {{ passengers|length }} place(s) occupée(s)
+                        </p>
+                        <p class="d-block text-center text-uppercase">
+                            trajet {{ covoit.eco ? 'éco' : 'standard' }}
+                        </p>
+                    </div>
+
+                    <div class="sep-vert"></div>
+
+                    <div class="infos-price mx-auto">
+                        <p class="title-price d-block text-center text-uppercase mb-2 mt-2">
+                            prix par place
+                        </p>
+                        <p class="price-credits d-block text-center text-uppercase mb-0 mt-2">
+                            {{ covoit.price }}
+                        </p>
+                        <p class="text-credits d-block text-center text-uppercase mb-2 mt-0">
+                            crédits
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="frame-details container mt-2 mb-4">
+            <div class="frame-content-crew-details pt-2">
+
+                {# =======================
+                   CHAUFFEUR
+                   ======================= #}
+                <div class="driver-trip mx-auto mt-4">
+                    <h5 class="d-block text-center text-uppercase mb-0 fw-bold">chauffeur</h5>
+
+                    <div class="content-crew-details d-flex container px-0">
+                        <div class="infos-perso">
+                            <div class="up d-flex">
+                                <div class="photo-infos-driver"></div>
+
+                                <div class="stats-up mx-auto">
+                                    <div class="nbr-trips-driver">
+                                        <p class="text-nbr-trips-driver d-block text-center text-uppercase mb-0">
+                                            nbr de trajet(s) chauffeur
+                                        </p>
+                                        <p class="int-nbr-trips-driver d-block text-center text-uppercase">
+                                            {{ covoit.driver.trips }}
+                                        </p>
+                                    </div>
+
+                                    <div class="rate-driver">
+                                        <p class="text-rate-driver d-block text-center text-uppercase mb-0">
+                                            note moyenne chauffeur
+                                        </p>
+                                        <p class="int-rate-driver d-block text-center text-uppercase">
+                                            {{ covoit.driver.avgRate }}/5
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="down">
+                                <p class="firstname-down d-block text-uppercase mb-0 mt-2">
+                                    {{ covoit.driver.firstname }}
+                                </p>
+                                <p class="name-down d-block text-uppercase mb-0">
+                                    {{ covoit.driver.lastname }}
+                                </p>
+                                <p class="surname-down d-block text-uppercase mb-0">
+                                    {{ covoit.driver.pseudo }}
+                                </p>
+                                <p class="mail-down d-block text-uppercase mb-0">
+                                    {{ covoit.driver.email }}
+                                </p>
+                                <p class="phone-down d-block text-uppercase mb-0">
+                                    {{ covoit.driver.phone }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="notice">
+                            {% for passenger in passengers %}
+                                {% set isReclam = passenger.note is not null and passenger.note < 3 %}
+                                <div class="{{ isReclam ? 'reclam-p2' : 'notice-p1' }} mt-1 mx-auto d-flex">
+                                    <div class="staus-notice_rate my-auto">
+                                        <p class="status d-block text-center text-uppercase mb-2 {{ isReclam ? 'text-danger' : '' }}">
+                                            {{ passenger.note is null ? 'avis' : (isReclam ? 'reclam' : 'avis') }}
+                                        </p>
+                                        <p class="rate d-block text-center text-uppercase {{ isReclam ? 'text-white' : '' }}">
+                                            {{ passenger.note is not null ? passenger.note ~ '/5' : '' }}
+                                        </p>
+                                    </div>
+
+                                    <div class="text-notice mx-1">
+                                        <p class="line-1 mb-0 {{ isReclam ? 'text-white' : '' }}">
+                                            {{ passenger.comment ?? '' }}
+                                        </p>
+                                    </div>
+
+                                    <div class="checkbox-validation m-auto">
+                                        <input type="checkbox" disabled>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                {# =======================
+                   PASSAGERS
+                   ======================= #}
+                <div class="frame-content-crew-details pt-2 pb-4">
+                    {% for passenger in passengers %}
+                        <div class="passenger1-trip mx-auto mt-4">
+                            <h5 class="d-block text-center text-uppercase mb-0 fw-bold">
+                                {{ passenger.label }}
+                            </h5>
+
+                            <div class="content-crew-details d-flex container px-0">
+                                <div class="infos-perso">
+                                    <div class="up d-flex">
+                                        <div class="photo-infos-passenger"></div>
+
+                                        <div class="stats-up mx-auto">
+                                            <div class="nbr-trips-passenger">
+                                                <p class="text-nbr-trips-passenger d-block text-center text-uppercase mb-0">
+                                                    nbr de trajet(s) passager
+                                                </p>
+                                                <p class="int-nbr-trips-passenger d-block text-center text-uppercase">
+                                                    {{ passenger.trips }}
+                                                </p>
+                                            </div>
+
+                                            <div class="rate-passenger">
+                                                <p class="text-rate-passenger d-block text-center text-uppercase mb-0">
+                                                    note moyenne passager
+                                                </p>
+                                                <p class="int-rate-passenger d-block text-center text-uppercase">
+                                                    {{ passenger.avgRate }}/5
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="down">
+                                        <p class="firstname-down d-block text-uppercase mb-0 mt-2">
+                                            {{ passenger.firstname }}
+                                        </p>
+                                        <p class="name-down d-block text-uppercase mb-0">
+                                            {{ passenger.lastname }}
+                                        </p>
+                                        <p class="surname-down d-block text-uppercase mb-0">
+                                            {{ passenger.pseudo }}
+                                        </p>
+                                        <p class="mail-down d-block text-uppercase mb-0">
+                                            {{ passenger.email }}
+                                        </p>
+                                        <p class="phone-down d-block text-uppercase mb-0">
+                                            {{ passenger.phone }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="notice">
+                                    {% set isReclam = passenger.note is not null and passenger.note < 3 %}
+                                    <div class="{{ isReclam ? 'reclam-p2' : 'notice-p1' }} mt-1 mx-auto d-flex">
+                                        <div class="staus-notice_rate my-auto">
+                                            <p class="status d-block text-center text-uppercase mb-2 {{ isReclam ? 'text-danger' : '' }}">
+                                                {{ passenger.note is null ? 'avis' : (isReclam ? 'reclam' : 'avis') }}
+                                            </p>
+                                            <p class="rate d-block text-center text-uppercase {{ isReclam ? 'text-white' : '' }}">
+                                                {{ passenger.note is not null ? passenger.note ~ '/5' : '' }}
+                                            </p>
+                                        </div>
+
+                                        <div class="text-notice mx-1">
+                                            <p class="line-1 mb-0 {{ isReclam ? 'text-white' : '' }}">
+                                                {{ passenger.comment ?? '' }}
+                                            </p>
+                                        </div>
+
+                                        <div class="checkbox-validation m-auto">
+                                            <input type="checkbox" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
