@@ -4,19 +4,64 @@
 
 {% block body %}
 
-{% include 'layout/a_staff/admin/_search-bar.html.twig' %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{# {% include 'layout/a_staff/admin/_search-bar.html.twig' %} #}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/bhhdev/News_Projects/Ecoride/app/src/Controller/AStaff/Admin/EmployeeAccountManagementController.php</code></li>
-        <li>Your template at <code>/home/bhhdev/News_Projects/Ecoride/app/templates/a_staff/admin/employee_account_management/index.html.twig</code></li>
-    </ul>
-</div>
+<section>
+    <h1 class="text-center text-white text-uppercase fw-bold">gestion des comptes employés</h1>
+    <div class="div_gestion-accont d-flex">
+        <div class="div_create-employee-account container">
+            <h3 class="create-employee-account d-block text-center text-white text-uppercase fw-bold mt-2">créer un compte employé</h3>
+            <form>
+                <div class="form-group mb-4">
+                    <label class="d-block text-center text-white text-uppercase" for="name">nom</label>
+                    <input type="text" class="input-name-register form-control border-input" id="nom" name="nom" aria-describedby="Entrez le nom" placeholder="Nom">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="d-block text-center text-white text-uppercase" for="firstname">prénom</label>
+                    <input type="text" class="input-firstname-register form-control border-input" id="firstname" name="firstname" aria-describedby="Entrez le prénom" placeholder="Prénom">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="d-block text-center text-white text-uppercase" for="email">Email</label>
+                    <input type="email" class="input-email-register form-control border-input" id="email" name="email" aria-describedby="Entrez votre email" placeholder="Email">
+                </div>
+                <div class="form-group mb-2">
+                    <label class="d-block text-center text-white text-uppercase" for="password">mot de passe provisoire</label>
+                    <input type="password" class="input-password-register form-control border-input" id="password" name="password" aria-describedby="Entrez le mot de passe provisoire de l'emplyé" placeholder="Mot de passe">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="button-connect btn btn-lg mt-4 text-uppercase fw-bold" type="submit">valider
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="div_suspend-employee-account container">
+            <h3 class="create-employee-account d-block text-center text-white text-uppercase fw-bold mt-2">suspendre / supprimer <br/> un compte employé</h3>
+            <form action="POST">
+                <div class="form-group mb-2 mt-2">
+                    <label class="d-block text-center text-white text-uppercase" for="firstname">id</label>
+                    <input type="int" class="input-id-register form-control border-input" id="id" name="id" aria-describedby="Entrez le id" placeholder="id">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="d-block text-center text-white text-uppercase" for="email">Email</label>
+                    <input type="email" class="input-email-register form-control border-input" id="email" name="email" aria-describedby="Entrez votre email" placeholder="Email">
+                </div>
+                <div class="div-textarea mt-2 mb-2">
+						<label class="d-block text-center text-white text-uppercase" for="textarea">données de</label>
+						<textarea class="fram-textarea m-auto form-control border-input" rows="3" maxlength="200"></textarea>
+					</div>
+                <div class="div-button d-flex">
+                    <div class="div-suspend-button d-flex justify-content-center container">
+                        <button class="suspend-button btn btn-lg mt-4 text-uppercase fw-bold" type="submit">suspendre
+                        </button>
+                    </div>
+                    <div class="div-delete-button d-flex justify-content-center container">
+                        <button class="delete-button btn btn-lg mt-4 text-uppercase fw-bold" type="submit">supprimer
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>     
 {% endblock %}
