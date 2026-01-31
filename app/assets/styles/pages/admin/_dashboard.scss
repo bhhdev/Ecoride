@@ -1,0 +1,58 @@
+body.admin {
+    .div-global-graph {
+        height: 550px;
+        width: 100%;
+    }
+    .graph-hours-day, .graph-global-days {
+        height: 450px;
+        width: 600px;
+        background-color: #936037;
+        border: 3px solid white;
+    }
+    .graph-global-days {
+        background-color: #34280C;
+    }
+
+    h2 {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+    }
+
+    h5 {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #95C11F;
+    }
+
+
+
+    .graphic {
+        height: 280px;
+        width: 560px;
+        background-color: white;
+        border: 3px solid #95C11F;
+    }
+
+
+
+    .stats-appli {
+        width: 1372px;
+        height: 400px;
+        background-color: black;
+        border: 3px solid white;
+    }
+    .div-credits-appli,  
+    .div-nbr-carpool-moyen,
+    .div-max-carpools-one-day,
+    .div-min-carpools-one-day {
+        height: 25%;
+    }
+    .title-stats {
+        width: 100%;
+    }
+    .phrase {
+        width: 60%;
+    }
+    .result {
+        width: 30%;
+    }
+}
