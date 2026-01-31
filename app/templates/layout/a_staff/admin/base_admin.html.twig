@@ -5,13 +5,16 @@
     <title>{% block title %}Admin{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% block importmap %}
+        {{ importmap('app') }}
+    {% endblock %}
+
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('styles/app.scss') }}">
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
     {% endblock %}
 </head>
 
-<body>
+<body class="admin {% block body_class %}{% endblock %}">
     {% include 'layout/a_staff/admin/_navbar.html.twig' %}
 
     <main>

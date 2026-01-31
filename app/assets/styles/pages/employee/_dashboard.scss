@@ -1,0 +1,93 @@
+.employee-dashboard {
+    padding: 2rem;
+
+    .covoit-table-wrapper {
+        max-width: 900px;
+        margin: auto;
+        background: #9c6b3e;
+        padding: 1rem;
+
+        /* ✅ bordure blanche autour de la frame marron */
+        border: 3px solid #fff;
+
+        /* ❌ pas de rounded */
+        /* border-radius: 6px; */
+    }
+
+    .covoit-title {
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .covoit-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        font-size: 0.9rem;
+
+        th, td {
+            border: 1px solid #000;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        tbody tr {
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+
+        tbody tr:hover {
+            background: #f0f0f0;
+        }
+
+        /* 🚨 RÉCLAMATION */
+        tbody tr.reclamation {
+            background: #ffe0e0;
+            color: #8b0000;
+            font-weight: bold;
+        }
+
+        tbody tr.reclamation:hover {
+            background: #ffcccc;
+        }
+
+        input[type="checkbox"] {
+            pointer-events: none;
+            transform: scale(1.1);
+        }
+
+        tfoot {
+            background: #ddd;
+            font-weight: bold;
+        }
+
+        /* =========================
+           BADGES STATUT (visibles)
+           ========================= */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.7rem;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+
+            border: 2px solid #000;
+            border-radius: 999px;
+
+            color: #fff; /* texte blanc */
+            box-shadow: 0 2px 0 #000; /* relief */
+        }
+
+        .badge-en-cours {
+            background: #ff9800; /* orange */
+        }
+
+        .badge-termine {
+            background: #2e7d32; /* vert foncé */
+        }
+    }
+}

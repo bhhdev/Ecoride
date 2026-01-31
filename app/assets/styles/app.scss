@@ -1,4 +1,13 @@
-@use './utils';
-@use './components';
-@use './pages';
-@use './layouts';
+@use "./utils";
+@use "./components";
+@use "./layouts";
+@use "./pages";
+
+// pages admin spécifiques
+@use "./pages/admin/dashboard" as *;
+@use "./pages/admin/employee-account-management" as *;
+@use "./pages/admin/user-account-management" as *;
+
+// pages employee spécifiques
+@use "./pages/employee/dashboard" as *;
+@use "./pages/employee/tripdetail" as *;

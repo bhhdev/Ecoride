@@ -21,9 +21,14 @@ services:
     restart: always
     ports:
       - "8080:80"
+
+    environment:
+      SASS_FORCE_POLLING: "true"
+
     volumes:
       - ./app:/var/www/html
       - ./app/apache/default.conf:/etc/apache2/sites-available/000-default.conf
+
     depends_on:
       - database
 

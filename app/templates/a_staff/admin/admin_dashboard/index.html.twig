@@ -1,20 +1,76 @@
 {% extends 'layout/a_staff/admin/base_admin.html.twig' %}
 
-{% block title %}Hello AStaff/Admin/AdminDashboardController!{% endblock %}
+{% block title %}Hello Admin dashboard{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <section>
+        <h1 class="text-center text-white text-uppercase fw-bold">dashboard admin</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/bhhdev/News_Projects/Ecoride/app/src/Controller/AStaff/Admin/AdminDashboardController.php</code></li>
-        <li>Your template at <code>/home/bhhdev/News_Projects/Ecoride/app/templates/a_staff/admin/admin_dashboard/index.html.twig</code></li>
-    </ul>
-</div>
-{% endblock %}
+        <div class="div-global-graph d-flex justify-content-center mb-6">
+            <div class="graph-hours-day container">
+                <h5 class="d-block text-center text-uppercase text-white fw-bold mt-2">crédits / jour</h5>
+                <h6 class="d-block text-center text-uppercase text-white fw-bold mt-2">date</h6>
+                <div class="col-md input-search-wrapper m-auto">
+                    <div class="form-floating">
+                        <input type="date" class="form-control border-input "
+                            id="departure-date"
+                            name="date"
+                            {# value="{{ date ?? '' }}" #}
+                            >
+                        <label for="departure-date">Date :</label>
+                    </div>
+                </div>
+                <div class="graphic mt-4 m-auto"></div>
+            </div>
+            <div class="graph-global-days container">
+                <h5 class="d-block text-center text-uppercase text-white fw-bold mt-2">covoiturages / jour</h5>
+                <h6 class="d-block text-center text-uppercase text-white fw-bold mt-2">date</h6>
+                <div class="col-md input-search-wrapper m-auto">
+                    <div class="form-floating">
+                        <input type="date" class="form-control border-input"
+                            id="departure-date"
+                            name="date"
+                            {# value="{{ date ?? '' }}" #}
+                            >
+                        <label for="departure-date">Date :</label>
+                    </div>
+                </div>
+                <div class="graphic mt-4 m-auto"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="stats-appli m-auto">
+            <div class="div-credits-appli d-flex">
+                <div class="title-stats">
+                    <h2 class="credits-appli d-block text-center text-white text-uppercase fw-bold mt-3 mb-3">l'apllication comptabilise : ... crédits</h2>
+                </div>
+                
+            </div>
+            <div class="div-nbr-carpool-moyen d-flex justify-content-center">
+                <div class="phrase">
+                    <h4 class="nbr-carpool-moyen d-block text-start text-white text-uppercase fw-bold mt-1 mb-3 ml-2">le nombre moyen de covoiturages / jour :</h4>
+                </div>
+                <div class="result">
+                    <h4 class="nbr-carpool-moyen d-block text-end text-white text-uppercase fw-bold mt-1 mb-3 ml-2">... covoiturages</h4>
+                </div>
+            </div>
+            <div class="div-max-carpools-one-day d-flex justify-content-center">
+                <div class="phrase">
+                    <h4 class="nbr-carpool-moyen d-block text-start text-white text-uppercase fw-bold mt-1 mb-3 ml-2">record max de covoiturages en 24h :</h4>
+                </div>
+                <div class="result">
+                    <h4 class="nbr-carpool-moyen d-block text-end text-white text-uppercase fw-bold mt-1 mb-3 ml-2">... le : .. / .. / ..</h4>
+                </div>
+            </div>
+            <div class="div-min-carpools-one-day d-flex justify-content-center">
+                <div class="phrase">
+                    <h4 class="nbr-carpool-moyen d-block text-start text-white text-uppercase fw-bold mt-1 mb-3 ml-2">record min de covoiturages en 24h :</h4>
+                </div>
+                <div class="result">
+                    <h4 class="nbr-carpool-moyen d-block text-end text-white text-uppercase fw-bold mt-1 mb-3 ml-2">... le : .. / .. / ..</h4>
+                </div>
+            </div>         
+        </div>
+    </section>
+{% endblock %} 
