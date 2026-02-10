@@ -5,10 +5,10 @@ services:
     restart: always
 
     environment:
-      MYSQL_ROOT_PASSWORD: MAmiemavie.150227
-      MYSQL_DATABASE: ecoride_db
-      MYSQL_USER: bhhdev
-      MYSQL_PASSWORD: bhhdev
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
     ports:
       - "4306:3306"
@@ -19,6 +19,7 @@ services:
   app:
     build:
       context: ./app
+    container_name: app
     user: "${UID}:${GID}"
     restart: always
 
@@ -26,6 +27,8 @@ services:
       - "8080:80"
 
     environment:
+      APP_ENV: ${APP_ENV}
+      DATABASE_URL: ${DATABASE_URL}
       SASS_FORCE_POLLING: "true"
 
     volumes:
