@@ -14,7 +14,7 @@ services:
 
   app:
     image: ghcr.io/bhhdev/ecoride:latest
-    user: "www-data"
+    user: "${UID}:${GID}"
     ports:
       - "2000:80"
     depends_on:

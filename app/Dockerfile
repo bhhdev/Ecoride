@@ -16,6 +16,3 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Copy Symfony app
 COPY . /var/www/html
-
-# Rights
-RUN chown -R www-data:www-data /var/www/html
