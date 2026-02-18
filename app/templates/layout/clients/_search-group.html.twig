@@ -1,10 +1,12 @@
 <form 
     {# action="{{ path('app_carpools') }}"  #}
-      {# method="GET"  #}
-      class="search-bar-content mx-auto d-flex align-items-start align-items-md-center justify-content-evenly">
+    {# method="GET"  #}
+    class="search-bar-content mx-auto d-flex align-items-start align-items-md-center justify-content-evenly">
 
     <div class="search-bar-icon">
-        <img src="{{ asset('images/search-icon.svg') }}">
+        <button type="submit" style="background: none; border: none; padding: 0;">
+            <img src="{{ asset('images/search-icon.svg') }}" alt="Rechercher">
+        </button>
     </div>
 
     <div class="row g-3 search-bar-wrapper">
@@ -48,4 +50,5 @@
 
     <!-- BOUTON DE SUBMIT MASQUÉ : NECESSAIRE POUR QUE ENTER FONCTIONNE -->
     {# <button type="submit" style="display:none"></button> #}
+
 </form>

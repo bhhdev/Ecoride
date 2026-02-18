@@ -1,0 +1,95 @@
+.record-vehicle-content {
+    width: 40%;
+    min-width: 340px;
+    background-color: #34280C;
+    border: 3px solid white;
+    padding: 1rem;
+}
+@media (min-width: 800px) {
+    .record-vehicle-content {
+        width: 32rem;
+    }
+}
+
+.m-m-c_vehicle {
+    height: 8rem;
+    width: 18.75rem;
+    padding-top: 0.5%;
+}
+.brand-vehicle,
+.model-vehicle,
+.color-vehicle {
+    height: 33%;
+    width: 100%;
+
+        .brand-text,
+        .model-text,
+        .color-text {
+            width: 33%;
+        }
+
+        .brand-input,
+        .model-input,
+        .color-input {
+            height: 80%;
+            width: 75%;
+        }
+}
+
+
+
+.energy-content {
+    width: 96%;
+}
+
+
+.license-content {
+    height: 5.3rem;
+    width: 20rem;
+
+        .license-number,
+        .first-date-license {
+            height: 2.65rem;
+            width: 100%;
+        }
+
+        .num-text,
+        .first-date-text {
+            width: 45%;
+        }
+        .first-date-text {
+            margin-right: 11%;
+        }
+
+        .num-input {
+            height: 80%;
+            width: 72%;
+        }
+        .first-date-input {
+            height: 80%;
+            width: 100%;
+        }
+}
+
+
+.number-seats-content {
+    height: 2.65rem;
+    width: 20rem;
+
+        .number-seats-vehicle {
+            height: 100%;
+            width: 100%;
+        }
+
+        .num-seats-text {
+            width: 60%;
+        }
+        .test {
+            width: 40%;
+            height: 80%;
+        }
+        .num-seats-input {
+            height: 100%;
+            width: 60%;
+        }
+}

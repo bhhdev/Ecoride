@@ -19,8 +19,8 @@
     <p class="text-white fw-bold display-6 text-uppercase intro-line">les déplacements</p>
 </div>
 
-<div class="d-flex justify-content-center mb-0">
-    <h1 class="mt-3 intro-line">
+<div class="d-flex justify-content-center mb-4">
+    <h1 class="mt-3 eco-img intro-line">
         <img class="m-auto title-img" src="{{ asset("images/€CO.svg") }}">
     </h1>
     <div class="logiques-nomiques intro-line">
@@ -32,6 +32,9 @@
 
 <div class="d-flex justify-content-center">
     <div class="d-none d-lg-block img-paysage d-flex justify-content-center">
+        <div class="filter-bg filter-1-bg"></div>
+        <div class="filter-bg filter-2-bg"></div>
+        <div class="filter-bg filter-3-bg"></div>
         <img class="bg-paysage" src="{{ asset("images/decors-image-presentation.svg") }}">
         <div class="img-car-wrapper2">
             <img class="m-auto car" src="{{ asset("images/car-without-wheels.svg") }}">
@@ -102,9 +105,17 @@
     </div>
 </div>
 
+
 {% endblock %}
+
+{# {% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/home.js') }}" defer></script>
+{% endblock %} #}
 
 {% block javascripts %}
     {{ parent() }}
+    {# <script src="{{ asset('js/home.js') }}"></script> #}
     {{ importmap(['home']) }}
 {% endblock %}
+

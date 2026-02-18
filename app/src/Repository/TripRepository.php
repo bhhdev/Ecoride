@@ -6,9 +6,6 @@ use App\Entity\Trip;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-/**
- * @extends ServiceEntityRepository<Trip>
- */
 class TripRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
@@ -16,28 +13,38 @@ class TripRepository extends ServiceEntityRepository
         parent::__construct($registry, Trip::class);
     }
 
-    //    /**
-    //     * @return Trip[] Returns an array of Trip objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('t')
-    //            ->andWhere('t.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('t.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    public function findTrips(?string $departure, ?string $arrival, ?string $date): array
+    {
+        $qb = $this->createQueryBuilder('t')
+            ->leftJoin('t.user', 'u')
+            ->addSelect('u')
 
-    //    public function findOneBySomeField($value): ?Trip
-    //    {
-    //        return $this->createQueryBuilder('t')
-    //            ->andWhere('t.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+            ->andWhere('t.status != :cancelled')
+            ->andWhere('t.seatAvailable > 0')
+            ->setParameter('cancelled', 'cancelled');
+
+        if (!empty($departure)) {
+            $qb->andWhere('LOWER(t.departureCity) LIKE :departure')
+               ->setParameter('departure', strtolower($departure) . '%');
+        }
+
+        if (!empty($arrival)) {
+            $qb->andWhere('LOWER(t.arrivalCity) LIKE :arrival')
+               ->setParameter('arrival', strtolower($arrival) . '%');
+        }
+
+        if (!empty($date)) {
+            $start = new \DateTime($date . ' 00:00:00');
+            $end   = new \DateTime($date . ' 23:59:59');
+
+            $qb->andWhere('t.departureDay >= :start')
+               ->andWhere('t.departureDay <= :end')
+               ->setParameter('start', $start)
+               ->setParameter('end', $end);
+        }
+
+        return $qb->orderBy('t.departureDay', 'ASC')
+                  ->getQuery()
+                  ->getResult();
+    }
 }

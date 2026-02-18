@@ -1,6 +1,5 @@
 {% extends 'layout/clients/base_clients.html.twig' %}
 
-
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
@@ -10,31 +9,23 @@
         {% endif %}
 
         {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            <div class="mb-3 d-block text-center">
+                Vous êtes connecté an tant que :  {{ app.user.userIdentifier }}, <a href="{{ logout_path() }}">Logout</a>
             </div>
         {% endif %}
-
 
         <h1 class="h1-history text-center text-white fw-bold display-6 text-uppercase">connexion</h1>
 
         <div class="d-flex justify-content-center">
             <div class="connection-content">
-                <div class="d-flex justify-content-center">
-                    <label class="mt-2 mb-1 text-white" for="username">Email</label>
-                </div>
-                <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control input-email m-auto" autocomplete="email" required autofocus>
-                <div class="d-flex justify-content-center">
-                    <label class="mt-2 mb-1 text-white" for="password">Mot de passe</label>
-                </div>
-                <input type="password" name="_password" id="password" class="form-control input-password m-auto" autocomplete="current-password " required>
+                <label class="d-block text-center mt-2 mb-1 text-white" for="username">Email</label>
+                <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control input-email border-input m-auto" autocomplete="email" required autofocus>
+                <label class="d-block text-center mt-2 mb-1 text-white" for="password">Mot de passe</label>
+                <input type="password" name="_password" id="password" class="form-control input-email border-input m-auto" autocomplete="current-password" required>
+                <p class="fs-6 d-block text-center">mot de passe oublié</p>
                 <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
-                <div class="d-flex justify-content-center">
-                    <p class="fs-6">mot de passe oublié</p>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p class="text-white text-uppercase text-center mt-2">se connecter en tant que :</p>
-                </div>
+
+                <p class="text-white text-uppercase d-block text-center mt-2">se connecter en tant que :</p>
                 <div class="d-flex justify-content-between justify-content-md-evenly">
                     <div class="checkbox-driver d-flex align-items-center flex-no-wrap">
                         <input type="checkbox" name="_chauffeur" id="_chauffeur" class="me-2">
@@ -51,6 +42,8 @@
                 </div>
             </div>
         </div>
+
+        <input type="hidden" name="_target_path" value="{{ path('app_clients_carpools') }}">
         {#
             Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
             See https://symfony.com/doc/current/security/remember_me.html
@@ -60,7 +53,5 @@
                 <label for="_remember_me">Remember me</label>
             </div>
         #}
-
-        
     </form>
 {% endblock %}
