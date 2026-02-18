@@ -1,14 +1,77 @@
 
 .intro-line {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(0);
+    animation: fadeInUp 0.5s ease-out forwards;
+    // transform: translateY(20px);
+    // transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.h2-home-page.intro-line {
+    animation-delay: 0.3s;
 }
 
-.intro-line.visible {
-    opacity: 1;
-    transform: translateY(0);
+.h2-home-page.animated-title{
+    animation: fadeOut 1.5s ease-out forwards;
 }
+.title-ecoride.intro-line {
+    animation-delay: 0.9s;
+}
+.les-depl .intro-line {
+    animation-delay: 1.5s;
+    // border: 3px solid red !important;
+}
+.eco-img.intro-line {
+    animation-delay: 2.3s;
+}
+.logiques-nomiques.intro-line {
+    animation-delay: 3s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    33% {
+        opacity: 0;
+        transform: translateX(120%);
+    }
+    66% {
+        opacity: 0;
+        transform: translateX(-120%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+// .intro-line.show {
+//     opacity: 1;
+//     transform: translateY(0);
+//     animation: fadeInUp 0.8s ease-out forwards;
+// }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// .intro-line {
+//     opacity: 0;
+//     transform: translateY(20px);
+//     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+// }
+
+// .intro-line.visible {
+//     opacity: 1;
+//     transform: translateY(0);
+// }
 
 .h2-home-page {
     margin-top: 4%;
@@ -78,6 +141,46 @@ h1 {
         width: 1181px;
         background-size: cover;
         overflow: hidden;
+        .filter-bg {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 100%;
+            z-index: 10;
+            transition: opacity 0.35s ease-out;
+        }
+        .filter-1-bg {
+            background: rgb(48, 48, 48, 0.5);
+            left: 0;
+            width: calc(100% / 3);
+        }
+        .filter-2-bg {
+            background: rgb(48, 48, 48, 0.4);
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% / 3);
+        }
+        .filter-3-bg {
+            background: rgb(48, 48, 48, 0.4);
+            right: 0;
+            width: calc(100% / 3);
+        }
+        .filter-bg:not(.hidden) {
+            opacity: 1;
+        }
+        .filter-1:not(.hidden) {
+            background: rgb(48, 48, 48, 0.5);
+        }
+        .filter-2-bg:not(.hidden) {
+            background: rgb(48, 48, 48, 0.5);
+        }
+        .filter-3-bg:not(.hidden) {
+            background: rgb(48, 48, 48, 0.5);
+        }
+        .filter-bg.hidden {
+            opacity: 0;
+            transition: opacity 0.25s ease-out;
+        }
     }
 }
 
@@ -89,6 +192,7 @@ h1 {
         width: 200px;
         bottom: 80px;
         left: 80px;
+        z-index: 5;
         // transform: translateX(980px);
 }
 .whole-car {
@@ -110,7 +214,7 @@ h1 {
 @media (min-width: 1200px) {
     .img-car-wrapper2 {
         position: absolute;
-        z-index: 10;
+        z-index: 5;
         height: 110px;
         width: 500px;
         bottom: 160px;
