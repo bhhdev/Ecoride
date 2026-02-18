@@ -7,18 +7,20 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
-    ports:
-      - "4306:3306"
+
+    # ports:
+    #   - "4306:3306"
 
     volumes:
       - db_data:/var/lib/mysql
 
+    networks:
+      - ecoride-network
+
   app:
     build:
-      context: ./app
+      context: .
     container_name: app
     user: "${UID}:${GID}"
     restart: always
@@ -27,16 +29,20 @@ services:
       - "8080:80"
 
     environment:
-      APP_ENV: ${APP_ENV}
+      APP_ENV: dev
+      APP_DEBUG: "1"
       DATABASE_URL: ${DATABASE_URL}
       SASS_FORCE_POLLING: "true"
 
     volumes:
-      - ./app:/var/www/html
-      - ./app/apache/default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./:/var/www/html
+      - ./apache/default.conf:/etc/apache2/sites-available/000-default.conf
 
     depends_on:
       - database
+
+    networks:
+      - ecoride-network
 
   adminer:
     container_name: adminer
@@ -46,5 +52,11 @@ services:
     ports:
       - "8899:8080"
 
+    networks:
+      - ecoride-network
+
 volumes:
   db_data:
+
+networks:
+  ecoride-network:
