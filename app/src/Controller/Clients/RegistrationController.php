@@ -24,34 +24,57 @@ class RegistrationController extends AbstractController
     }
 
     #[Route('/inscription', name: 'app_clients_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, Security $security, EntityManagerInterface $entityManager): Response
+    public function register(
+        Request $request,
+        UserPasswordHasherInterface $userPasswordHasher,
+        Security $security,
+        EntityManagerInterface $entityManager
+    ): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var string $plainPassword */
+
             $plainPassword = $form->get('plainPassword')->getData();
 
-            // encode the plain password
-            $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
+            $user->setPassword(
+                $userPasswordHasher->hashPassword($user, $plainPassword)
+            );
 
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // generate a signed url and email it to the user
-            $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
+            // ✅ Envoi email de confirmation
+            $this->emailVerifier->sendEmailConfirmation(
+                'app_verify_email',
+                $user,
                 (new TemplatedEmail())
                     ->from(new Address('ecoride@contact.fr', 'bhhdev'))
                     ->to((string) $user->getEmail())
-                    ->subject('Please Confirm your Email')
-                    ->htmlTemplate('registration/confirmation_email.html.twig')
+                    ->subject('Confirmez votre adresse e-mail')
+                    ->htmlTemplate('clients/registration/confirmation_email.html.twig')
             );
 
-            // do anything else you need here, like send an email
+            // ✅ Connexion automatique
+            $security->login($user, 'form_login', 'clients');
 
-            return $security->login($user, 'form_login', 'main');
+            $this->addFlash(
+                'success',
+                'Un email de confirmation vous a été envoyé. Vérifiez votre boîte mail.'
+            );
+
+            $isPassenger = $form->get('isPassenger')->getData();
+            $isDriver = $form->get('isDriver')->getData();
+
+            if ($isPassenger && !$isDriver) {
+                return $this->redirectToRoute('app_clients_carpools');
+            } elseif ($isDriver) {
+                return $this->redirectToRoute('app_clients_record_vehicle');
+            }
+
+            return $this->redirectToRoute('app_clients_home');
         }
 
         return $this->render('clients/registration/register.html.twig', [
@@ -60,24 +83,31 @@ class RegistrationController extends AbstractController
     }
 
     #[Route('/verify/email', name: 'app_verify_email')]
-    public function verifyUserEmail(Request $request, TranslatorInterface $translator): Response
+    public function verifyUserEmail(
+        Request $request,
+        TranslatorInterface $translator
+    ): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
-        // validate email confirmation link, sets User::isVerified=true and persists
         try {
             /** @var User $user */
             $user = $this->getUser();
-            $this->emailVerifier->handleEmailConfirmation($request, $user);
-        } catch (VerifyEmailExceptionInterface $exception) {
-            $this->addFlash('verify_email_error', $translator->trans($exception->getReason(), [], 'VerifyEmailBundle'));
 
-            return $this->redirectToRoute('app_register');
+            $this->emailVerifier->handleEmailConfirmation($request, $user);
+
+        } catch (VerifyEmailExceptionInterface $exception) {
+
+            $this->addFlash(
+                'verify_email_error',
+                $translator->trans($exception->getReason(), [], 'VerifyEmailBundle')
+            );
+
+            return $this->redirectToRoute('app_clients_register');
         }
 
-        // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Your email address has been verified.');
+        $this->addFlash('success', 'Votre adresse email a bien été vérifiée.');
 
-        return $this->redirectToRoute('app_register');
+        return $this->redirectToRoute('app_clients_home');
     }
 }
