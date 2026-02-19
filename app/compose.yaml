@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
 
   database:
@@ -6,19 +8,22 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_USER: bhhdev
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
       - db_data:/var/lib/mysql
 
   app:
-    image: ghcr.io/bhhdev/ecoride:latest
+    image: ghcr.io/bhhdev/ecoride-app:latest
+    container_name: ecoride
     user: "${UID}:${GID}"
     ports:
-      - "2000:80"
+      - "2001:80"
+    environment:
+      APP_ENV: prod
+      DATABASE_URL: ${DATABASE_URL}
     depends_on:
       - database
+    restart: unless-stopped
 
   adminer:
     container_name: adminer
