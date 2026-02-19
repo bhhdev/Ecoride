@@ -1,33 +1,37 @@
-FROM php:8.2-apache
+# Étape 0 : image de base PHP Apache
+FROM php:8.2-apache AS prod
 
-# Installer les packages nécessaires
+# Installer les paquets nécessaires
 RUN apt-get update && apt-get install -y \
     zip unzip git libicu-dev libxml2-dev libzip-dev libonig-dev \
-    && docker-php-ext-install intl pdo pdo_mysql zip opcache
+    && rm -rf /var/lib/apt/lists/*
 
-# Activer Apache Rewrite
+# Activer mod_rewrite pour Symfony
 RUN a2enmod rewrite
 
-# Copier config Apache
+# Copier la conf Apache
 COPY ./apache/default.conf /etc/apache2/sites-available/000-default.conf
 
-# Installer Composer
+# Installer Composer depuis l'image officielle
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Définir le répertoire de travail
+# Travailler dans le dossier de Symfony
 WORKDIR /var/www/html
 
-# Copier l’application
+# Copier tout le projet
 COPY . /var/www/html
 
-# Installer uniquement les dépendances de prod
+# Autoriser symfony/flex pour composer
+RUN composer config --no-plugins allow-plugins.symfony/flex true
+
+# Installer uniquement les dépendances prod
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Assurer les permissions
-RUN chown -R www-data:www-data /var/www/html/var /var/www/html/vendor
+# Assurer les permissions pour Apache
+RUN chown -R www-data:www-data /var/www/html/var /var/www/html/public/assets
 
 # Exposer le port HTTP
 EXPOSE 80
 
-# Lancer Apache
+# Lancer Apache en foreground
 CMD ["apache2-foreground"]
