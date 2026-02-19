@@ -9,7 +9,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 final class EmployeeSecurityController extends AbstractController
 {
-    #[Route('/dev/employee/login', name: 'dev_employee_login')]
+    #[Route('/employee/login', name: 'dev_employee_login')]
     public function index(AuthenticationUtils $authenticationUtils): Response
     {
         $error = $authenticationUtils->getLastAuthenticationError();
