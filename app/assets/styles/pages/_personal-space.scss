@@ -239,8 +239,18 @@
 .infos-next-ride {
     height: 80%;
     width: 100%;
+
+    .infos-driver {
+        width: 25%;
+    }
+    .infos-ride {
+        width: 55%;
+    }
+    .infos-price {
+        width: 20%;
+    }
 }
-.sep-vert {
+.sep-vert_ps {
     height: 98%;
     width: 0.5%;
     border-radius: 10px;
@@ -260,7 +270,7 @@
 
 .photo-driver{
     height: 50%;
-    width: 50%;
+    width: 40%;
 }
 @media (min-width: 1200px) {
     .photo-driver {
@@ -290,11 +300,18 @@
 }
 .infos-driver {
     height: 100%;
-    width: 19.5%;
 }
 .infos-ride {
     height: 85%;
     width: 60%;
+
+    .title-date {
+        margin-left: 2%;
+        width: 47%;
+    }
+    .titke-h {
+        margin-right: 2%;
+    }
 }
 
 .date-h, .next-ride-passenger, .infos-price {
@@ -352,7 +369,7 @@
 }
 @media (min-width: 1200px) {
     .photo-other-passenger {
-        width: 21%;
+        width: 18%;
         margin: 1.8% 1.8%;
     }
 }
@@ -605,7 +622,8 @@
 
 .text1_ps,
 .text2_ps,
-.text3_ps {
+.text3_ps,
+.text4_ps {
     font-size: 12px;
 }
 // -------------------END PERSONAL INFOS USER
