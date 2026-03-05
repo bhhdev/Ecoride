@@ -180,6 +180,7 @@
 }
 .line-2  {
     margin: 0 0 1.5% 0;
+    font-size: 10px;
 }
 .line-3 {
     margin-bottom: 1%;
@@ -193,6 +194,9 @@
 @media (min-width: 800px) {
     .p-trajet {
         font-size: 16px;
+    }
+    .line-2  {
+        font-size: 12px;
     }
 }
 .p-ride-eco.eco, .p-ride-eco.standard {
@@ -447,15 +451,15 @@
         width: 31.5rem;
     }
 }
-.last-avis, .fivth-avis, .fourth-avis, .third-avis, .second-avis, .first-avis {
-    height: 60px;
+.avis-item {
+    height: 3.75rem;
     width: 98%;
     background-color: #CBBBA0;
     border: 2px solid #95C11F;
     margin: 0 1%;
 }
 .photo-avis {
-    height: 94%;
+    height: 53px;
     width: 13%;
     background-color: white;
     border: 1px solid black;
@@ -477,7 +481,7 @@
 
 }
 .avis  {
-    height: 94%;
+    height: 53px;
     width: 60.5%;
     background-color: black;
     border: 1px solid white;
@@ -489,9 +493,17 @@
         width: 64.5%;
     }
 }
-.p-message-passenger {
+.p-message-passenger-intro {
+    height: 20px;
     font-size: 10px;
     font-weight: 500;
+    overflow: auto;
+}
+.p-message-passenger {
+    height: 50px;
+    font-size: 10px;
+    font-weight: 500;
+    overflow: auto;
 }
 @media (min-width: 800px) {
     .p-message-passenger {
