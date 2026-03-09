@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -32,6 +33,18 @@ class Vehicle
 
     #[ORM\OneToMany(mappedBy: 'vehicle', targetEntity: Trip::class)]
     private Collection $trips;
+
+    #[ORM\Column(length: 30)]
+    private ?string $color = null;
+
+    #[ORM\Column(length: 20)]
+    private ?string $licenseNumber = null;
+
+    #[ORM\Column(type: Types::DATE_IMMUTABLE)]
+    private ?\DateTimeImmutable $firstRegistrationDate = null;
+
+    #[ORM\Column]
+    private ?bool $airConditionning = null;
 
     public function __construct()
     {
@@ -111,5 +124,53 @@ class Vehicle
     public function getTrips(): Collection
     {
         return $this->trips;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(string $color): static
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    public function getLicenseNumber(): ?string
+    {
+        return $this->licenseNumber;
+    }
+
+    public function setLicenseNumber(string $licenseNumber): static
+    {
+        $this->licenseNumber = $licenseNumber;
+
+        return $this;
+    }
+
+    public function getFirstRegistrationDate(): ?\DateTimeImmutable
+    {
+        return $this->firstRegistrationDate;
+    }
+
+    public function setFirstRegistrationDate(\DateTimeImmutable $firstRegistrationDate): static
+    {
+        $this->firstRegistrationDate = $firstRegistrationDate;
+
+        return $this;
+    }
+
+    public function isAirConditionning(): ?bool
+    {
+        return $this->airConditionning;
+    }
+
+    public function setAirConditionning(bool $airConditionning): static
+    {
+        $this->airConditionning = $airConditionning;
+
+        return $this;
     }
 }
