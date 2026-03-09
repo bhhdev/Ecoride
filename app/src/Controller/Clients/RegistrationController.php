@@ -46,7 +46,6 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // ✅ Envoi email de confirmation
             $this->emailVerifier->sendEmailConfirmation(
                 'app_verify_email',
                 $user,
@@ -57,7 +56,6 @@ class RegistrationController extends AbstractController
                     ->htmlTemplate('clients/registration/confirmation_email.html.twig')
             );
 
-            // ✅ Connexion automatique
             $security->login($user, 'form_login', 'clients');
 
             $this->addFlash(
@@ -70,7 +68,9 @@ class RegistrationController extends AbstractController
 
             if ($isPassenger && !$isDriver) {
                 return $this->redirectToRoute('app_clients_carpools');
-            } elseif ($isDriver) {
+            }
+
+            if ($isDriver) {
                 return $this->redirectToRoute('app_clients_record_vehicle');
             }
 
