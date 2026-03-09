@@ -6,7 +6,6 @@ use App\Entity\User;
 use App\Entity\Vehicle;
 use App\Entity\Trip;
 use App\Entity\Preference;
-use App\Entity\Booking;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -45,6 +44,7 @@ class AppFixtures extends Fixture
                  ->setLastname("Last{$i}")
                  ->setPhone("06" . rand(10000000,99999999))
                  ->setCredits(rand(0,1000))
+                 ->setIsVerified(true)
                  ->setIsPassenger(true)
                  ->setIsDriver($isDriver)
                  ->setPassword(
@@ -71,6 +71,7 @@ class AppFixtures extends Fixture
         $brands = ['Toyota','Renault','Peugeot','Ford','BMW','Audi','Tesla','Citroën'];
         $models = ['Corolla','Clio','308','Focus','320i','A3','Model 3','C3'];
         $energies = ['electric','gasoline','hybrid'];
+        $colors = ['black','white','gray','blue','red','green','silver'];
 
         foreach ($drivers as $driver) {
             if (count($vehicles) >= 80) break;
@@ -78,6 +79,12 @@ class AppFixtures extends Fixture
             $vehicle = new Vehicle();
             $vehicle->setBrand($brands[array_rand($brands)])
                     ->setModel($models[array_rand($models)])
+                    ->setColor($colors[array_rand($colors)])
+                    ->setLicenseNumber(strtoupper(substr(md5(rand()),0,7)))
+                    ->setFirstRegistrationDate(
+                        (new \DateTimeImmutable())->modify('-'.rand(0,10).' years')
+                    )
+                    ->setAirConditionning(rand(0,1)===1)
                     ->setNumberSeats(rand(2,7))
                     ->setEnergy($energies[array_rand($energies)])
                     ->setOwner($driver);
