@@ -42,9 +42,9 @@ class TripSearchController extends AbstractController
                     'trip' => [
                         'from'      => $trip->getDepartureCity(),
                         'to'        => $trip->getArrivalCity(),
-                        'date'      => $trip->getDepartureDay()->format('Y-m-d'),
-                        'timeStart' => $trip->getDepartureDay()->format('H:i'),
-                        'timeEnd'   => $trip->getArrivalDay()->format('H:i'),
+                        'date'      => $trip->getDepartureDay()->format('d-m-Y'),
+                        'departureHour' => $trip->getDepartureHour()->format('H:i'),
+                        'arrivalHour'   => $trip->getArrivalHour()->format('H:i'),
                         'seatsLeft' => $trip->getSeatAvailable(),
                         'eco'       => $vehicle->getEnergy() === 'electric',
                         'status'    => $trip->getStatus()
