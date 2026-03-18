@@ -29,20 +29,24 @@
                        href="{{ path('app_clients_carpools') }}">covoiturages</a>
                 </li>
 
+                {% if app.user %}
                 <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
                     <a class="nav-links {{ route_name starts with 'app_clients_personal_space' ? 'active' : '' }}"
                        href="{{ path('app_clients_personal_space') }}">espace perso</a>
                 </li>
+                {% endif %}
 
                 <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
                     <a class="nav-links {{ route_name starts with 'app_clients_contact' ? 'active' : '' }}"
                        href="{{ path('app_clients_contact') }}">contact</a>
                 </li>
 
+                {% if app.user %}
                 <li class="nav-item mx-0 mx-lg-1 mx-xl-2 px-2 my-2 my-lg-0">
                     <a class="nav-links {{ route_name starts with 'app_clients_history' ? 'active' : '' }}"
                        href="{{ path('app_clients_history') }}">historique</a>
                 </li>
+                {% endif %}
 
 
                 {# 🔐 AUTH #}
