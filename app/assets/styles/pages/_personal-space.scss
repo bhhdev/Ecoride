@@ -3,18 +3,15 @@
 // -------------------START GENERAL TICKETS
 .next-tickets {
     width: 22rem;
-    height: 80vh;
 }
 @media (min-width: 800px) {
     .next-tickets {
         width: 50%;
-        height: 50vh;
     }
 }
 @media (min-width: 1200px) {
     .next-tickets {
         width: 40%;
-        height: 80vh;
     }
 }
 
@@ -69,35 +66,60 @@
 }
 
  .passenger-list {
-    height: 60%;
-    width: 100%;
+    height: 10rem;
+    width: 96%;
     background-color: #34280C;
-    border: 5px solid #936037;
+    border: 5px solid #fff;
     overflow: auto;
 }
 .first-passenger, .second-passenger, .third-passenger, .fourth-passenger {
     width: 96%;
-    height: 70%;
+    height: 4rem;
     background-color: #CBBBA0;
     border: 2px solid #95C11F;
 }
-.photo-passenger-inscrit {
-    width: 15%;
-    height: 96%;
-    background-color: white;
-    border: 1px solid #34280C;
-    margin: 0.45% 0.3% 0 0.3%;
+
+.photo-passenger-inscrit-next-ticket-driver {
+        width: 15%;
+        height: 96%;
+        background-color: white;
+        border: 1px solid #34280C;
+        margin: 0.25% 0.3% 0 0.3%;
 }
+.photo-passenger-inscrit-last-notice {
+        width: 15%;
+        height: 96%;
+        background-color: white;
+        border: 1px solid #34280C;
+        margin: 0.25% 0.3% 0 0.3%;
+    }
 @media (min-width: 800px) {
-    .photo-passenger-inscrit {
-        width: 14%;
+    .photo-passenger-inscrit-next-ticket-driver {
+        width: 12%;
         margin: 0.42% 0.4% 0 0.4%;
+    }
+    .photo-passenger-inscrit-last-notice {
+        width: 14%;
+        height: 96%;
+        background-color: white;
+        border: 1px solid #34280C;
+        margin: 0.3% 0.3% 0 0.3%;
     }
 }
 @media (min-width: 1200px) {
-    .photo-passenger-inscrit {
-        width: 11%;
-        margin: 0.3% 0.4% 0 0.4%;
+    .photo-passenger-inscrit-next-ticket-driver {
+        width: 10%;
+        height: 96%;
+        background-color: white;
+        border: 1px solid #34280C;
+        margin: 0.45% 0.3% 0 0.3%;
+    }
+    .photo-passenger-inscrit-last-notice {
+        width: 10%;
+        height: 96%;
+        background-color: white;
+        border: 1px solid #34280C;
+        margin: 0.25% 0.3% 0 0.3%;
     }
 }
 
@@ -107,7 +129,7 @@
 }
 @media (min-width: 800px) {
     .pseudo-note-passenger_ps {
-        margin: 3% 0.5%;
+        margin: 3% 0.9%;
     }
 }
 @media (min-width: 1200px) {
@@ -132,7 +154,7 @@
 }
 @media (min-width: 1200px) {
     .frame-adress_ps {
-        width: 68%;
+        width: 80%;
     }
 }
 .text-adress_ps {
@@ -181,7 +203,7 @@
     width: 34%;
 }
 .button-annul-ride {
-    height: 100%;
+    height: 1.7rem;
     width: 80%;
     background-color: #34280C;
     border-radius: 5px;
@@ -251,7 +273,12 @@
     }
 }
 .sep-vert_ps {
-    height: 98%;
+    height: 5.5rem;
+    width: 0.5%;
+    border-radius: 10px;
+}
+.sep-vert_ps-resa {
+    height: 4.3rem;
     width: 0.5%;
     border-radius: 10px;
 }
@@ -269,7 +296,7 @@
 }
 
 .photo-driver{
-    height: 50%;
+    height: 2.8rem;
     width: 40%;
 }
 @media (min-width: 1200px) {
@@ -291,6 +318,9 @@
     .title-date, 
     .title-h {
         font-size: 12px;
+    }
+    .title-date {
+        margin-left: 5%;
     }
 }
 
@@ -314,11 +344,23 @@
     }
 }
 
+
 .date-h, .next-ride-passenger, .infos-price {
     height: 27.5%;
 }
 .date-h, .brand-model-vehicle, .next-ride-passenger {
     width: 100%;
+    padding-left: 2%;
+}
+@media (min-width: 800px) {
+    .date-h {
+        padding-left: 4%;
+    }
+}
+@media (min-width: 1200px) {
+    .date-h {
+        padding-left: 7%;
+    }
 }
 .title-date, 
 .title-h {
@@ -339,10 +381,10 @@
 }
 
 .others-passengers {
-    height: 42.5%;
-    width: 100%;
+    height: 5rem;
+    width: 96%;
     background-color: #346928;
-    border: 5px solid #34280C;
+    border: 5px solid #fff;
     overflow: auto;
 }
 .first-line, .second-line {
@@ -367,6 +409,13 @@
     margin: 3% 3%;
     border: 2px solid black;
 }
+@media (min-width: 800px) {
+    .photo-other-passenger {
+        height: 92%;
+        width: 25%;
+        margin: 1.8% 1.8%;
+    }
+}
 @media (min-width: 1200px) {
     .photo-other-passenger {
         width: 18%;
@@ -378,6 +427,13 @@
     height: 90%;
     width: 64%;
     margin-top: 3%;
+}
+@media (min-width: 1200px) {
+    .details-other-passenger {
+        height: 90%;
+        width: 64%;
+        margin-top: 0%;
+    }
 }
 
 .options-ride {
@@ -431,19 +487,19 @@
 // -------------------START GENERAL PERSONAL SPACE USER
 .details-perso-space {
     width: 22rem;
-    height: 97rem;
+    height: 122.2rem;
     background-color: #346928;
     border: 3px solid black;
 }
 @media (min-width: 800px) {
     .details-perso-space {
-        height: 98rem;
+        height: 124.9rem;
         width: 50%;
     }
 }
 @media (min-width: 1200px) {
     .details-perso-space {
-        height: 103rem;
+        height: 127.4rem;
         width: 40%;
     }
 }
@@ -630,19 +686,19 @@
 
 // -------------------START LAST NOTICES
 .last-notice {
-    height: 13rem;
+    height: 15rem;
     width: 98%;
     background-color: #936037;
     border: 2px solid white;
 }
 @media (min-width: 800px) {
     .last-notice {
-        height: 14rem;
+        height: 15.5rem;
     }
 }
 @media (min-width: 1200px) {
     .last-notice {
-        height: 15rem;
+        height: 16rem;
     }
 }
 
@@ -651,7 +707,7 @@
 }
 .last-notice-passenger,
 .last-notice-driver {
-    height: 49%;
+    height: 6rem;
     width: 100%;
 }
 .general-frame {
@@ -707,7 +763,7 @@
 
 // -------------------START VEHICLE STATUT
 .vehicl-satut_and_organise-ride {
-    height: 60rem;
+    // height: 65rem;
     width: 98%;
     background-color: #34280C;
     border: 2px solid white;
@@ -716,28 +772,87 @@
     font-size: 12px;
 }
 .vehicul-list {
-    height: 8%;
+    height: 80%;
     width: 94%;
-    font-size: 14px;
+    font-size: 12px;
 }
 .list {
-    height: 80%;
-    width: 98%;
+    height: 100%;
+    width: 96%;
+}
+
+.list-content {
+    width: 21.5rem;
+    height: 6rem;
     border: 2px solid #95C11F;
     background-color: #936037;
     overflow: auto;
 }
-.list-content {
-    width: 100%;
-}
-.buttons-statut-vehicl {
-    width: 100%;
-    height: 5%;
-}
 @media (min-width: 1200px) {
-    .buttons-statut-vehicl {
-    height: 5%;
+    .list-content {
+       width: 25rem;
     }
+}
+
+.vehicle-item {
+    color:#000;
+    cursor: pointer;
+    padding:5px;
+    transition:0.2s;
+    font-size: 12px;
+}
+.vehicle-item:hover {
+    color: #fff;
+}
+.vehicle-item.vehicle-item-selected,
+.vehicle-item:active {
+    color: #fff;
+        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-color: #95C11F;
+
+}
+@media (min-width: 800px) {
+    .vehicle-item {
+        font-size: 14px;
+    }
+}
+.vehicle-item-selected{
+    color:white;
+}
+.vehicle-hidden-input{
+    display:none;
+}
+
+.button-supp-record {
+    height: 6rem;
+    width: 10.5rem;
+    margin-left: 1rem;
+}
+.button-supp-vehicle, .button-record-vehicl {
+    width: 100%;
+    height: 2.9rem;
+    background-color: #CBBBA0;
+    color: #000;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #95C11F;
+}
+.button-supp-vehicle {
+    
+    background-color: #000;
+    color: red;
+}
+
+.buttons-statut-vehicl {
+    width: 20rem;
+    height: 2.9rem;
+}
+
+@media (min-width: 1200px) {
+     .buttons-statut-vehicl {
+        width: 20rem;
+     }
 }
 
 .div-button-recorded-vehicl,
@@ -745,9 +860,9 @@
     width: 50%;
     height: 100%;
 }
-.button-recorded-vehicl,
+
 .button-select-vehicl {
-    width: 92%;
+    width: 100%;
     height: 100%;
     background-color: #CBBBA0;
     border-radius: 5px;
@@ -756,9 +871,8 @@
     border: 2px solid #95C11F;
 }
 @media (min-width: 1200px) {
-    .button-recorded-vehicl,
-.button-select-vehicl {
-    width: 60%;
+    .button-select-vehicl {
+    width: 100%;
     }
 }
 
@@ -788,6 +902,19 @@
 }
 .departure {
     width: 96%;
+}
+.departure-input, .arrival-input {
+    width: 9.5rem;
+}
+@media (min-width: 800px) {
+    .departure-input, .arrival-input {
+        width: 10.7rem;
+    }
+}
+@media (min-width: 1200px) {
+    .departure-input, .arrival-input {
+        width: 17.1rem;
+    }
 }
 .dispo-seats {
     height: 22%;
@@ -835,7 +962,7 @@
     width: 100%;
 }
 .button-recorded {
-    height: 100%;
+    height: 2.9rem;
     width: 40%;
     background-color: #CBBBA0;
     border-radius: 5px;
