@@ -13,24 +13,67 @@ class Preference
     private ?int $id = null;
 
     #[ORM\Column]
-    private bool $airConditioning;
+    private bool $airConditioning = false;
 
     #[ORM\Column]
-    private bool $animalsAccepted;
+    private bool $animalsAccepted = false;
 
     #[ORM\Column]
-    private bool $smokeVap;
+    private bool $smokeVap = false;
 
     #[ORM\OneToOne(mappedBy: 'preference', targetEntity: Trip::class, cascade: ['persist'])]
     private ?Trip $trip = null;
 
-    public function getId(): ?int { return $this->id; }
-    public function getAirConditioning(): bool { return $this->airConditioning; }
-    public function setAirConditioning(bool $b): self { $this->airConditioning = $b; return $this; }
-    public function getAnimalsAccepted(): bool { return $this->animalsAccepted; }
-    public function setAnimalsAccepted(bool $b): self { $this->animalsAccepted = $b; return $this; }
-    public function getSmokeVap(): bool { return $this->smokeVap; }
-    public function setSmokeVap(bool $b): self { $this->smokeVap = $b; return $this; }
-    public function getTrip(): ?Trip { return $this->trip; }
-    public function setTrip(Trip $trip): self { $this->trip = $trip; return $this; }
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getAirConditioning(): bool
+    {
+        return $this->airConditioning;
+    }
+
+    public function setAirConditioning(bool $value): self
+    {
+        $this->airConditioning = $value;
+
+        return $this;
+    }
+
+    public function getAnimalsAccepted(): bool
+    {
+        return $this->animalsAccepted;
+    }
+
+    public function setAnimalsAccepted(bool $value): self
+    {
+        $this->animalsAccepted = $value;
+
+        return $this;
+    }
+
+    public function getSmokeVap(): bool
+    {
+        return $this->smokeVap;
+    }
+
+    public function setSmokeVap(bool $value): self
+    {
+        $this->smokeVap = $value;
+
+        return $this;
+    }
+
+    public function getTrip(): ?Trip
+    {
+        return $this->trip;
+    }
+
+    public function setTrip(Trip $trip): self
+    {
+        $this->trip = $trip;
+
+        return $this;
+    }
 }
