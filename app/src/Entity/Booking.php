@@ -14,21 +14,50 @@ class Booking
 
     #[ORM\ManyToOne(inversedBy: 'bookings')]
     #[ORM\JoinColumn(nullable: false)]
-    private User $user;
-
+    private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'bookings')]
     #[ORM\JoinColumn(nullable: false)]
-    private Trip $trip;
+    private ?Trip $trip = null;
 
     #[ORM\Column]
     private int $seatNumber;
 
-    public function getId(): ?int { return $this->id; }
-    public function getUser(): User { return $this->user; }
-    public function setUser(User $u): self { $this->user = $u; return $this; }
-    public function getTrip(): Trip { return $this->trip; }
-    public function setTrip(Trip $t): self { $this->trip = $t; return $this; }
-    public function getSeatNumber(): int { return $this->seatNumber; }
-    public function setSeatNumber(int $n): self { $this->seatNumber = $n; return $this; }
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+        return $this;
+    }
+
+    public function getTrip(): ?Trip
+    {
+        return $this->trip;
+    }
+
+    public function setTrip(?Trip $trip): self
+    {
+        $this->trip = $trip;
+        return $this;
+    }
+
+    public function getSeatNumber(): int
+    {
+        return $this->seatNumber;
+    }
+
+    public function setSeatNumber(int $seatNumber): self
+    {
+        $this->seatNumber = $seatNumber;
+        return $this;
+    }
 }

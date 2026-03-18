@@ -58,10 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         </p>
                     </div>
 
+
                     <div class="line-2 d-flex justify-content-evenly">
                         <p class="mb-0">${escapeHTML(ride.trip.date)}</p>
-                        <p class="mb-0">D : ${escapeHTML(ride.trip.timeStart)}</p>
-                        <p class="mb-0">A : ${escapeHTML(ride.trip.timeEnd ?? "")}</p>
+                        <p class="mb-0">D : ${escapeHTML(ride.trip.departureHour)}</p>
+                        <p class="mb-0">A : ${escapeHTML(ride.trip.arrivalHour ?? "")}</p>
                     </div>
 
                     <div class="line-3">

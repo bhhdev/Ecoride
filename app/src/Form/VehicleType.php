@@ -28,7 +28,7 @@ class VehicleType extends AbstractType
             'choices' => [
                 'fossile' => 'fossile',
                 'hybride' => 'hybride',
-                'elec' => 'elec',
+                'elec' => 'electric',
             ],
             'expanded' => true,
             'multiple' => false

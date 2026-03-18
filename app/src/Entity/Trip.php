@@ -15,11 +15,17 @@ class Trip
     #[ORM\Column]
     private int $id;
 
-    #[ORM\Column]
+    #[ORM\Column(type: 'date_immutable')]
     private \DateTimeImmutable $departureDay;
 
-    #[ORM\Column]
+    #[ORM\Column(type: 'time_immutable')]
+    private \DateTimeImmutable $departureHour;
+
+    #[ORM\Column(type: 'date_immutable')]
     private \DateTimeImmutable $arrivalDay;
+
+    #[ORM\Column(type: 'time_immutable')]
+    private \DateTimeImmutable $arrivalHour;
 
     #[ORM\Column(length: 50)]
     private string $departureAddress;
@@ -69,8 +75,12 @@ class Trip
     public function __construct()
     {
         $now = new \DateTimeImmutable();
+
         $this->departureDay = $now;
+        $this->departureHour = $now;
+
         $this->arrivalDay = $now->modify('+1 hour');
+        $this->arrivalHour = $now->modify('+1 hour');
 
         $this->departureAddress = '';
         $this->departureCity = '';
@@ -176,6 +186,19 @@ class Trip
         return $this;
     }
 
+    public function getDepartureHour(): \DateTimeImmutable
+    {
+        return $this->departureHour;
+    }
+
+    public function setDepartureHour(
+        \DateTimeImmutable $hour
+    ): self
+    {
+        $this->departureHour = $hour;
+        return $this;
+    }
+
     public function getArrivalDay(): \DateTimeImmutable
     {
         return $this->arrivalDay;
@@ -189,9 +212,34 @@ class Trip
         return $this;
     }
 
+    public function getArrivalHour(): \DateTimeImmutable
+    {
+        return $this->arrivalHour;
+    }
+
+    public function setArrivalHour(
+        \DateTimeImmutable $hour
+    ): self
+    {
+        $this->arrivalHour = $hour;
+        return $this;
+    }
+
     public function getSeatAvailable(): int
     {
         return $this->seatAvailable;
+    }
+
+    /**
+     * Setter nécessaire pour que le formulaire Symfony puisse hydrater l'entité
+     */
+    public function setSeatAvailable(
+        int $seatAvailable
+    ): self
+    {
+        $this->seatAvailable = $seatAvailable;
+
+        return $this;
     }
 
     public function getSeatPrice(): int
@@ -237,8 +285,10 @@ class Trip
                 );
             }
         }
+
         $this->numberSeats = $numberSeats;
         $this->seatAvailable = $numberSeats;
+
         return $this;
     }
 
@@ -247,7 +297,9 @@ class Trip
         if ($this->seatAvailable <= 0) {
             throw new \DomainException("Plus aucune place disponible.");
         }
+
         $this->seatAvailable--;
+
         return $this;
     }
 
@@ -256,12 +308,10 @@ class Trip
     ): self
     {
         $this->updatedAt = $date;
+
         return $this;
     }
 
-    // ===============================
-    // ✅ Nouveaux getters/setters pour les adresses
-    // ===============================
     public function getDepartureAddress(): string
     {
         return $this->departureAddress;
@@ -272,6 +322,7 @@ class Trip
     ): self
     {
         $this->departureAddress = $address;
+
         return $this;
     }
 
@@ -285,12 +336,14 @@ class Trip
     ): self
     {
         $this->arrivalAddress = $address;
+
         return $this;
     }
 
     // ===============================
     // Utilitaire pour le front
     // ===============================
+
     public function isEco(): bool
     {
         return $this->vehicle->getEnergy() === 'electric';

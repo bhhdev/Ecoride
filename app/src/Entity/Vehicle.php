@@ -173,4 +173,9 @@ class Vehicle
 
         return $this;
     }
+
+    public function getVehicleName()
+    {
+        return $this->brand . ' ' . $this->model . ' -> ' . $this->licenseNumber;
+    }
 }

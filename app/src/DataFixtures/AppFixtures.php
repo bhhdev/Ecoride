@@ -22,7 +22,6 @@ class AppFixtures extends Fixture
         $drivers = [];
         $vehicles = [];
 
-        // ✅ LISTE DES AVATARS RANDOM
         $avatars = [
             'bob.jpg',
             'christian.jpg',
@@ -54,7 +53,6 @@ class AppFixtures extends Fixture
                      )
                  );
 
-            // ✅ RANDOM POUR TOUS
             $user->setAvatar($avatars[array_rand($avatars)]);
 
             $manager->persist($user);
@@ -134,6 +132,7 @@ class AppFixtures extends Fixture
             $pref->setAirConditioning(rand(0,1)===1)
                  ->setAnimalsAccepted(rand(0,1)===1)
                  ->setSmokeVap(false);
+
             $manager->persist($pref);
 
             $trip = new Trip();
@@ -141,7 +140,9 @@ class AppFixtures extends Fixture
                  ->setVehicle($vehicle)
                  ->setPreference($pref)
                  ->setDepartureDay($departureDate)
+                 ->setDepartureHour($departureDate)   // ✅ AJOUT
                  ->setArrivalDay($arrivalDate)
+                 ->setArrivalHour($arrivalDate)       // ✅ AJOUT
                  ->setDepartureCity($departure[0])
                  ->setDepartureAddress($departure[1])
                  ->setArrivalCity($arrival[0])

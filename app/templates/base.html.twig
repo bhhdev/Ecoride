@@ -31,6 +31,8 @@
 
         {% block search %}{% endblock %}
 
+        {{ include('/_partials/_flashes.html.twig') }}
+
         <main>
             {% block body %}{% endblock %}
         </main>
