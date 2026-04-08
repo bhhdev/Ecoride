@@ -30,6 +30,9 @@ class TripSearchController extends AbstractController
                 $vehicle = $trip->getVehicle();
 
                 return [
+                    // ✅ AJOUT ID GLOBAL (optionnel mais utile)
+                    'id' => $trip->getId(),
+
                     'driver' => [
                         'firstname'   => $driver?->getFirstname(),
                         'lastname'    => $driver?->getLastname(),
@@ -40,6 +43,9 @@ class TripSearchController extends AbstractController
                         'note' => null
                     ],
                     'trip' => [
+                        // ✅ 🔥 AJOUT CRITIQUE
+                        'id' => $trip->getId(),
+
                         'from'      => $trip->getDepartureCity(),
                         'to'        => $trip->getArrivalCity(),
                         'date'      => $trip->getDepartureDay()->format('d-m-Y'),

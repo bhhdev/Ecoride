@@ -287,6 +287,10 @@
     margin-top: 0.4%;
     background-color: #936037;
 }
+
+
+
+
 .details-container {
     height: 49.25rem;
     width: 100%;
@@ -296,6 +300,11 @@
     padding-top: 1%;
     padding-left: 2.5%;
 }
+.details-container {
+    display: none;
+}
+
+
 @media (min-width: 800px) {
     .details-container {
         height: 62.5rem;
@@ -303,7 +312,7 @@
 }
 .section-details-1 {
     height: 11rem;
-    width: 98%;
+    width: 100%;
     margin-top: 1%;
 }
 @media (min-width: 800px) {
@@ -347,8 +356,11 @@
 .p-next-trajet, .p-trajet_details, .p-date_h-start_h-end, .p-seat-dispo_details, .p-vehicul {
     width: 100%;
 }
+.p-date_h-start_h-end {
+    margin-left: 0.5rem;
+}
 .p-next-trajet, .p-prefer-trajet, .p-driver-message, .p-avis-passenger {
-    margin-bottom: 8%;
+    margin-bottom: 4%;
         -webkit-text-stroke-width: 0.5px;
         -webkit-text-stroke-color: #95C11F;
 }

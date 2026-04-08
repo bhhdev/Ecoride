@@ -26,7 +26,8 @@
 						<div class="infos_vehicul-price-eco">
 							{% if trip %}
 								<p class="p-vehicle_ps mb-1 mt-1 text-uppercase text-center text-white">{{ trip.vehicle.brand ~ ' ' ~ trip.vehicle.model}}</p>
-								<p class="p-price_ps mb-1 text-uppercase text-center text-white">{{ trip.seatPrice }} crédit(s)</p>
+								<p class="p-price_ps mb-1 text-uppercase text-center text-white">{{ trip.seatPrice }}
+									crédit(s)</p>
 								<div class="checkbox m-auto">
 									<div class="ride-eco d-flex justify-content-center">
 										<label class="eco_ps text-uppercase text-white me-1 mb-0">
@@ -117,8 +118,7 @@
 
 				{# ========================= #}
 				{# ✅ BOUTONS (TOUJOURS VISIBLES) #}
-				{# ========================= #}
-				<div class="sep-hori m-auto bg-white mt-4 mb-2"> </div>
+				{# ========================= #}<div class="sep-hori m-auto bg-white mt-4 mb-2"> </div>
 
 				<div class="frame-buttons_ps d-flex mb-2">
 					<div class="frame-button-annul_ps">
@@ -137,7 +137,7 @@
 			</div>
 		</div>
 
-		
+
 		<div class="next-ticket-passenger_ps">
 			<h3 class="h3_ps text-center text-white text-uppercase fs-5 mt-1 mb-3">prochain ticket passager</h3>
 			<div class="infos-next-ride">
@@ -240,9 +240,29 @@
 				<h2 class="text-personal-credits-1_ps text-end text-white text-uppercase text-end">vous disposez de :</h2>
 			</div>
 			<div class="personal-credits-2_ps">
-				<h2 class="text-personal-credits-2_ps text-white text-uppercase">18 crédit(s)</h2>
+				<h2 class="text-personal-credits-2_ps text-white text-uppercase">{{ app.user.solde }}
+					crédit(s)
+				</h2>
 			</div>
 		</div>
+
+		{{ form_start(formAddCredits) }}
+
+		<div class="add-credits-form mt-0 mb-4 mx-auto">
+
+			{{ form_label(formAddCredits.credits, null, {label_attr: { class: 'label-add-credits text-white' }}) }}
+
+			<div class="input-group-custom">
+				{{ form_widget(formAddCredits.credits, {attr: { class: 'form-control-add-credits' }}) }}
+
+				{{ form_widget(formAddCredits.submit, {attr: { class: 'btn-valid-add-credits btn' }}) }}
+			</div>
+
+		</div>
+
+		{{ form_end(formAddCredits) }}
+
+
 		<div class="infos-perso m-auto mt-2 d-flex">
 			<div class="your-photo bg-white">
 				<div class="photo-first-frame-infos-pers_ps">
@@ -570,6 +590,20 @@
 		{{ form_end(form) }}
 
 
+		{# ================== FORMULAIRE DE PROPOSITION DE TRAJET ================== #}
+		{# {{ form_start(form) }}
+		<div
+			class="vehicl-satut_and_organise-ride m-auto mt-2">
+		</div>
+		{{ form_end(form) }} #}
+
+		{# ================== INJECTION DU SOLDE DANS JS ================== #}
+		<script>
+			window.userCredits = {{ app.user.solde }};
+		</script>
+
+		{# ================== LIENS VERS JS ================== #}
+		<script src="{{ asset('js/personal-space.js') }}"></script>
 		<script src="{{ asset('js/select-vehicle.js') }}"></script>
 	</div>
 

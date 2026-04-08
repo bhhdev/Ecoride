@@ -47,7 +47,6 @@
 
 				<h3 class="h3_ps text-uppercase text-white mt-2">détails des covoiturages</h3>
 				<div class="details d-flex justify-content-center">
-					
 					<div class="details-container mb-2">
 						<div class="section-details-1 d-flex">
 							<div class="details-photo-container d-flex justify-content-center">
@@ -61,9 +60,9 @@
 								<p class="p-next-trajet text-center text-white text-uppercase">prochain trajet</p>
 								<p class="p-trajet_details text-center text-white">de (ville) à (ville)</p>
 								<div class="d-flex">
-									<p class="p-date_h-start_h-end text-center text-white">le: ../../..</p>
-									<p class="p-date_h-start_h-end text-center text-white">D: ..H..</p>
-									<p class="p-date_h-start_h-end text-center text-white">A: ..H..</p>
+									<p class="p-date_h-start_h-end text-center text-white">le:<br>../../..</p>
+									<p class="p-date_h-start_h-end text-center text-white">heure Départ:<br> ..H..</p>
+									<p class="p-date_h-start_h-end text-center text-white">heure d'Arrivée:<br> ..H..</p>
 								</div>
 								<p class="p-seat-dispo_details text-center text-white">place(s) dispo</p>
 								<p class="p-vehicul text-center text-white">marque / modèle / energie</p>
@@ -128,14 +127,16 @@
 
 						<div class="d-flex justify-content-center">
 							<div class="button-participer text-uppercase text-center">participer</div>
-						</div>
 
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+						{# {% if app.user is null %}
+						<p>toto</p>
+						{% endif %} #}
 	<div class="d-flex justify-content-center">
 		<div class="frame-new-date ">s
 			<div class="d-flex justify-content-center">
@@ -153,4 +154,16 @@
 			</div>	
 		</div>
 	</div>
+
+    {# ================== INJECTION DU SOLDE DANS JS ================== #}
+    <script>
+        window.userCredits = {{ app.user ? app.user.solde : 0 }};
+		window.isLoggedIn = {{ app.user ? 'true' : 'false' }};
+        {# window.userCredits = {{ app.user.solde }}; #}
+    </script>
+
+
+    <!-- ✅ AJOUT UNIQUE -->
+    <div id="toast-container" style="position: fixed; top: 80px; right: 20px; z-index: 1000;"></div>
+
 {% endblock %}

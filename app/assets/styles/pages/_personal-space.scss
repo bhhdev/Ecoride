@@ -217,6 +217,7 @@
     .button-annul-ride {
         width: 60%;
         font-size: 16px;
+        height: 1.8rem;
     }
 }
 
@@ -487,20 +488,22 @@
 // -------------------START GENERAL PERSONAL SPACE USER
 .details-perso-space {
     width: 22rem;
-    height: 122.2rem;
+    // height: 127.6rem;
     background-color: #346928;
     border: 3px solid black;
+    padding-bottom: 0.2rem;
 }
 @media (min-width: 800px) {
     .details-perso-space {
-        height: 124.9rem;
+        // height: 124.9rem;
         width: 50%;
     }
 }
 @media (min-width: 1200px) {
     .details-perso-space {
-        height: 127.4rem;
+        // height: 127.4rem;
         width: 40%;
+        padding-bottom: 0.3rem;
     }
 }
 // -------------------END GENERAL PERSONAL SPACE USER
@@ -518,12 +521,12 @@
 }
 .text-personal-credits-1_ps {
     font-size: 14px;
-    margin: 12% 2.5% 0 0;
+    margin: 10% 2.5% 0 0;
         -webkit-text-stroke-width: 0.4px;
         -webkit-text-stroke-color: black;
 }
 .text-personal-credits-2_ps {
-    font-size: 22px;
+    font-size: 20px;
     margin: 7.9% 0 0 2%;
         -webkit-text-stroke-width: 0.8px;
         -webkit-text-stroke-color: black;
@@ -534,7 +537,7 @@
         margin: 10% 2.5% 0 0;
     }
     .text-personal-credits-2_ps {
-        font-size: 26px;
+        font-size: 24px;
         margin: 6% 0 0 2%;
     }
 }
@@ -545,6 +548,66 @@
     .text-personal-credits-2_ps {
         font-size: 36px;
         margin: 7% 0 0 2.5%;
+    }
+}
+
+.add-credits-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    label {
+        margin-bottom: 10px;
+    }
+
+    .input-group-custom {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-control-add-credits {
+        width: 100px;
+        text-align: center;
+    }
+
+    .btn-valid-add-credits {
+        margin-right: 0.5rem;
+        background-color: #936037;
+        color: #fff;
+        font-weight: bold;
+        border: 1px solid #CBBBA0;
+    }
+}
+
+
+@media (min-width: 800px) {
+
+    .add-credits-form {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .label-add-credits {
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+        font-size: 14px;
+    }
+
+    .btn-valid-add-credits {
+        margin-right: 0.5rem;
+        background-color: #936037;
+        color: #fff;
+        font-weight: bold;
+        border: 1px solid #CBBBA0;
+    }
+
+    .input-group-custom {
+        justify-content: flex-end;
     }
 }
 // -------------------END CREDITS USER

@@ -55,7 +55,7 @@ class NewTripType extends AbstractType
                 'label' => false,
                 'query_builder' => function (EntityRepository $er) use ($options) {
                     return $er->createQueryBuilder('v')
-                        ->where('v.owner = :user') // Assurez-vous que la propriété s'appelle 'user' dans votre entité Vehicle
+                        ->where('v.owner = :user')
                         ->setParameter('user', $options['user']);
                         // ->setParameter('user', $options['user'])
                         // ->orderBy('v.vehicleName', 'ASC');
