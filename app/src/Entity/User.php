@@ -42,6 +42,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private int $credits = 0;
 
+    // ✅ AJOUT ICI
+    #[ORM\Column(type: 'integer')]
+    private int $solde = 20;
+
     #[ORM\Column]
     private bool $isPassenger = false;
 
@@ -132,6 +136,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCredits(int $c): self
     {
         $this->credits = $c;
+        return $this;
+    }
+
+    // ✅ GETTER / SETTER AJOUTÉS
+    public function getSolde(): int
+    {
+        return $this->solde;
+    }
+
+    public function setSolde(int $solde): self
+    {
+        $this->solde = $solde;
         return $this;
     }
 
