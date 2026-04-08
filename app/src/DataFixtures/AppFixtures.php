@@ -42,7 +42,11 @@ class AppFixtures extends Fixture
                  ->setFirstname("First{$i}")
                  ->setLastname("Last{$i}")
                  ->setPhone("06" . rand(10000000,99999999))
-                 ->setCredits(rand(0,1000))
+                 ->setCredits(rand(0,9999))
+                 
+                 // ✅ AJOUT DU SOLDE
+                 ->setSolde(rand(0,1000))
+
                  ->setIsVerified(true)
                  ->setIsPassenger(true)
                  ->setIsDriver($isDriver)
@@ -140,9 +144,9 @@ class AppFixtures extends Fixture
                  ->setVehicle($vehicle)
                  ->setPreference($pref)
                  ->setDepartureDay($departureDate)
-                 ->setDepartureHour($departureDate)   // ✅ AJOUT
+                 ->setDepartureHour($departureDate)
                  ->setArrivalDay($arrivalDate)
-                 ->setArrivalHour($arrivalDate)       // ✅ AJOUT
+                 ->setArrivalHour($arrivalDate)
                  ->setDepartureCity($departure[0])
                  ->setDepartureAddress($departure[1])
                  ->setArrivalCity($arrival[0])
