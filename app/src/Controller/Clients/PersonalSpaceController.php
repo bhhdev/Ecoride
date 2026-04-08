@@ -6,6 +6,7 @@ use App\Entity\Trip;
 use App\Entity\User;
 use App\Entity\Preference;
 use App\Form\NewTripType;
+use App\Form\AddCreditsType;
 use App\Repository\TripRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -33,7 +34,42 @@ final class PersonalSpaceController extends AbstractController
             'user' => $user
         ]);
 
+        //  AJOUT FORMULAIRE CRÉDIT
+        $formAddCredits = $this->createForm(AddCreditsType::class);
+        $formAddCredits->handleRequest($request);
+
         $form->handleRequest($request);
+
+        //  TRAITEMENT FORM CRÉDIT
+        if ($formAddCredits->isSubmitted() && $formAddCredits->isValid()) {
+
+            $data = $formAddCredits->getData();
+            $creditsToAdd = (int) $data['credits'];
+
+            $currentSolde = $user->getSolde();
+            $maxAddable = 9999 - $currentSolde;
+
+            if ($creditsToAdd <= 0) {
+                $this->addFlash('error', 'Veuillez entrer un nombre valide');
+
+            } elseif ($creditsToAdd > $maxAddable) {
+                $this->addFlash(
+                    'error',
+                    "Vous pouvez ajouter au maximum {$maxAddable} crédits"
+            );
+
+            } else {
+                $user->setSolde($currentSolde + $creditsToAdd);
+                $entityManager->flush();
+
+                $this->addFlash(
+                    'success',
+                    "Votre solde a bien été crédité de {$creditsToAdd} crédits"
+            );
+        }
+
+            return $this->redirectToRoute('app_clients_personal_space');
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -55,9 +91,7 @@ final class PersonalSpaceController extends AbstractController
 
             $trip->setPreference($preference);
 
-            // ✅ sièges dispos
             $trip->setSeatAvailable($trip->getSeatAvailable() ?? 1);
-            
 
             $this->addFlash('success', 'Bravo vous avez enregistré votre trajet de rêve...');
 
@@ -68,7 +102,6 @@ final class PersonalSpaceController extends AbstractController
             return $this->redirectToRoute('app_clients_personal_space');
         }
 
-        // ✅ UNIQUEMENT FUTUR → sinon NULL
         $nextTrip = $tripRepository->createQueryBuilder('t')
             ->leftJoin('t.vehicle', 'v')->addSelect('v')
             ->leftJoin('t.bookings', 'b')->addSelect('b')
@@ -84,8 +117,9 @@ final class PersonalSpaceController extends AbstractController
 
         return $this->render('clients/personal_space/index.html.twig', [
             'form' => $form->createView(),
+            'formAddCredits' => $formAddCredits->createView(), // ✅ AJOUT
             'vehicles' => $user->getVehicles(),
-            'trip' => $nextTrip // peut être NULL → fallback twig
+            'trip' => $nextTrip
         ]);
     }
 }
